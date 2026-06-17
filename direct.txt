@@ -150,3 +150,113 @@ IP-CIDR,100.88.0.0/16,no-resolve
 # 国内域名
 DOMAIN-SUFFIX,cn
 GEOIP,CN
+
+# 补充 - 国内常用服务
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tmall.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,wechat.com
+DOMAIN-SUFFIX,weixin.com
+DOMAIN-SUFFIX,weibo.com
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,zhihu.com
+DOMAIN-SUFFIX,baidu.com
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,126.com
+DOMAIN-SUFFIX,netease.com
+DOMAIN-SUFFIX,sina.com
+DOMAIN-SUFFIX,sohu.com
+DOMAIN-SUFFIX,ifeng.com
+DOMAIN-SUFFIX,ctrip.com
+DOMAIN-SUFFIX,dianping.com
+DOMAIN-SUFFIX,meituan.com
+DOMAIN-SUFFIX,ele.me
+DOMAIN-SUFFIX,didi.cn
+DOMAIN-SUFFIX,gaode.com
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,xiaomi.com
+DOMAIN-SUFFIX,mi.com
+DOMAIN-SUFFIX,huawei.com
+DOMAIN-SUFFIX,honor.com
+DOMAIN-SUFFIX,oppo.com
+DOMAIN-SUFFIX,vivo.com
+DOMAIN-SUFFIX,meizu.com
+DOMAIN-SUFFIX,360.com
+
+# 国内视频平台
+DOMAIN-SUFFIX,youku.com
+DOMAIN-SUFFIX,iqiyi.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,v.qq.com
+DOMAIN-SUFFIX,film.qq.com
+DOMAIN-SUFFIX,mgtv.com
+DOMAIN-SUFFIX,le.com
+DOMAIN-SUFFIX,pptv.com
+DOMAIN-SUFFIX,baofeng.com
+DOMAIN-SUFFIX,acfun.cn
+DOMAIN-SUFFIX,yy.com
+DOMAIN-SUFFIX,douyu.com
+DOMAIN-SUFFIX,huya.com
+
+# 国内音乐
+DOMAIN-SUFFIX,music.163.com
+DOMAIN-SUFFIX,music.qq.com
+DOMAIN-SUFFIX,kugou.com
+DOMAIN-SUFFIX,kuwo.cn
+DOMAIN-SUFFIX,xiami.com
+
+# 国内云存储
+DOMAIN-SUFFIX,aliyundrive.com
+DOMAIN-SUFFIX,pan.baidu.com
+DOMAIN-SUFFIX,yun.139.com
+DOMAIN-SUFFIX,cloud.189.cn
+DOMAIN-SUFFIX,weiyun.com
+
+# 国内办公
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,larkoffice.com
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,wps.cn
+DOMAIN-SUFFIX,docs.qq.com
+DOMAIN-SUFFIX,yuque.com
+
+# 国内开发
+DOMAIN-SUFFIX,gitee.com
+DOMAIN-SUFFIX,coding.net
+DOMAIN-SUFFIX,oschina.net
+DOMAIN-SUFFIX,csdn.net
+DOMAIN-SUFFIX,segmentfault.com
+DOMAIN-SUFFIX,juejin.cn
+DOMAIN-SUFFIX,zhihu.com
+
+# 国内金融
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,tenpay.com
+DOMAIN-SUFFIX,wechatpay.com
+DOMAIN-SUFFIX,ccb.com
+DOMAIN-SUFFIX,icbc.com.cn
+DOMAIN-SUFFIX,boc.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,psbc.com
+DOMAIN-SUFFIX,cmbchina.com
+DOMAIN-SUFFIX,cmbc.com.cn
+
+# 国内教育
+DOMAIN-SUFFIX,edu.cn
+DOMAIN-SUFFIX,chaoxing.com
+DOMAIN-SUFFIX,zhixue.com
+DOMAIN-SUFFIX,xuexi.cn
+DOMAIN-SUFFIX,zhihuishu.com
+DOMAIN-SUFFIX,icourse163.org
+
+# 国内政府/公共服务
+DOMAIN-SUFFIX,gov.cn
+DOMAIN-SUFFIX,12306.cn
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,wx.qq.com
+DOMAIN-SUFFIX,servicewechat.com
