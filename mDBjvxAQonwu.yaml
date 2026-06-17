@@ -49,6 +49,13 @@ rule-providers:
     path: ./ruleset/ai.yaml
     interval: 86400
 
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
   private:
     type: http
     behavior: domain
@@ -93,6 +100,7 @@ rules:
   # ===== 第 4 层：特殊服务代理 =====
   - RULE-SET,ai,🤖 AI服务
   - RULE-SET,steam,🎮 Steam
+  - RULE-SET,icloud,🚀 节点选择
   - RULE-SET,apple,🍎 苹果服务
 
   # ===== 第 5 层：通用代理/直连 =====

@@ -8,7 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/thintsing/clash-rules?style=flat-square&color=yellow)](https://github.com/thintsing/clash-rules/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thintsing/clash-rules?style=flat-square&color=success)](https://github.com/thintsing/clash-rules/commits/main)
 [![License](https://img.shields.io/github/license/thintsing/clash-rules?style=flat-square)](LICENSE)
-[![Total Rules](https://img.shields.io/badge/Total%20Rules-1137%2B-brightgreen?style=flat-square)](#-规则统计)
+[![Total Rules](https://img.shields.io/badge/Total%20Rules-1157%2B-brightgreen?style=flat-square)](#-规则统计)
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt)
 
 <br>
@@ -29,12 +29,13 @@
 | apple | **148** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
 | steam | **45** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
 | ai | **50** | AI 服务（OpenAI/Claude等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
+| icloud | **20** | iCloud 认证/Private Relay/CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt) |
 | private | **26** | 私有网络域名（路由器/内网） | [private.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/private.txt) |
 | telegramcidr | **16** | Telegram IP 段 | [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/telegramcidr.txt) |
 | lancidr | **13** | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/lancidr.txt) |
 | applications | **51** | 应用进程匹配（浏览器/游戏/办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/applications.txt) |
 
-**总计: 1137+ 条规则**，覆盖日常使用全场景。
+**总计: 1157+ 条规则**，覆盖日常使用全场景。
 
 ---
 
@@ -45,7 +46,7 @@
 | **即用** | 直接引用 jsDelivr CDN 链接，无需手动维护 |
 | **自动更新** | 搭配 rule-providers，规则每天自动同步 |
 | **隐私安全** | 仅含域名/IP规则，不含任何节点信息 |
-| **分类清晰** | 10个独立规则集，按优先级精准分流 |
+| **分类清晰** | 11个独立规则集，按优先级精准分流 |
 | **持续维护** | 定期跟随主流规则源更新 |
 
 ---
@@ -204,10 +205,10 @@ rules:
 ## 更新日志
 
 ### v1.2 - 2026-06-17
-- 新增 4 个规则集: private.txt / telegramcidr.txt / lancidr.txt / applications.txt
+- 新增 5 个规则集: private / telegramcidr / lancidr / applications / icloud
 - 规则优先级重构为 7 层体系
 - 内联 IP-CIDR 全部迁移到独立规则集
-- 规则总数: 1030+ -> 1137+
+- 规则总数: 1030+ -> 1157+
 
 ### v1.1 - 2026-06-17
 - 规则大幅扩充: 从 400+ 到 1030+ 条
