@@ -202,4 +202,4 @@ hosts: {}
 # ==================== 规则集（通过 Merge 配置添加）====================
 # 本文件不包含规则集和分流规则
 # 规则集配置在 Merge 文件中（profiles/mDBjvxAQonwu.yaml）
-# 详见: https://github.com/thintsing/clash-rules
+# 详见: https://github.com/thintsing/clash-rules/blob/main/clash-verge-merge.yaml

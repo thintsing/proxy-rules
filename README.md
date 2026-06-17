@@ -269,3 +269,15 @@ rules:
 ## License
 
 MIT License 2026 thintsing
+
+---
+
+## 文件说明
+
+| 文件 | 说明 |
+|:----|:------|
+| *.txt | 规则数据文件（11个），通过 rule-providers 远程引用 |
+| clash-verge-merge.yaml | Clash Verge 增强配置（Merge），引用全部规则集 + 七层分流规则 |
+| example-config.yaml | 完整 Clash 配置示例，含节点/代理组/DNS |
+| .github/workflows/update-rules.yml | GitHub Actions 自动构建配置 |
+| scripts/merge_rules.py | 自动合并上游规则的 Python 脚本 |
