@@ -237,8 +237,6 @@ rules:
 
 如果觉得有用，欢迎 Star 支持！
 
-[![Star History Chart](https://api.star-history.com/svg?repos=thintsing/clash-rules&type=Date)](https://star-history.com/#thintsing/clash-rules&Date)
-
 </div>
 
 ## License
