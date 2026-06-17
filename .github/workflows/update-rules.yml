@@ -1,26 +1,51 @@
-name: Update Rules
+name: Auto-Update Rules
 
 on:
   schedule:
-    # 每天 UTC 时间 00:00 运行
-    - cron: '0 0 * * *'
+    # 每天 UTC 22:00 = 北京时间 06:00 运行
+    - cron: '0 22 * * *'
   workflow_dispatch:
+    # 支持手动触发测试
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Update rules
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run merge script
+        run: python scripts/merge_rules.py
+
+      - name: Check for changes
+        id: git-check
         run: |
-          echo "规则更新时间: $(date)" > LAST_UPDATED
-          
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+          fi
+
       - name: Commit and push
+        if: steps.git-check.outputs.changed == 'true'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add LAST_UPDATED
-          git commit -m "Update rules: $(date +%Y-%m-%d)" || exit 0
+          git config --local user.email "bot@thintsing.me"
+          git config --local user.name "thintsing-bot"
+          git add .
+          git commit -m "chore: auto-update rules $(date +%Y-%m-%d)"
           git push
+
+      - name: Update rule timestamp
+        if: steps.git-check.outputs.changed == 'true'
+        run: echo "Rules updated on $(date '+%Y-%m-%d %H:%M:%S UTC')"

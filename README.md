@@ -8,7 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/thintsing/clash-rules?style=flat-square&color=yellow)](https://github.com/thintsing/clash-rules/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thintsing/clash-rules?style=flat-square&color=success)](https://github.com/thintsing/clash-rules/commits/main)
 [![License](https://img.shields.io/github/license/thintsing/clash-rules?style=flat-square)](LICENSE)
-[![Total Rules](https://img.shields.io/badge/Total%20Rules-1157%2B-brightgreen?style=flat-square)](#-规则统计)
+[![Total Rules](https://img.shields.io/badge/Total%20Rules-2836%2B-brightgreen?style=flat-square)](#-规则统计)
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt)
 
 <br>
@@ -26,16 +26,16 @@
 | reject | **220** | 广告追踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt) |
 | proxy | **357** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt) |
 | direct | **211** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt) |
-| apple | **148** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
-| steam | **45** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
-| ai | **50** | AI 服务（OpenAI/Claude等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
-| icloud | **20** | iCloud 认证/Private Relay/CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt) |
+| apple | **1729** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
+| steam | **54** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
+| ai | **78** | AI 服务（OpenAI/Claude等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
+| icloud | **81** | iCloud 认证/Private Relay/CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt) |
 | private | **26** | 私有网络域名（路由器/内网） | [private.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/private.txt) |
 | telegramcidr | **16** | Telegram IP 段 | [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/telegramcidr.txt) |
 | lancidr | **13** | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/lancidr.txt) |
 | applications | **51** | 应用进程匹配（浏览器/游戏/办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/applications.txt) |
 
-**总计: 1157+ 条规则**，覆盖日常使用全场景。
+**总计: 2836+ 条规则**，覆盖日常使用全场景。
 
 ---
 
@@ -46,8 +46,26 @@
 | **即用** | 直接引用 jsDelivr CDN 链接，无需手动维护 |
 | **自动更新** | 搭配 rule-providers，规则每天自动同步 |
 | **隐私安全** | 仅含域名/IP规则，不含任何节点信息 |
+| **每日更新** | GitHub Actions 自动从 blackmatrix7 同步 Apple/Steam/AI 规则 |
 | **分类清晰** | 11个独立规则集，按优先级精准分流 |
 | **持续维护** | 定期跟随主流规则源更新 |
+
+---
+
+## 自动更新
+
+本仓库使用 GitHub Actions 每天自动同步上游规则：
+
+| 文件 | 上游来源 | 行为 |
+|:----|:--------|:----|
+| apple.txt | blackmatrix7 | 合并补充（保留自定义规则优先） |
+| steam.txt | blackmatrix7 | 合并补充 |
+| ai.txt | blackmatrix7 | 合并补充 |
+| icloud.txt | blackmatrix7 | 合并补充 |
+| reject/proxy/direct | **手动维护** | 上游规则过于庞大，不自动合并 |
+| private/lancidr 等 | **自定义** | 无上游来源 |
+
+合并脚本位于 `scripts/merge_rules.py`，可在 Actions 面板手动触发。
 
 ---
 
@@ -203,6 +221,13 @@ rules:
 ---
 
 ## 更新日志
+
+### v1.3 - 2026-06-17
+- 新增 `icloud.txt`: iCloud 认证/Private Relay 代理规则（81条）
+- GitHub Actions 自动构建管道上线
+  - 每天从 blackmatrix7 同步 Apple/Steam/AI/iCloud 规则
+  - 保留自定义规则优先，保守合并
+- 规则总数: 1157+ -> 2836+
 
 ### v1.2 - 2026-06-17
 - 新增 5 个规则集: private / telegramcidr / lancidr / applications / icloud

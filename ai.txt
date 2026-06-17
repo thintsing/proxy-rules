@@ -2,75 +2,93 @@
 # OpenAI, Anthropic, Google AI, 等
 
 # OpenAI / ChatGPT
-DOMAIN-SUFFIX,openai.com
+
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,static.cloudflareinsights.com
 DOMAIN-SUFFIX,ai.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,openai-api.arkoselabs.com
-DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
-DOMAIN-SUFFIX,openaicom.imgix.net
-DOMAIN-SUFFIX,chat.openai.com
-DOMAIN-SUFFIX,api.openai.com
-DOMAIN-SUFFIX,platform.openai.com
-
-# Anthropic / Claude
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,api.anthropic.com
-
-# Google AI
-DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,ai.google.dev
 DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
 DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,antigravity-pa.googleapis.com
 DOMAIN-SUFFIX,antigravity.googleapis.com
-DOMAIN-SUFFIX,ai.google.dev
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,api.anthropic.com
+DOMAIN-SUFFIX,api.openai.com
+DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bard.google.com
-
-# Perplexity
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,www.perplexity.ai
-
-# Poe
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,www.poe.com
-
-# Cursor
-DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,character.ai
+DOMAIN-SUFFIX,chat.openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,copy.ai
 DOMAIN-SUFFIX,cursor.com
-DOMAIN-SUFFIX,www.cursor.com
-
-# Vercel AI
-DOMAIN-SUFFIX,v0.dev
-DOMAIN-SUFFIX,vercel.com
-
-# Midjourney
-DOMAIN-SUFFIX,midjourney.com
-DOMAIN-SUFFIX,www.midjourney.com
-
-# Stability AI
-DOMAIN-SUFFIX,stability.ai
-DOMAIN-SUFFIX,www.stability.ai
-
-# Hugging Face
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,grammarly.com
+DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,huggingface.com
-DOMAIN-SUFFIX,www.huggingface.co
-
-# Replicate
-DOMAIN-SUFFIX,replicate.com
-DOMAIN-SUFFIX,www.replicate.com
-
-# 其他 AI 服务
-DOMAIN-SUFFIX,character.ai
-DOMAIN-SUFFIX,www.character.ai
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,jasper.ai
-DOMAIN-SUFFIX,copy.ai
-DOMAIN-SUFFIX,writesonic.com
-DOMAIN-SUFFIX,grammarly.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,openai-api.arkoselabs.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,platform.openai.com
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,turn.livekit.cloud
+DOMAIN-SUFFIX,v0.dev
+DOMAIN-SUFFIX,vercel.com
+DOMAIN-SUFFIX,writesonic.com
+DOMAIN-SUFFIX,www.character.ai
+DOMAIN-SUFFIX,www.cursor.com
+DOMAIN-SUFFIX,www.huggingface.co
+DOMAIN-SUFFIX,www.midjourney.com
+DOMAIN-SUFFIX,www.perplexity.ai
+DOMAIN-SUFFIX,www.poe.com
+DOMAIN-SUFFIX,www.replicate.com
+DOMAIN-SUFFIX,www.stability.ai
+DOMAIN-KEYWORD,openai
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve
+# Anthropic / Claude
+# Cursor
+# Google AI
+# Hugging Face
+# Midjourney
+# Perplexity
+# Poe
+# Replicate
+# Stability AI
+# Vercel AI
+# 其他 AI 服务
+IP-ASN,20473,no-resolve
