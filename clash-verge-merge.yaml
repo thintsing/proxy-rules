@@ -79,6 +79,13 @@ rule-providers:
     interval: 86400
 
   # 进程匹配规则集
+  microsoft:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/microsoft.txt"
+    path: ./ruleset/microsoft.yaml
+    interval: 86400
+
   applications:
     type: http
     behavior: classical
@@ -98,6 +105,7 @@ rules:
   - RULE-SET,reject,🛑 全球拦截
 
   # ===== 第 4 层：特殊服务代理 =====
+  - RULE-SET,microsoft,Ⓜ️ 微软服务
   - RULE-SET,ai,🤖 AI服务
   - RULE-SET,steam,🎮 Steam
   - RULE-SET,icloud,🚀 节点选择

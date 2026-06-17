@@ -252,3 +252,15 @@ DOMAIN-SUFFIX,www.google-analytics.com
 DOMAIN-SUFFIX,ssl.google-analytics.com
 DOMAIN-SUFFIX,www.googleadservices.com
 DOMAIN-SUFFIX,googleads.g.doubleclick.net
+DOMAIN-SUFFIX,adtang.com
+DOMAIN-SUFFIX,admaster.com.cn
+DOMAIN-SUFFIX,adservice.google.com.hk
+DOMAIN-SUFFIX,adservice.google.cn
+DOMAIN-SUFFIX,adsafeprotected.com
+DOMAIN-SUFFIX,adroll.com
+DOMAIN-SUFFIX,adsrvr.org
+DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,bat.bing.com
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,zc.qq.com
+DOMAIN-SUFFIX,zmedia.com

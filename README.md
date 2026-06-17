@@ -29,19 +29,20 @@
 
 | 规则集 | 数量 | 用途 | CDN 链接 |
 |:------:|:----:|:----|:--------:|
-| reject | 220 | 广告跟踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt) |
-| proxy | 356 | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt) |
-| direct | 205 | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt) |
-| apple | 1729 | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
-| steam | 54 | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
-| ai | 78 | AI 服务（OpenAI / Claude 等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
-| icloud | 81 | iCloud 认证 / Private Relay / CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt) |
+| reject | **232** | 广告跟踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt) |
+| proxy | **338** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt) |
+| direct | **217** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt) |
+| apple | **1729** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
+| microsoft | 651 | Microsoft 服务（Office/Teams/Azure/VS Code） | [microsoft.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/microsoft.txt) |
+| steam | **54** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
+| ai | **78** | AI 服务（OpenAI / Claude 等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
+| icloud | **81** | iCloud 认证 / Private Relay / CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt) |
 | private | 26 | 私有网络域名（路由器 / 内网） | [private.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/private.txt) |
 | telegramcidr | 16 | Telegram IP 段 | [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/telegramcidr.txt) |
 | lancidr | 13 | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/lancidr.txt) |
 | applications | 51 | 应用进程匹配（浏览器 / 游戏 / 办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/applications.txt) |
 
-**总计: 2829+ 条规则**
+**总计: 3486+ 条规则**
 
 ---
 

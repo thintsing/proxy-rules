@@ -224,3 +224,14 @@ DOMAIN-SUFFIX,12306.cn
 DOMAIN-SUFFIX,alipay.com
 DOMAIN-SUFFIX,wx.qq.com
 DOMAIN-SUFFIX,servicewechat.com
+DOMAIN-SUFFIX,kuaishou.com
+DOMAIN-SUFFIX,kuaishou.cn
+DOMAIN-SUFFIX,zhanqi.tv
+DOMAIN-SUFFIX,wasu.com
+DOMAIN-SUFFIX,wasu.cn
+DOMAIN-SUFFIX,cntv.cn
+DOMAIN-SUFFIX,cctv.com
+DOMAIN-SUFFIX,cctv.cn
+DOMAIN-SUFFIX,tudou.com
+DOMAIN-SUFFIX,letv.com
+DOMAIN-SUFFIX,y.qq.com

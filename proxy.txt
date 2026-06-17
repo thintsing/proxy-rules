@@ -27,7 +27,6 @@ DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,openai-api.arkoselabs.com
-DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
 DOMAIN-SUFFIX,openaicom.imgix.net
 
 # AI服务 - Anthropic
@@ -177,19 +176,6 @@ DOMAIN-SUFFIX,academia.edu
 DOMAIN-SUFFIX,semanticscholar.org
 
 # 微软服务（国际）
-DOMAIN-SUFFIX,azure.microsoft.com
-DOMAIN-SUFFIX,azuremarketplace.microsoft.com
-DOMAIN-SUFFIX,azurestatus.com
-DOMAIN-SUFFIX,azureedge.net
-DOMAIN-SUFFIX,azure-devices.net
-DOMAIN-SUFFIX,azurewebsites.net
-DOMAIN-SUFFIX,azure-api.net
-DOMAIN-SUFFIX,azurecontainer.io
-DOMAIN-SUFFIX,azurecr.io
-DOMAIN-SUFFIX,azuredatabricks.net
-DOMAIN-SUFFIX,azurefd.net
-DOMAIN-SUFFIX,azurehdinsight.net
-DOMAIN-SUFFIX,azurecosmosdb.net
 
 # Steam（国际）
 DOMAIN-SUFFIX,steamcommunity.com
@@ -213,7 +199,6 @@ DOMAIN-SUFFIX,box.com
 DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,figma.com
 DOMAIN-SUFFIX,canva.com
-DOMAIN-SUFFIX,onedrive.live.com
 
 # 其他国外服务
 DOMAIN-SUFFIX,t.me
@@ -238,9 +223,7 @@ DOMAIN-SUFFIX,sourceforge.net
 DOMAIN-SUFFIX,git-scm.com
 DOMAIN-SUFFIX,jetbrains.com
 DOMAIN-SUFFIX,intellij.net
-DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,vscode.dev
-DOMAIN-SUFFIX,code.visualstudio.com
 DOMAIN-SUFFIX,registry.npmjs.org
 DOMAIN-SUFFIX,registry.yarnpkg.com
 DOMAIN-SUFFIX,registry.npmmirror.com
@@ -386,8 +369,6 @@ DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,zoom.us
 DOMAIN-SUFFIX,webex.com
 DOMAIN-SUFFIX,gotomeeting.com
-DOMAIN-SUFFIX,teams.microsoft.com
-DOMAIN-SUFFIX,skype.com
 DOMAIN-SUFFIX,telegram.org
 
 # 安全/隐私
