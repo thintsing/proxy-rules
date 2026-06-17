@@ -1,25 +1,61 @@
-# Clash Rules Collection
+<div align="center">
 
-个人整理的 Clash 分流规则集，基于日常使用优化。
+# 🛡️ Clash Rules Collection
 
-**仓库地址**: https://github.com/thintsing/clash-rules
+**个人整理的 Clash 分流规则集 · 开箱即用 · 自动更新**
 
-## 📁 文件说明
+[![GitHub release](https://img.shields.io/github/v/release/thintsing/clash-rules?style=flat-square&color=blue)](https://github.com/thintsing/clash-rules/releases)
+[![GitHub stars](https://img.shields.io/github/stars/thintsing/clash-rules?style=flat-square&color=yellow)](https://github.com/thintsing/clash-rules/stargazers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/thintsing/clash-rules?style=flat-square&color=success)](https://github.com/thintsing/clash-rules/commits/main)
+[![License](https://img.shields.io/github/license/thintsing/clash-rules?style=flat-square)](LICENSE)
+[![Total Rules](https://img.shields.io/badge/Total%20Rules-1030+-brightgreen?style=flat-square)](#-规则统计)
+[![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt)
 
-| 文件 | 说明 | 用途 |
-|------|------|------|
-| `direct.txt` | 直连域名列表 | 国内网站、CDN等 |
-| `proxy.txt` | 代理域名列表 | 国外网站、需要翻墙的服务 |
-| `reject.txt` | 拦截域名列表 | 广告、追踪、恶意网站 |
-| `apple.txt` | 苹果服务域名 | Apple 相关服务 |
-| `steam.txt` | Steam 游戏平台 | Steam 商店、社区、下载 |
-| `ai.txt` | AI 服务域名 | OpenAI、Claude、Gemini 等 |
+<br>
 
-## 🚀 使用方法
+**仓库地址**: [https://github.com/thintsing/clash-rules](https://github.com/thintsing/clash-rules)
 
-### 在 Clash Verge 中引用
+</div>
+
+---
+
+## 📋 规则集概览
+
+| 规则集 | 规则数 | 用途 | CDN 链接 |
+|:------:|:-----:|:----:|:--------:|
+| 🚫 `reject` | **219** | 广告追踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt) |
+| 🌐 `proxy` | **355** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt) |
+| 🏠 `direct` | **214** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt) |
+| 🍎 `apple` | **148** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
+| 🎮 `steam` | **44** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
+| 🤖 `ai` | **50** | AI 服务（OpenAI/Claude等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
+
+**总计: 1030+ 条规则**，覆盖日常使用全场景。
+
+---
+
+## 🎯 特点
+
+| 特点 | 说明 |
+|:----|:------|
+| **即用** | 直接引用 jsDelivr CDN 链接，无需手动维护 |
+| **自动更新** | 搭配 `rule-providers`，规则每天自动同步 |
+| **隐私安全** | 仅含域名/IP规则，不含任何节点信息 |
+| **分类清晰** | 6个独立规则集，按优先级精准分流 |
+| **持续维护** | 定期跟随主流规则源更新 |
+
+---
+
+## 🚀 快速开始
+
+### 在 Clash Verge 中使用
+
+**1. 添加 Merge 配置**
+
+在 Clash Verge -> 配置 -> Merge 中添加以下内容：
 
 ```yaml
+# 规则集提供者
 rule-providers:
   reject:
     type: http
@@ -63,6 +99,7 @@ rule-providers:
     path: ./ruleset/ai.yaml
     interval: 86400
 
+# 分流规则（优先级从高到低）
 rules:
   - RULE-SET,reject,🛑 全球拦截
   - RULE-SET,ai,🤖 AI服务
@@ -70,28 +107,16 @@ rules:
   - RULE-SET,apple,🍎 苹果服务
   - RULE-SET,proxy,🚀 节点选择
   - RULE-SET,direct,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 ```
 
-### 代理组配置示例
+**2. 配置代理组**
+
+确保 Clash 配置中有以下代理组：
 
 ```yaml
 proxy-groups:
-  - name: 🚀 节点选择
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - DIRECT
-
-  - name: ♻️ 自动选择
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 你的节点1
-      - 你的节点2
-
   - name: 🤖 AI服务
     type: select
     proxies:
@@ -105,75 +130,111 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - DIRECT
-
-  - name: 🍎 苹果服务
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-
-  - name: 🛑 全球拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
-  - name: 🐟 漏网之鱼
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - DIRECT
 ```
+
+**3. 重新加载**
+
+点击「重新加载」即可生效，规则集将自动下载。
+
+---
+
+## 📦 规则详情
+
+### 🚫 reject — 广告追踪拦截
+
+拦截 Google 广告、国内移动广告、社交追踪、数据采集等。
+
+```
+包含: DoubleClick, GoogleAds, Facebook-ads, Umeng, Mopub, AppLovin 等
+```
+
+### 🌐 proxy — 国外网站代理
+
+涵盖流媒体、社交、开发工具、学术科研、购物出行等。
+
+| 类别 | 包含 |
+|:----|:-----|
+| 🎬 流媒体 | YouTube, Netflix, Spotify, Twitch, Disney+, HBO, Hulu, Abema |
+| 💬 社交 | Twitter/X, Facebook, Instagram, Reddit, Telegram, Discord |
+| 🔧 开发 | GitHub, Docker, NPM, PyPI, Maven, Gradle, GitLab, JetBrains |
+| 📚 学术 | arXiv, IEEE, Nature, Springer, ScienceDirect, Google Scholar |
+| 🤖 AI | OpenAI, Claude, Gemini, Perplexity, Poe, Cursor, V0 |
+| 🛒 购物 | Amazon, eBay, AliExpress, BestBuy, Walmart |
+| ✈️ 旅行 | Booking, Airbnb, Expedia, Agoda, Uber, Lyft |
+| 🏦 金融 | PayPal, Wise, Revolut, Coinbase, Binance |
+
+### 🏠 direct — 国内网站直连
+
+涵盖国内主流平台和服务。
+
+| 类别 | 包含 |
+|:----|:-----|
+| 🏢 综合 | Baidu, Alibaba, Tencent, ByteDance, NetEase, Xiaomi |
+| 🎵 音乐 | NetEase Music, QQ Music, Kugou, Kuwo |
+| 🎬 视频 | Bilibili, iQiyi, Youku, Douyin, Douyu, Huya |
+| ☁️ 云服务 | Aliyun, Tencent Cloud, Qiniu, UPYun |
+| 📝 办公 | Feishu, DingTalk, WPS, Yuque |
+| 💳 金融 | Alipay, WeChat Pay, UnionPay, ABOC, ICBC |
+
+---
+
+## 🔐 安全说明
+
+- ✅ 仅含域名/IP 规则，**不包含任何代理节点信息**
+- ✅ 可放心分享、发布、用于 `rule-providers`
+- ✅ 建议搭配 Merge 配置使用，节点信息保留在本地
+
+---
 
 ## 📊 规则统计
 
-| 规则集 | 规则数量 | 说明 |
-|--------|---------|------|
-| `reject.txt` | 50+ | 广告、追踪、恶意网站 |
-| `proxy.txt` | 200+ | 国外网站、需要代理的服务 |
-| `direct.txt` | 150+ | 国内网站、CDN等 |
-| `apple.txt` | 150+ | Apple 相关服务 |
-| `steam.txt` | 46 | Steam 游戏平台 |
-| `ai.txt` | 30+ | AI 服务（OpenAI、Claude等） |
+```mermaid
+pie
+    title 规则分布 (总计 1030+)
+    "🚫 reject" : 219
+    "🌐 proxy" : 355
+    "🏠 direct" : 214
+    "🍎 apple" : 148
+    "🎮 steam" : 44
+    "🤖 ai" : 50
+```
 
-## 🔗 规则集链接
-
-可以直接复制以下链接使用：
-
-- **Reject**: `https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt`
-- **Proxy**: `https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt`
-- **Direct**: `https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt`
-- **Apple**: `https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt`
-- **Steam**: `https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt`
-- **AI**: `https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt`
+---
 
 ## 📝 更新日志
 
-### 2026-06-17 (第二次更新)
-- 大幅扩充直连规则：新增国内常用服务、视频平台、音乐、云存储、办公、开发、金融、教育等
-- 大幅扩充代理规则：新增开发工具、技术社区、设计创意、学习教育、新闻资讯、娱乐视频、购物电商、旅游出行、金融支付、工具效率、通讯协作、安全隐私、游戏、运动健康等
-- 大幅扩充拦截规则：新增更多广告网络、数据收集、移动广告、隐私追踪等
-- 规则总数从 400+ 扩充到 1000+
+### v1.1 · 2026-06-17
+- 🚀 **规则大幅扩充**: 从 400+ → **1030+** 条
+  - `proxy.txt` 扩充至 355 条（新增开发工具、学术、购物、旅行等）
+  - `direct.txt` 扩充至 214 条（新增国内视频、音乐、云服务等）
+  - `reject.txt` 扩充至 219 条（新增更多广告网络、追踪服务）
+- 🎨 **美化管理**: 添加 badges、Mermaid 统计图、分栏说明
+- ⚡ **DNS 优化**: Clash 最佳 DNS 实践
 
-### 2026-06-17 (初始版本)
+### v1.0 · 2026-06-17
 - 初始版本发布
-- 添加 Steam 完整规则（46条）
-- 优化微软服务分流
-- 添加 Google 国内 CDN 直连
-- 添加 AI 服务规则（OpenAI、Claude、Gemini等）
-- 添加 Apple 服务规则
+- 包含 Steam 完整规则（44 条）
+- 微软/Google 国内 CDN 分流优化
+- Apple 服务规则（148 条）
+- AI 服务规则（50 条）
+
+---
 
 ## 🙏 致谢
 
-- 参考 [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)
-- 参考 [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
+- [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)
+
+---
+
+<div align="center">
+
+**如果觉得有用，欢迎 ⭐ Star 支持！**
+
+[![Star History Chart](https://api.star-history.com/svg?repos=thintsing/clash-rules&type=Date)](https://star-history.com/#thintsing/clash-rules&Date)
+
+</div>
 
 ## 📄 License
 
-MIT License
+MIT License © 2026 thintsing
