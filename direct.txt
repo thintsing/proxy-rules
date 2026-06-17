@@ -1,6 +1,5 @@
-# 直连规则集
+﻿# 直连规则集
 # 国内网站、CDN、微软服务（国内）等
-
 # Google 国内 CDN
 DOMAIN-SUFFIX,2mdn-cn.net
 DOMAIN-SUFFIX,admob-cn.com
@@ -19,7 +18,6 @@ DOMAIN-SUFFIX,fonts.googleapis.com
 DOMAIN-SUFFIX,redirector.gvt1.com
 DOMAIN-SUFFIX,update.googleapis.com
 DOMAIN-SUFFIX,www.gstatic.com
-
 # 微软服务（国内）
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,microsoftonline.com
@@ -33,20 +31,15 @@ DOMAIN-SUFFIX,outlook.com
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,bing.com
-DOMAIN-SUFFIX,skype.com
 DOMAIN-SUFFIX,xbox.com
 DOMAIN-SUFFIX,windows.com
-DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,msdn.com
-DOMAIN-SUFFIX,teams.microsoft.com
 DOMAIN-SUFFIX,microsoft.net
 DOMAIN-SUFFIX,microsoftcloud.com
 DOMAIN-SUFFIX,microsoftstream.com
 DOMAIN-SUFFIX,microsoftsupport.com
 DOMAIN-SUFFIX,microsoftstore.com
 DOMAIN-SUFFIX,microsoft.com.cn
-
-# Steam 国内 CDN
 DOMAIN-SUFFIX,steamstat.us
 DOMAIN-SUFFIX,steamusercontent-a.akamaihd.net
 DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
@@ -78,9 +71,6 @@ DOMAIN-SUFFIX,wmsjsteam.com
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
-
-# Epic Games（国内）
-DOMAIN-SUFFIX,epicgames.com
 DOMAIN-SUFFIX,epicgames.net
 DOMAIN-SUFFIX,unrealengine.com
 DOMAIN-SUFFIX,fortnite.com
@@ -88,24 +78,18 @@ DOMAIN-SUFFIX,fortnite.net
 DOMAIN-SUFFIX,paragon.com
 DOMAIN-SUFFIX,roborecall.com
 DOMAIN-SUFFIX,shadowcomplex.com
-DOMAIN-SUFFIX,epicgames.com.cn
-DOMAIN-SUFFIX,epicgames.com.hk
 DOMAIN-KEYWORD,epicgames
-
 # 国内电商
 DOMAIN-KEYWORD,taobao
 DOMAIN-KEYWORD,alipay
 DOMAIN-KEYWORD,tmall
 DOMAIN-KEYWORD,jd.com
-
 # 国内搜索
 DOMAIN-KEYWORD,baidu
-
 # 国内视频
 DOMAIN-KEYWORD,bilibili
 DOMAIN-KEYWORD,douyin
 DOMAIN-KEYWORD,tiktokv
-
 # 国内社交
 DOMAIN-KEYWORD,qq.com
 DOMAIN-KEYWORD,weixin
@@ -113,14 +97,12 @@ DOMAIN-KEYWORD,weibo
 DOMAIN-SUFFIX,douban.com
 DOMAIN-SUFFIX,doubanio.com
 DOMAIN-KEYWORD,douban
-
 # 国内新闻
 DOMAIN-KEYWORD,163.com
 DOMAIN-KEYWORD,sina
 DOMAIN-KEYWORD,sohu
 DOMAIN-KEYWORD,ifeng
 DOMAIN-KEYWORD,zhihu
-
 # 国内生活服务
 DOMAIN-KEYWORD,ctrip
 DOMAIN-KEYWORD,dianping
@@ -131,7 +113,6 @@ DOMAIN-KEYWORD,diDi
 DOMAIN-KEYWORD,didi
 DOMAIN-KEYWORD,gaode
 DOMAIN-KEYWORD,amap
-
 # 国内手机厂商
 DOMAIN-KEYWORD,xiaomi
 DOMAIN-KEYWORD,huawei
@@ -139,11 +120,9 @@ DOMAIN-KEYWORD,oppo
 DOMAIN-KEYWORD,vivo
 DOMAIN-KEYWORD,meizu
 DOMAIN-KEYWORD,360.cn
-
 # 国内域名
 DOMAIN-SUFFIX,cn
 GEOIP,CN
-
 # 补充 - 国内常用服务
 DOMAIN-SUFFIX,alicdn.com
 DOMAIN-SUFFIX,aliyun.com
@@ -179,7 +158,6 @@ DOMAIN-SUFFIX,oppo.com
 DOMAIN-SUFFIX,vivo.com
 DOMAIN-SUFFIX,meizu.com
 DOMAIN-SUFFIX,360.com
-
 # 国内视频平台
 DOMAIN-SUFFIX,youku.com
 DOMAIN-SUFFIX,iqiyi.com
@@ -194,21 +172,18 @@ DOMAIN-SUFFIX,acfun.cn
 DOMAIN-SUFFIX,yy.com
 DOMAIN-SUFFIX,douyu.com
 DOMAIN-SUFFIX,huya.com
-
 # 国内音乐
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,music.qq.com
 DOMAIN-SUFFIX,kugou.com
 DOMAIN-SUFFIX,kuwo.cn
 DOMAIN-SUFFIX,xiami.com
-
 # 国内云存储
 DOMAIN-SUFFIX,aliyundrive.com
 DOMAIN-SUFFIX,pan.baidu.com
 DOMAIN-SUFFIX,yun.139.com
 DOMAIN-SUFFIX,cloud.189.cn
 DOMAIN-SUFFIX,weiyun.com
-
 # 国内办公
 DOMAIN-SUFFIX,feishu.cn
 DOMAIN-SUFFIX,larkoffice.com
@@ -216,7 +191,6 @@ DOMAIN-SUFFIX,dingtalk.com
 DOMAIN-SUFFIX,wps.cn
 DOMAIN-SUFFIX,docs.qq.com
 DOMAIN-SUFFIX,yuque.com
-
 # 国内开发
 DOMAIN-SUFFIX,gitee.com
 DOMAIN-SUFFIX,coding.net
@@ -225,7 +199,6 @@ DOMAIN-SUFFIX,csdn.net
 DOMAIN-SUFFIX,segmentfault.com
 DOMAIN-SUFFIX,juejin.cn
 DOMAIN-SUFFIX,zhihu.com
-
 # 国内金融
 DOMAIN-SUFFIX,alipay.com
 DOMAIN-SUFFIX,alipayobjects.com
@@ -238,7 +211,6 @@ DOMAIN-SUFFIX,bankcomm.com
 DOMAIN-SUFFIX,psbc.com
 DOMAIN-SUFFIX,cmbchina.com
 DOMAIN-SUFFIX,cmbc.com.cn
-
 # 国内教育
 DOMAIN-SUFFIX,edu.cn
 DOMAIN-SUFFIX,chaoxing.com
@@ -246,7 +218,6 @@ DOMAIN-SUFFIX,zhixue.com
 DOMAIN-SUFFIX,xuexi.cn
 DOMAIN-SUFFIX,zhihuishu.com
 DOMAIN-SUFFIX,icourse163.org
-
 # 国内政府/公共服务
 DOMAIN-SUFFIX,gov.cn
 DOMAIN-SUFFIX,12306.cn

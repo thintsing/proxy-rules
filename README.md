@@ -6,9 +6,10 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/thintsing/clash-rules?style=flat-square&color=blue)](https://github.com/thintsing/clash-rules/releases)
 [![GitHub stars](https://img.shields.io/github/stars/thintsing/clash-rules?style=flat-square&color=yellow)](https://github.com/thintsing/clash-rules/stargazers)
+[![Auto Update](https://img.shields.io/github/actions/workflow/status/thintsing/clash-rules/update-rules.yml?style=flat-square&label=auto-update&logo=githubactions)](https://github.com/thintsing/clash-rules/actions/workflows/update-rules.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thintsing/clash-rules?style=flat-square&color=success)](https://github.com/thintsing/clash-rules/commits/main)
 [![License](https://img.shields.io/github/license/thintsing/clash-rules?style=flat-square)](LICENSE)
-[![Total Rules](https://img.shields.io/badge/Total%20Rules-2836%2B-brightgreen?style=flat-square)](#-规则统计)
+[![Total Rules](https://img.shields.io/badge/Total%20Rules-2829%2B-brightgreen?style=flat-square)](#-规则统计)
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt)
 
 <br>
@@ -24,8 +25,8 @@
 | 规则集 | 规则数 | 用途 | CDN 链接 |
 |:------:|:-----:|:----:|:--------:|
 | reject | **220** | 广告追踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt) |
-| proxy | **357** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt) |
-| direct | **211** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt) |
+| proxy | **356** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt) |
+| direct | **205** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt) |
 | apple | **1729** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt) |
 | steam | **54** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt) |
 | ai | **78** | AI 服务（OpenAI/Claude等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt) |
@@ -35,7 +36,7 @@
 | lancidr | **13** | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/lancidr.txt) |
 | applications | **51** | 应用进程匹配（浏览器/游戏/办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/applications.txt) |
 
-**总计: 2836+ 条规则**，覆盖日常使用全场景。
+**总计: 2829+ 条规则**，覆盖日常使用全场景。
 
 ---
 
@@ -47,7 +48,7 @@
 | **自动更新** | 搭配 rule-providers，规则每天自动同步 |
 | **隐私安全** | 仅含域名/IP规则，不含任何节点信息 |
 | **每日更新** | GitHub Actions 自动从 blackmatrix7 同步 Apple/Steam/AI 规则 |
-| **分类清晰** | 11个独立规则集，按优先级精准分流 |
+| **分类清晰** | 11 个独立规则集，按优先级精准分流 |
 | **持续维护** | 定期跟随主流规则源更新 |
 
 ---

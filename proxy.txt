@@ -1,4 +1,4 @@
-# 代理规则集
+﻿# 代理规则集
 # 需要翻墙的国外网站和服务
 
 # GitHub
@@ -341,7 +341,6 @@ DOMAIN-SUFFIX,target.com
 DOMAIN-SUFFIX,bestbuy.com
 DOMAIN-SUFFIX,newegg.com
 DOMAIN-SUFFIX,aliexpress.com
-DOMAIN-SUFFIX,alibaba.com
 
 # 旅游/出行
 DOMAIN-SUFFIX,booking.com
@@ -443,3 +442,4 @@ DOMAIN-SUFFIX,postimg.cc
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,giphy.com
 DOMAIN-SUFFIX,tenor.com
+

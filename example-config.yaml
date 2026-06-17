@@ -1,185 +1,205 @@
-# Clash 配置示例 - 使用 thintsing 规则集
+# Clash 配置示例 - 使用 thintsing/clash-rules 规则集
 # 仓库: https://github.com/thintsing/clash-rules
+# 注意: 替换下方 NODE_IP/NODE_PORT/NODE_PASS 为你的实际节点信息
 
-# 代理端口
+# ==================== 基础配置 ====================
 mixed-port: 7897
 allow-lan: false
-bind-address: '*'
-mode: rule
 log-level: info
-ipv6: true
-external-controller: 127.0.0.1:9090
+external-controller: :9090
+ipv6: false
 
-# DNS 配置
-dns:
-  enable: true
-  listen: 0.0.0.0:1053
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-    - '*.local'
-    - '*.arpa'
-    - '*.msftncsi.com'
-    - '*.msftconnecttest.com'
-    - 'msftncsi.com'
-    - 'msftconnecttest.com'
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fallback:
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
+mode: rule
 
-# 代理节点（请替换为您的实际节点）
+# ==================== 代理节点 ====================
 proxies:
-  - name: "节点1"
-    type: ss
-    server: 127.0.0.1
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: "password"
-    udp: true
+  - name: "Hysteria2-Node"
+    type: hysteria2
+    server: NODE_IP
+    port: NODE_PORT
+    password: NODE_PASS
+    alpn:
+      - h3
+    up: 100
+    down: 200
 
-# 代理组
+# ==================== 代理组 ====================
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: "🚀 节点选择"
     type: select
     proxies:
       - ♻️ 自动选择
-      - 节点1
+      - Hysteria2-Node
       - DIRECT
 
-  - name: ♻️ 自动选择
+  - name: "♻️ 自动选择"
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    proxies:
+      - Hysteria2-Node
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
-    proxies:
-      - 节点1
 
-  - name: 🌍 国外媒体
+  - name: "🌍 国外媒体"
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - DIRECT
 
-  - name: 📲 电报信息
+  - name: "📲 电报信息"
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - DIRECT
 
-  - name: 🤖 AI服务
+  - name: "🤖 AI服务"
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
+      - DIRECT
 
-  - name: 🎮 Steam
+  - name: "🎮 Steam"
     type: select
     proxies:
       - 🚀 节点选择
+      - ♻️ 自动选择
       - DIRECT
 
-  - name: 🍎 苹果服务
+  - name: "Ⓜ️ 微软服务"
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+
+  - name: "🍎 苹果服务"
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+
+  - name: "🎯 全球直连"
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
 
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-
-  - name: 🛑 全球拦截
+  - name: "🛑 全球拦截"
     type: select
     proxies:
       - REJECT
       - DIRECT
 
-  - name: 🐟 漏网之鱼
+  - name: "🐟 漏网之鱼"
     type: select
     proxies:
       - 🚀 节点选择
+      - ♻️ 自动选择
       - DIRECT
 
-# 规则集提供者
-# 仓库: https://github.com/thintsing/clash-rules
-rule-providers:
-  reject:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt"
-    path: ./ruleset/reject.yaml
-    interval: 86400
+# ==================== DNS 配置 ====================
+dns:
+  enable: true
+  listen: :53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  prefer-h3: true
+  respect-rules: true
 
-  proxy:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt"
-    path: ./ruleset/proxy.yaml
-    interval: 86400
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - '*.arpa'
+    - '*.srv.nintendo.net'
+    - '*.stun.playstation.net'
+    - '*.xbox.*.*.*'
+    - '*.xbox.*.*'
+    - '*.xbox.*'
+    - xbox.*
+    - '*.xboxlive.*'
+    - '*.msftncsi.com'
+    - www.msftconnecttest.com
+    - '*.msftconnecttest.com'
+    - msftconnecttest.com
+    - '*.stun.*'
+    - stun.*
+    - '*.stun.*.*'
+    - '*.stun.*.*.*'
+    - time.*.com
+    - ntp.*.com
+    - '+.market.xiaomi.com'
+    - localhost.ptlogin2.qq.com
+    - '*.ipswcdn.*'
+    - '*.ipsw.dev'
+    - '*.icloud.com'
+    - '*.icloud-content.com'
 
-  direct:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt"
-    path: ./ruleset/direct.yaml
-    interval: 86400
+  default-nameserver:
+    - 223.6.6.6
+    - 119.29.29.29
+    - 114.114.114.114
 
-  apple:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt"
-    path: ./ruleset/apple.yaml
-    interval: 86400
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - tls://dns.alidns.com
+    - tls://dns.pub
 
-  steam:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt"
-    path: ./ruleset/steam.yaml
-    interval: 86400
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - tls://223.5.5.5
 
-  ai:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt"
-    path: ./ruleset/ai.yaml
-    interval: 86400
+  fallback:
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.google/dns-query
 
-# 规则
-rules:
-  # 局域网
-  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
-  - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
-  - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
-  - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
-  - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
-  - IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
-  - IP-CIDR,fe80::/10,🎯 全球直连,no-resolve
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+      - '+.github.com'
+      - '+.openai.com'
+      - '+.telegram.org'
+      - '+.twitter.com'
+      - '+.x.com'
+      - '+.reddit.com'
+      - '+.discord.com'
+      - '+.netflix.com'
+      - '+.spotify.com'
+      - '+.pixiv.net'
+      - '+.twitch.tv'
 
-  # 规则集（优先级从高到低）
-  - RULE-SET,reject,🛑 全球拦截
-  - RULE-SET,ai,🤖 AI服务
-  - RULE-SET,steam,🎮 Steam
-  - RULE-SET,apple,🍎 苹果服务
-  - RULE-SET,proxy,🚀 节点选择
-  - RULE-SET,direct,🎯 全球直连
+  nameserver-policy:
+    'geosite:cn': https://doh.pub/dns-query
+    '+.baidu.com': https://doh.pub/dns-query
+    '+.qq.com': https://doh.pub/dns-query
+    '+.taobao.com': https://doh.pub/dns-query
+    '+.weixin.com': https://doh.pub/dns-query
+    # 以下域名强制使用境外 DNS（避免被污染）
+    '+.tiktok.com': tls://1.1.1.1
+    '+.chatgpt.com': tls://1.1.1.1
+    '+.openai.com': tls://1.1.1.1
+    '+.anthropic.com': tls://1.1.1.1
+    '+.github.com': tls://8.8.8.8
+    '+.telegram.org': tls://8.8.8.8
 
-  # 兜底规则
-  - GEOIP,CN,🎯 全球直连
-  - MATCH,🐟 漏网之鱼
+hosts: {}
+
+# ==================== 规则集（通过 Merge 配置添加）====================
+# 本文件不包含规则集和分流规则
+# 规则集配置在 Merge 文件中（profiles/mDBjvxAQonwu.yaml）
+# 详见: https://github.com/thintsing/clash-rules
