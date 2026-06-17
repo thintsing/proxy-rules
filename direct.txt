@@ -247,3 +247,14 @@ DOMAIN-SUFFIX,immersivetranslate.com
 
 # Sentry error tracking
 DOMAIN-SUFFIX,sentry.io
+
+# IP lookup
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,ipip.net
+DOMAIN-SUFFIX,ipinfo.io
+
+# Mesh VPN
+DOMAIN-SUFFIX,tailscale.com
+
+# DNS services
+DOMAIN-SUFFIX,hwdns.net
