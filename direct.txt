@@ -140,13 +140,6 @@ DOMAIN-KEYWORD,vivo
 DOMAIN-KEYWORD,meizu
 DOMAIN-KEYWORD,360.cn
 
-# 内网IP
-IP-CIDR,172.16.5.0/24,no-resolve
-IP-CIDR,10.0.0.0/8,no-resolve
-IP-CIDR,172.16.0.0/12,no-resolve
-IP-CIDR,192.168.0.0/16,no-resolve
-IP-CIDR,100.88.0.0/16,no-resolve
-
 # 国内域名
 DOMAIN-SUFFIX,cn
 GEOIP,CN

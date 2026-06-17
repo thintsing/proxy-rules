@@ -1,0 +1,33 @@
+# 局域网及保留 IP 段（用于 IPCIDR 规则集）
+# 以下规则已从 direct.txt 迁移至此
+
+# 本地回环
+IP-CIDR,127.0.0.0/8,no-resolve
+IP-CIDR,::1/128,no-resolve
+
+# 私有 A 类
+IP-CIDR,10.0.0.0/8,no-resolve
+
+# 私有 B 类
+IP-CIDR,172.16.0.0/12,no-resolve
+
+# 私有 C 类
+IP-CIDR,192.168.0.0/16,no-resolve
+
+# 运营商级 NAT (CGNAT)
+IP-CIDR,100.64.0.0/10,no-resolve
+
+# 链路本地
+IP-CIDR,169.254.0.0/16,no-resolve
+
+# 多播地址
+IP-CIDR,224.0.0.0/4,no-resolve
+
+# 保留地址
+IP-CIDR,240.0.0.0/4,no-resolve
+IP-CIDR,255.255.255.255/32,no-resolve
+
+# IPv6 链路本地
+IP-CIDR,fc00::/7,no-resolve
+IP-CIDR,fe80::/10,no-resolve
+IP-CIDR,ff00::/8,no-resolve

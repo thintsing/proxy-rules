@@ -1,0 +1,34 @@
+# 私有网络域名 - 路由器管理页面、本地网络域名
+# 路由器管理页面
+DOMAIN-SUFFIX,tplogin.cn
+DOMAIN-SUFFIX,tplinkwifi.net
+DOMAIN-SUFFIX,tendawifi.com
+DOMAIN-SUFFIX,miwifi.com
+DOMAIN-SUFFIX,router.asus.com
+DOMAIN-SUFFIX,asusrouter.com
+DOMAIN-SUFFIX,routerlogin.com
+DOMAIN-SUFFIX,hiwifi.com
+DOMAIN-SUFFIX,phicomm.me
+DOMAIN-SUFFIX,peiluyou.com
+DOMAIN-SUFFIX,oasisauth.h3c.com
+DOMAIN-SUFFIX,zte.home
+DOMAIN-SUFFIX,my.router
+DOMAIN-SUFFIX,router.ctc
+
+# 本地网络域名
+DOMAIN-SUFFIX,local
+DOMAIN-SUFFIX,lan
+DOMAIN-SUFFIX,localdomain
+DOMAIN-SUFFIX,home.arpa
+DOMAIN-SUFFIX,internal
+DOMAIN-SUFFIX,example
+DOMAIN-SUFFIX,invalid
+DOMAIN-SUFFIX,test
+DOMAIN-SUFFIX,localhost
+
+# P2P 直连
+DOMAIN-SUFFIX,plex.direct
+
+# VPN 内网
+DOMAIN-SUFFIX,ts.net
+DOMAIN-SUFFIX,leike.cc
