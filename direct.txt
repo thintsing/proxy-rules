@@ -235,3 +235,15 @@ DOMAIN-SUFFIX,cctv.cn
 DOMAIN-SUFFIX,tudou.com
 DOMAIN-SUFFIX,letv.com
 DOMAIN-SUFFIX,y.qq.com
+# CDN - jsDelivr usado pelas rule-providers
+DOMAIN-SUFFIX,jsdelivr.net
+DOMAIN-SUFFIX,jsdelivr.com
+
+# AdGuard filters
+DOMAIN-SUFFIX,adtidy.org
+
+# Immersive Translate
+DOMAIN-SUFFIX,immersivetranslate.com
+
+# Sentry error tracking
+DOMAIN-SUFFIX,sentry.io

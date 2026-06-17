@@ -424,3 +424,6 @@ DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,giphy.com
 DOMAIN-SUFFIX,tenor.com
 
+
+# AI model platforms
+DOMAIN-SUFFIX,models.dev

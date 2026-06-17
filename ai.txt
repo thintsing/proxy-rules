@@ -92,3 +92,5 @@ IP-CIDR,64.23.132.171/32,no-resolve
 # Vercel AI
 # 其他 AI 服务
 IP-ASN,20473,no-resolve
+DOMAIN-SUFFIX,opencode.ai
+DOMAIN-SUFFIX,gemini.gstatic.com
