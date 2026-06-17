@@ -1,0 +1,65 @@
+# 拦截规则集
+# 广告、追踪、恶意网站
+
+# Google 广告
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,ads.google.com
+DOMAIN-SUFFIX,adservice.google.com
+DOMAIN-SUFFIX,pagead2.googlesyndication.com
+DOMAIN-SUFFIX,tpc.googlesyndication.com
+
+# 通用广告
+DOMAIN-SUFFIX,ad.com
+DOMAIN-SUFFIX,ads.com
+DOMAIN-SUFFIX,adsystem.com
+DOMAIN-SUFFIX,advertising.com
+
+# 广告关键词
+DOMAIN-KEYWORD,admarvel
+DOMAIN-KEYWORD,admaster
+DOMAIN-KEYWORD,adsage
+DOMAIN-KEYWORD,adsmogo
+DOMAIN-KEYWORD,adsrvmedia
+DOMAIN-KEYWORD,adwords
+DOMAIN-KEYWORD,analyse
+DOMAIN-KEYWORD,analytics
+DOMAIN-KEYWORD,tracking
+DOMAIN-KEYWORD,telemetry
+
+# 游戏广告
+DOMAIN-SUFFIX,bindingofisaacrebirth.com
+DOMAIN-SUFFIX,lianmeng.360.cn
+
+# 网站广告
+DOMAIN,ad.doubanio.com
+DOMAIN,ad.360in.com
+DOMAIN,ad.12306.cn
+
+# 移动广告
+DOMAIN-SUFFIX,umeng.com
+DOMAIN-SUFFIX,umengcloud.com
+DOMAIN-SUFFIX,umsns.com
+DOMAIN-SUFFIX,umtrack.com
+DOMAIN-SUFFIX,uyunad.com
+
+# 社交广告
+DOMAIN-SUFFIX,facebook-analytics.com
+DOMAIN-SUFFIX,facebook-ads.com
+DOMAIN-SUFFIX,fb-analytics.com
+
+# 追踪服务
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,googletagservices.com
+DOMAIN-SUFFIX,googleoptimize.com
+
+# 其他广告网络
+DOMAIN-SUFFIX,amazon-adsystem.com
+DOMAIN-SUFFIX,amazonadvertising.com
+DOMAIN-SUFFIX,adsystem.amazon.com
+
+# 恶意软件/钓鱼
+DOMAIN-KEYWORD,malware
+DOMAIN-KEYWORD,phishing
+DOMAIN-KEYWORD,virus

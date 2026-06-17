@@ -1,0 +1,26 @@
+name: Update Rules
+
+on:
+  schedule:
+    # 每天 UTC 时间 00:00 运行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update rules
+        run: |
+          echo "规则更新时间: $(date)" > LAST_UPDATED
+          
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add LAST_UPDATED
+          git commit -m "Update rules: $(date +%Y-%m-%d)" || exit 0
+          git push

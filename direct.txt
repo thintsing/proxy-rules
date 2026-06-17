@@ -1,0 +1,152 @@
+# 直连规则集
+# 国内网站、CDN、微软服务（国内）等
+
+# Google 国内 CDN
+DOMAIN-SUFFIX,2mdn-cn.net
+DOMAIN-SUFFIX,admob-cn.com
+DOMAIN-SUFFIX,app-measurement-cn.com
+DOMAIN-SUFFIX,beacons.gcp.gvt2.com
+DOMAIN-SUFFIX,beacons.gvt2.com
+DOMAIN-SUFFIX,beacons2.gvt2.com
+DOMAIN-SUFFIX,beacons3.gvt2.com
+DOMAIN-SUFFIX,cache.pack.google.com
+DOMAIN-SUFFIX,checkin.gstatic.com
+DOMAIN-SUFFIX,connectivitycheck.gstatic.com
+DOMAIN-SUFFIX,dl.google.com
+DOMAIN-SUFFIX,dl.l.google.com
+DOMAIN-SUFFIX,fonts.gstatic.com
+DOMAIN-SUFFIX,fonts.googleapis.com
+DOMAIN-SUFFIX,redirector.gvt1.com
+DOMAIN-SUFFIX,update.googleapis.com
+DOMAIN-SUFFIX,www.gstatic.com
+
+# 微软服务（国内）
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,microsoftazure.com
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office365.com
+DOMAIN-SUFFIX,outlook.com
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,skype.com
+DOMAIN-SUFFIX,xbox.com
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,visualstudio.com
+DOMAIN-SUFFIX,msdn.com
+DOMAIN-SUFFIX,teams.microsoft.com
+DOMAIN-SUFFIX,microsoft.net
+DOMAIN-SUFFIX,microsoftcloud.com
+DOMAIN-SUFFIX,microsoftstream.com
+DOMAIN-SUFFIX,microsoftsupport.com
+DOMAIN-SUFFIX,microsoftstore.com
+DOMAIN-SUFFIX,microsoft.com.cn
+
+# Steam 国内 CDN
+DOMAIN-SUFFIX,steamstat.us
+DOMAIN-SUFFIX,steamusercontent-a.akamaihd.net
+DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
+DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+DOMAIN-SUFFIX,steamstore-a.akamaihd.net
+DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net
+DOMAIN-SUFFIX,steambroadcast.akamaized.net
+DOMAIN-SUFFIX,steammobile.akamaized.net
+DOMAIN-SUFFIX,steampipe.akamaized.net
+DOMAIN-SUFFIX,steampipe-kr.akamaized.net
+DOMAIN-SUFFIX,steampipe-partner.akamaized.net
+DOMAIN-SUFFIX,steamcontent.tnkjmec.com
+DOMAIN-SUFFIX,st.dl.bscstorage.net
+DOMAIN-SUFFIX,st.dl.eccdnx.com
+DOMAIN-SUFFIX,st.dl.pinyuncloud.com
+DOMAIN-SUFFIX,dl.steam.clngaa.com
+DOMAIN-SUFFIX,dl.steam.ksyna.com
+DOMAIN-SUFFIX,steam.apac.qtlglb.com
+DOMAIN-SUFFIX,steam.eca.qtlglb.com
+DOMAIN-SUFFIX,steam.naeu.qtlglb.com
+DOMAIN-SUFFIX,steam.ru.qtlglb.com
+DOMAIN-SUFFIX,edge.steam-dns.top.comcast.net
+DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
+DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
+DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
+DOMAIN-SUFFIX,csgo.wmsj.cn
+DOMAIN-SUFFIX,dota2.wmsj.cn
+DOMAIN-SUFFIX,wmsjsteam.com
+DOMAIN-KEYWORD,steambroadcast
+DOMAIN-KEYWORD,steamstore
+DOMAIN-KEYWORD,steamuserimages
+
+# Epic Games（国内）
+DOMAIN-SUFFIX,epicgames.com
+DOMAIN-SUFFIX,epicgames.net
+DOMAIN-SUFFIX,unrealengine.com
+DOMAIN-SUFFIX,fortnite.com
+DOMAIN-SUFFIX,fortnite.net
+DOMAIN-SUFFIX,paragon.com
+DOMAIN-SUFFIX,roborecall.com
+DOMAIN-SUFFIX,shadowcomplex.com
+DOMAIN-SUFFIX,epicgames.com.cn
+DOMAIN-SUFFIX,epicgames.com.hk
+DOMAIN-KEYWORD,epicgames
+
+# 国内电商
+DOMAIN-KEYWORD,taobao
+DOMAIN-KEYWORD,alipay
+DOMAIN-KEYWORD,tmall
+DOMAIN-KEYWORD,jd.com
+
+# 国内搜索
+DOMAIN-KEYWORD,baidu
+
+# 国内视频
+DOMAIN-KEYWORD,bilibili
+DOMAIN-KEYWORD,douyin
+DOMAIN-KEYWORD,tiktokv
+
+# 国内社交
+DOMAIN-KEYWORD,qq.com
+DOMAIN-KEYWORD,weixin
+DOMAIN-KEYWORD,weibo
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,doubanio.com
+DOMAIN-KEYWORD,douban
+
+# 国内新闻
+DOMAIN-KEYWORD,163.com
+DOMAIN-KEYWORD,sina
+DOMAIN-KEYWORD,sohu
+DOMAIN-KEYWORD,ifeng
+DOMAIN-KEYWORD,zhihu
+
+# 国内生活服务
+DOMAIN-KEYWORD,ctrip
+DOMAIN-KEYWORD,dianping
+DOMAIN-KEYWORD,meituan
+DOMAIN-KEYWORD,ele.me
+DOMAIN-KEYWORD,eleme
+DOMAIN-KEYWORD,diDi
+DOMAIN-KEYWORD,didi
+DOMAIN-KEYWORD,gaode
+DOMAIN-KEYWORD,amap
+
+# 国内手机厂商
+DOMAIN-KEYWORD,xiaomi
+DOMAIN-KEYWORD,huawei
+DOMAIN-KEYWORD,oppo
+DOMAIN-KEYWORD,vivo
+DOMAIN-KEYWORD,meizu
+DOMAIN-KEYWORD,360.cn
+
+# 内网IP
+IP-CIDR,172.16.5.0/24,no-resolve
+IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,172.16.0.0/12,no-resolve
+IP-CIDR,192.168.0.0/16,no-resolve
+IP-CIDR,100.88.0.0/16,no-resolve
+
+# 国内域名
+DOMAIN-SUFFIX,cn
+GEOIP,CN

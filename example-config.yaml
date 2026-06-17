@@ -1,0 +1,184 @@
+# Clash 配置示例 - 使用规则集
+# 配合本仓库的规则集使用
+
+# 代理端口
+mixed-port: 7897
+allow-lan: false
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9090
+
+# DNS 配置
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - '*.arpa'
+    - '*.msftncsi.com'
+    - '*.msftconnecttest.com'
+    - 'msftncsi.com'
+    - 'msftconnecttest.com'
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+# 代理节点（请替换为您的实际节点）
+proxies:
+  - name: "节点1"
+    type: ss
+    server: 127.0.0.1
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: "password"
+    udp: true
+
+# 代理组
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 节点1
+      - DIRECT
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 节点1
+
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 🤖 AI服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 🎮 Steam
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
+
+# 规则集提供者
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  steam:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/steam.txt"
+    path: ./ruleset/steam.yaml
+    interval: 86400
+
+  ai:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/ai.txt"
+    path: ./ruleset/ai.yaml
+    interval: 86400
+
+# 规则
+rules:
+  # 局域网
+  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
+  - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
+  - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
+  - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
+  - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
+  - IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
+  - IP-CIDR,fe80::/10,🎯 全球直连,no-resolve
+
+  # 规则集
+  - RULE-SET,reject,🛑 全球拦截
+  - RULE-SET,ai,🤖 AI服务
+  - RULE-SET,steam,🎮 Steam
+  - RULE-SET,apple,🍎 苹果服务
+  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,direct,🎯 全球直连
+
+  # 兜底规则
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼

@@ -1,0 +1,229 @@
+# 代理规则集
+# 需要翻墙的国外网站和服务
+
+# GitHub
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,ghcr.io
+
+# Google
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-KEYWORD,google
+
+# StackOverflow
+DOMAIN-SUFFIX,stackoverflow.com
+
+# AI服务 - OpenAI
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,openai-api.arkoselabs.com
+DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+
+# AI服务 - Anthropic
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+
+# AI服务 - Google AI
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
+DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,antigravity-pa.googleapis.com
+DOMAIN-SUFFIX,antigravity.googleapis.com
+
+# AI服务 - 其他
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,v0.dev
+DOMAIN-SUFFIX,vercel.com
+
+# 流媒体 - YouTube
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,youtubekids.com
+DOMAIN-SUFFIX,youtube-nocookie.com
+
+# 流媒体 - Netflix
+DOMAIN-SUFFIX,netflix.com
+DOMAIN-SUFFIX,nflxvideo.net
+DOMAIN-SUFFIX,nflxso.net
+DOMAIN-SUFFIX,nflxext.com
+DOMAIN-SUFFIX,nflximg.com
+DOMAIN-SUFFIX,nflxsearch.net
+
+# 流媒体 - Spotify
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spoti.fi
+
+# 流媒体 - Twitch
+DOMAIN-SUFFIX,twitch.tv
+DOMAIN-SUFFIX,ttvnw.net
+DOMAIN-SUFFIX,twitchcdn.net
+
+# 流媒体 - Disney+
+DOMAIN-SUFFIX,disney-plus.net
+DOMAIN-SUFFIX,disneyplus.com
+DOMAIN-SUFFIX,dssott.com
+DOMAIN-SUFFIX,disney.com
+
+# 流媒体 - Amazon Prime
+DOMAIN-SUFFIX,primevideo.com
+DOMAIN-SUFFIX,amazon.com
+DOMAIN-SUFFIX,amazon.co.jp
+DOMAIN-SUFFIX,amazon.co.uk
+DOMAIN-SUFFIX,amazon.de
+
+# 流媒体 - HBO
+DOMAIN-SUFFIX,hbomax.com
+DOMAIN-SUFFIX,hbonow.com
+DOMAIN-SUFFIX,hbo.com
+
+# 流媒体 - Hulu
+DOMAIN-SUFFIX,hulu.com
+DOMAIN-SUFFIX,hulustream.com
+
+# 流媒体 - 日本
+DOMAIN-SUFFIX,abema.tv
+DOMAIN-SUFFIX,abema.io
+DOMAIN-SUFFIX,dazn.com
+DOMAIN-SUFFIX,bahamut.com.tw
+DOMAIN-SUFFIX,gamer.com.tw
+
+# Telegram
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telesco.pe
+IP-CIDR,91.108.0.0/16,no-resolve
+IP-CIDR,109.239.140.0/24,no-resolve
+IP-CIDR,149.154.160.0/20,no-resolve
+
+# Twitter/X
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,t.co
+
+# Facebook
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,messenger.com
+
+# 社交媒体 - 其他
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redd.it
+DOMAIN-SUFFIX,imgur.com
+DOMAIN-SUFFIX,pinterest.com
+DOMAIN-SUFFIX,medium.com
+DOMAIN-SUFFIX,quora.com
+
+# 云服务
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,aws.amazon.com
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,vercel.com
+DOMAIN-SUFFIX,netlify.app
+DOMAIN-SUFFIX,netlify.com
+DOMAIN-SUFFIX,heroku.com
+DOMAIN-SUFFIX,supabase.co
+DOMAIN-SUFFIX,digitalocean.com
+DOMAIN-SUFFIX,linode.com
+DOMAIN-SUFFIX,vultr.com
+
+# 开发工具
+DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,npmjs.org
+DOMAIN-SUFFIX,nodejs.org
+DOMAIN-SUFFIX,python.org
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,golang.org
+DOMAIN-SUFFIX,go.dev
+DOMAIN-SUFFIX,gradle.org
+DOMAIN-SUFFIX,maven.org
+DOMAIN-SUFFIX,apache.org
+DOMAIN-SUFFIX,nuget.org
+DOMAIN-SUFFIX,rubygems.org
+
+# 学术/技术
+DOMAIN-SUFFIX,arxiv.org
+DOMAIN-SUFFIX,ieee.org
+DOMAIN-SUFFIX,acm.org
+DOMAIN-SUFFIX,springer.com
+DOMAIN-SUFFIX,nature.com
+DOMAIN-SUFFIX,sciencedirect.com
+DOMAIN-SUFFIX,researchgate.net
+DOMAIN-SUFFIX,academia.edu
+DOMAIN-SUFFIX,semanticscholar.org
+
+# 微软服务（国际）
+DOMAIN-SUFFIX,azure.microsoft.com
+DOMAIN-SUFFIX,azuremarketplace.microsoft.com
+DOMAIN-SUFFIX,azurestatus.com
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,azure-devices.net
+DOMAIN-SUFFIX,azurewebsites.net
+DOMAIN-SUFFIX,azure-api.net
+DOMAIN-SUFFIX,azurecontainer.io
+DOMAIN-SUFFIX,azurecr.io
+DOMAIN-SUFFIX,azuredatabricks.net
+DOMAIN-SUFFIX,azurefd.net
+DOMAIN-SUFFIX,azurehdinsight.net
+DOMAIN-SUFFIX,azurecosmosdb.net
+
+# Steam（国际）
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steam-api.com
+DOMAIN-SUFFIX,steam.tv
+DOMAIN-SUFFIX,steamgames.com
+DOMAIN-SUFFIX,steamdeck.com
+DOMAIN-SUFFIX,valvesoftware.com
+DOMAIN-SUFFIX,s.team
+DOMAIN-SUFFIX,underlords.com
+DOMAIN-SUFFIX,playartifact.com
+DOMAIN-SUFFIX,fanatical.com
+DOMAIN-SUFFIX,humblebundle.com
+
+# 文件存储
+DOMAIN-SUFFIX,dropbox.com
+DOMAIN-SUFFIX,box.com
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,figma.com
+DOMAIN-SUFFIX,canva.com
+DOMAIN-SUFFIX,onedrive.live.com
+
+# 其他国外服务
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,signal.org
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,kakao.com
+DOMAIN-SUFFIX,naver.com
+DOMAIN-SUFFIX,nicovideo.jp
+DOMAIN-SUFFIX,pixiv.net
