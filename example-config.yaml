@@ -1,5 +1,5 @@
-# Clash 配置示例 - 使用规则集
-# 配合本仓库的规则集使用
+# Clash 配置示例 - 使用 thintsing 规则集
+# 仓库: https://github.com/thintsing/clash-rules
 
 # 代理端口
 mixed-port: 7897
@@ -117,46 +117,47 @@ proxy-groups:
       - DIRECT
 
 # 规则集提供者
+# 仓库: https://github.com/thintsing/clash-rules
 rule-providers:
   reject:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/reject.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
 
   proxy:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/proxy.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 86400
 
   direct:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/direct.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
 
   apple:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/apple.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt"
     path: ./ruleset/apple.yaml
     interval: 86400
 
   steam:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/steam.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt"
     path: ./ruleset/steam.yaml
     interval: 86400
 
   ai:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/你的用户名/clash-rules@main/ai.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt"
     path: ./ruleset/ai.yaml
     interval: 86400
 
@@ -171,7 +172,7 @@ rules:
   - IP-CIDR,224.0.0.0/4,🎯 全球直连,no-resolve
   - IP-CIDR,fe80::/10,🎯 全球直连,no-resolve
 
-  # 规则集
+  # 规则集（优先级从高到低）
   - RULE-SET,reject,🛑 全球拦截
   - RULE-SET,ai,🤖 AI服务
   - RULE-SET,steam,🎮 Steam
