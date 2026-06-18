@@ -258,3 +258,6 @@ DOMAIN-SUFFIX,tailscale.com
 
 # DNS services
 DOMAIN-SUFFIX,hwdns.net
+
+# Let's Encrypt OCSP/CRL
+DOMAIN-SUFFIX,lencr.org

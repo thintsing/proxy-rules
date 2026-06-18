@@ -427,3 +427,7 @@ DOMAIN-SUFFIX,tenor.com
 
 # AI model platforms
 DOMAIN-SUFFIX,models.dev
+
+# Dart/Flutter ecosystem
+DOMAIN-SUFFIX,pub.dev
+DOMAIN-SUFFIX,flutter.dev

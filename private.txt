@@ -32,3 +32,9 @@ DOMAIN-SUFFIX,plex.direct
 # VPN 内网
 DOMAIN-SUFFIX,ts.net
 DOMAIN-SUFFIX,leike.cc
+
+# Personal domains
+DOMAIN-SUFFIX,thintsing.com
+
+# Cloud metadata IP (AWS/GCP/Azure)
+IP-CIDR,169.254.169.254/32,no-resolve

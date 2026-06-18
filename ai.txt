@@ -97,3 +97,6 @@ DOMAIN-SUFFIX,gemini.gstatic.com
 
 # OpenRouter AI
 DOMAIN-SUFFIX,openrouter.ai
+
+# OpenAI Statsig
+DOMAIN-SUFFIX,oaistatsig.com
