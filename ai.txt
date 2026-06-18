@@ -30,15 +30,21 @@ DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com
 DOMAIN-SUFFIX,copy.ai
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,gemini.gstatic.com
 DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,grammarly.com
+DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,huggingface.com
@@ -47,10 +53,14 @@ DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,llama.com
 DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,mistral.ai
 DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,observeit.net
 DOMAIN-SUFFIX,openai-api.arkoselabs.com
@@ -68,6 +78,7 @@ DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stability.ai
 DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,tabnine.com
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,v0.dev
 DOMAIN-SUFFIX,vercel.com
@@ -84,10 +95,17 @@ DOMAIN-KEYWORD,openai
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 # Anthropic / Claude
+# Coding AI
+# Cohere
 # Cursor
+# DeepSeek
 # Google AI
+# Groq
 # Hugging Face
+# Meta AI
 # Midjourney
+# Mistral AI
+# OpenAI Statsig
 # OpenRouter AI
 # Perplexity
 # Poe
@@ -96,30 +114,3 @@ IP-CIDR,64.23.132.171/32,no-resolve
 # Vercel AI
 # 其他 AI 服务
 IP-ASN,20473,no-resolve
-
-# OpenRouter AI
-
-# OpenAI Statsig
-DOMAIN-SUFFIX,oaistatsig.com
-
-# DeepSeek
-DOMAIN-SUFFIX,deepseek.com
-
-# Groq
-DOMAIN-SUFFIX,groq.com
-
-# Cohere
-DOMAIN-SUFFIX,cohere.ai
-DOMAIN-SUFFIX,cohere.com
-
-# Mistral AI
-DOMAIN-SUFFIX,mistral.ai
-
-# Meta AI
-DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,llama.com
-
-# Coding AI
-DOMAIN-SUFFIX,tabnine.com
-DOMAIN-SUFFIX,codeium.com
-DOMAIN-SUFFIX,githubcopilot.com
