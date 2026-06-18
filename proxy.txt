@@ -410,3 +410,12 @@ DOMAIN-SUFFIX,playstation.net
 DOMAIN-SUFFIX,riotgames.com
 DOMAIN-SUFFIX,rockstargames.com
 DOMAIN-SUFFIX,rockstarnorth.com
+
+# Tumblr
+DOMAIN-SUFFIX,tumblr.com
+DOMAIN-SUFFIX,tmblr.co
+
+# Fastly CDN
+DOMAIN-SUFFIX,fastly.com
+DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,fastlylb.net
