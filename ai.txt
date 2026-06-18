@@ -101,3 +101,25 @@ IP-ASN,20473,no-resolve
 
 # OpenAI Statsig
 DOMAIN-SUFFIX,oaistatsig.com
+
+# DeepSeek
+DOMAIN-SUFFIX,deepseek.com
+
+# Groq
+DOMAIN-SUFFIX,groq.com
+
+# Cohere
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com
+
+# Mistral AI
+DOMAIN-SUFFIX,mistral.ai
+
+# Meta AI
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,llama.com
+
+# Coding AI
+DOMAIN-SUFFIX,tabnine.com
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,githubcopilot.com

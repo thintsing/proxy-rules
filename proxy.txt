@@ -20,34 +20,12 @@ DOMAIN-KEYWORD,google
 DOMAIN-SUFFIX,stackoverflow.com
 
 # AI服务 - OpenAI
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,ai.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,openai-api.arkoselabs.com
-DOMAIN-SUFFIX,openaicom.imgix.net
 
 # AI服务 - Anthropic
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
 
 # AI服务 - Google AI
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,antigravity-pa.googleapis.com
-DOMAIN-SUFFIX,antigravity.googleapis.com
 
 # AI服务 - 其他
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,cursor.sh
-DOMAIN-SUFFIX,cursor.com
-DOMAIN-SUFFIX,v0.dev
-DOMAIN-SUFFIX,vercel.com
 
 # 流媒体 - YouTube
 DOMAIN-SUFFIX,youtube.com
@@ -140,7 +118,6 @@ DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,aws.amazon.com
 DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,vercel.app
-DOMAIN-SUFFIX,vercel.com
 DOMAIN-SUFFIX,netlify.app
 DOMAIN-SUFFIX,netlify.com
 DOMAIN-SUFFIX,heroku.com
@@ -161,7 +138,6 @@ DOMAIN-SUFFIX,go.dev
 DOMAIN-SUFFIX,gradle.org
 DOMAIN-SUFFIX,maven.org
 DOMAIN-SUFFIX,apache.org
-DOMAIN-SUFFIX,nuget.org
 DOMAIN-SUFFIX,rubygems.org
 
 # 学术/技术
@@ -196,7 +172,6 @@ DOMAIN-SUFFIX,humblebundle.com
 # 文件存储
 DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,box.com
-DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,figma.com
 DOMAIN-SUFFIX,canva.com
 
@@ -223,7 +198,6 @@ DOMAIN-SUFFIX,sourceforge.net
 DOMAIN-SUFFIX,git-scm.com
 DOMAIN-SUFFIX,jetbrains.com
 DOMAIN-SUFFIX,intellij.net
-DOMAIN-SUFFIX,vscode.dev
 DOMAIN-SUFFIX,registry.npmjs.org
 DOMAIN-SUFFIX,registry.yarnpkg.com
 DOMAIN-SUFFIX,registry.npmmirror.com
@@ -352,7 +326,6 @@ DOMAIN-SUFFIX,ftx.com
 # 工具/效率
 DOMAIN-SUFFIX,todoist.com
 DOMAIN-SUFFIX,ticktick.com
-DOMAIN-SUFFIX,notion.so
 DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,evernote.com
 DOMAIN-SUFFIX,obsidian.md
@@ -397,8 +370,6 @@ DOMAIN-SUFFIX,gog.com
 DOMAIN-SUFFIX,humblebundle.com
 DOMAIN-SUFFIX,itch.io
 DOMAIN-SUFFIX,roblox.com
-DOMAIN-SUFFIX,minecraft.net
-DOMAIN-SUFFIX,mojang.com
 
 # 运动/健康
 DOMAIN-SUFFIX,strava.com
@@ -422,7 +393,6 @@ DOMAIN-SUFFIX,imgbb.com
 DOMAIN-SUFFIX,postimg.cc
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,giphy.com
-DOMAIN-SUFFIX,tenor.com
 
 
 # AI model platforms
@@ -431,3 +401,12 @@ DOMAIN-SUFFIX,models.dev
 # Dart/Flutter ecosystem
 DOMAIN-SUFFIX,pub.dev
 DOMAIN-SUFFIX,flutter.dev
+
+# Gaming platforms
+DOMAIN-SUFFIX,nintendo.com
+DOMAIN-SUFFIX,nintendo.net
+DOMAIN-SUFFIX,playstation.com
+DOMAIN-SUFFIX,playstation.net
+DOMAIN-SUFFIX,riotgames.com
+DOMAIN-SUFFIX,rockstargames.com
+DOMAIN-SUFFIX,rockstarnorth.com
