@@ -161,7 +161,6 @@ DOMAIN-SUFFIX,360.com
 # 国内视频平台
 DOMAIN-SUFFIX,youku.com
 DOMAIN-SUFFIX,iqiyi.com
-DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,v.qq.com
 DOMAIN-SUFFIX,film.qq.com
 DOMAIN-SUFFIX,mgtv.com
@@ -198,7 +197,6 @@ DOMAIN-SUFFIX,oschina.net
 DOMAIN-SUFFIX,csdn.net
 DOMAIN-SUFFIX,segmentfault.com
 DOMAIN-SUFFIX,juejin.cn
-DOMAIN-SUFFIX,zhihu.com
 # 国内金融
 DOMAIN-SUFFIX,alipay.com
 DOMAIN-SUFFIX,alipayobjects.com
@@ -221,7 +219,6 @@ DOMAIN-SUFFIX,icourse163.org
 # 国内政府/公共服务
 DOMAIN-SUFFIX,gov.cn
 DOMAIN-SUFFIX,12306.cn
-DOMAIN-SUFFIX,alipay.com
 DOMAIN-SUFFIX,wx.qq.com
 DOMAIN-SUFFIX,servicewechat.com
 DOMAIN-SUFFIX,kuaishou.com
@@ -295,3 +292,9 @@ x1.c.lencr.org
 x2.c.lencr.org
 ye.c.lencr.org
 yr.c.lencr.org
+
+arms-retcode-sg.aliyuncs.com
+iframeblock.mp.weixin.qq.com
+isdspeed.qq.com
+pingfore.qq.com
+report.huatuo.qq.com

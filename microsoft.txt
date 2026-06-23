@@ -729,3 +729,12 @@ www.bingapis.com
 www.clarity.ms
 www.microsoft.com
 xpaywalletcdn-prod.azureedge.net
+
+array603.prod.do.dsp.mp.microsoft.com
+array604.prod.do.dsp.mp.microsoft.com
+browser.events.data.msn.com
+dl-edge.smartscreen.microsoft.com
+mobile.events.data.microsoft.com
+msrewardspme.azureedge.net
+storecatalogrevocation.storequality.microsoft.com
+tse1.mm.bing.net

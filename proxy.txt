@@ -176,8 +176,6 @@ DOMAIN-SUFFIX,figma.com
 DOMAIN-SUFFIX,canva.com
 
 # 其他国外服务
-DOMAIN-SUFFIX,t.me
-DOMAIN-SUFFIX,telegram.org
 DOMAIN-SUFFIX,signal.org
 DOMAIN-SUFFIX,line.me
 DOMAIN-SUFFIX,kakao.com
@@ -206,7 +204,6 @@ DOMAIN-SUFFIX,docs.rs
 DOMAIN-SUFFIX,pypi.python.org
 DOMAIN-SUFFIX,packagist.org
 DOMAIN-SUFFIX,composer.org
-DOMAIN-SUFFIX,rubygems.org
 DOMAIN-SUFFIX,maven.apache.org
 DOMAIN-SUFFIX,repo.maven.apache.org
 DOMAIN-SUFFIX,jitpack.io
@@ -283,14 +280,10 @@ DOMAIN-SUFFIX,dailymotion.com
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,snapchat.com
-DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,gfycat.com
 DOMAIN-SUFFIX,streamable.com
-DOMAIN-SUFFIX,twitch.tv
-DOMAIN-SUFFIX,youtube.com
 
 # 购物/电商
-DOMAIN-SUFFIX,amazon.com
 DOMAIN-SUFFIX,ebay.com
 DOMAIN-SUFFIX,etsy.com
 DOMAIN-SUFFIX,walmart.com
@@ -342,7 +335,6 @@ DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,zoom.us
 DOMAIN-SUFFIX,webex.com
 DOMAIN-SUFFIX,gotomeeting.com
-DOMAIN-SUFFIX,telegram.org
 
 # 安全/隐私
 DOMAIN-SUFFIX,protonmail.com
@@ -357,8 +349,6 @@ DOMAIN-SUFFIX,eff.org
 DOMAIN-SUFFIX,freedom.press
 
 # 游戏
-DOMAIN-SUFFIX,steampowered.com
-DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,epicgames.com
 DOMAIN-SUFFIX,ea.com
 DOMAIN-SUFFIX,origin.com
@@ -367,7 +357,6 @@ DOMAIN-SUFFIX,uplay.com
 DOMAIN-SUFFIX,blizzard.com
 DOMAIN-SUFFIX,battle.net
 DOMAIN-SUFFIX,gog.com
-DOMAIN-SUFFIX,humblebundle.com
 DOMAIN-SUFFIX,itch.io
 DOMAIN-SUFFIX,roblox.com
 
@@ -391,7 +380,6 @@ DOMAIN-SUFFIX,ghostbin.com
 DOMAIN-SUFFIX,privatebin.net
 DOMAIN-SUFFIX,imgbb.com
 DOMAIN-SUFFIX,postimg.cc
-DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,giphy.com
 
 
@@ -482,3 +470,73 @@ www.wimp.com
 www.youtube.com
 x.com
 yt3.ggpht.com
+
+1password.com
+5jdxmo9ix2ncv3a2.public.blob.vercel-storage.com
+accounts.spotify.com
+api-partner.spotify.com
+api.genius.com
+api.iconify.design
+api.spotify.com
+b.azlyrics.com
+cdnjs.cloudflare.com
+chatgpt.com
+clienttoken.spotify.com
+code.thetadev.de
+coinbase.com
+crunchyroll.com
+crypto.com
+csp.withgoogle.com
+d3gk2c5xim1je2.cloudfront.net
+default.exp-tas.com
+discord.com
+eu-assets.i.posthog.com
+files.pythonhosted.org
+gateway.discord.gg
+gitlab.com
+godaddy.com
+hermes-agent.org
+hermes-ai.net
+huatuocode.weiyun.com
+imdap-sea.alipay.com
+ip.net.coffee
+kali.download
+logos.benevity.org
+main.vscode-cdn.net
+marketplace.visualstudio.com
+medium.com
+metube.thintsing.com
+midjourney.com
+models.dev
+music.youtube.com
+nodejs.org
+notion.so
+open.spotify.com
+open.spotifycdn.com
+p1-play.edge4k.com
+pixpix.com
+producthunt.com
+pypi.org
+r.msftstatic.com
+rr2---sn-oguesn6r.googlevideo.com
+rr5---sn-q4flrnss.googlevideo.com
+shopify.com
+sora.com
+stat.tiara.kakao.com
+supabase.stirling.com
+t1.gstatic.com
+t1.kakaocdn.net
+unpkg.com
+update.code.visualstudio.com
+use.fontawesome.com
+windows.policies.live.net
+wise.com
+ws.chatgpt.com
+www.adobe.com
+www.azlyrics.com
+www.cloudflare.com
+www.google.co.kr
+www.musixmatch.com
+www.okx.com
+youtube.com
+zoom.us

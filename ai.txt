@@ -137,3 +137,17 @@ platform.publicai.co
 reclaim.ai
 s-cdn.anthropic.com
 token.sensenova.cn
+
+agentskills.io
+anthropic.com
+api.individual.githubcopilot.com
+api.oaistatsig.com
+grok.com
+hermes-agent.nousresearch.com
+hermes-assets.nousresearch.com
+hermesagent.org.cn
+nousresearch.com
+openai.com
+openai.gallery.vsassets.io
+openai.gallerycdn.vsassets.io
+www.perplexity.ai

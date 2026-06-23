@@ -67,12 +67,9 @@ DOMAIN-KEYWORD,virus
 # 补充 - 更多广告/追踪
 DOMAIN-SUFFIX,googleadservices.com
 DOMAIN-SUFFIX,googleadsserving.cn
-DOMAIN-SUFFIX,googlesyndication.com
-DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,admob.com
 DOMAIN-SUFFIX,adsense.com
-DOMAIN-SUFFIX,adservice.google.com
 DOMAIN-SUFFIX,pagead.l.google.com
 DOMAIN-SUFFIX,partner.googleadservices.com
 DOMAIN-SUFFIX,ads.gmodules.com
@@ -80,11 +77,6 @@ DOMAIN-SUFFIX,afd.l.google.com
 DOMAIN-SUFFIX,csi.gstatic.com
 DOMAIN-SUFFIX,www-google-analytics.l.google.com
 DOMAIN-SUFFIX,ssl-google-analytics.l.google.com
-DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-SUFFIX,googleadservices.com
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,googletagservices.com
-DOMAIN-SUFFIX,googleoptimize.com
 DOMAIN-SUFFIX,firebase-analytics.com
 DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,app-measurement.com
@@ -92,9 +84,6 @@ DOMAIN-SUFFIX,app-analytics.com
 DOMAIN-SUFFIX,mobileanalytics.com
 
 # 社交媒体追踪
-DOMAIN-SUFFIX,facebook-analytics.com
-DOMAIN-SUFFIX,facebook-ads.com
-DOMAIN-SUFFIX,fb-analytics.com
 DOMAIN-SUFFIX,instagram-analytics.com
 DOMAIN-SUFFIX,twitter-analytics.com
 DOMAIN-SUFFIX,twitter-ads.com
@@ -106,8 +95,6 @@ DOMAIN-SUFFIX,ads.linkedin.com
 DOMAIN-SUFFIX,analytics.linkedin.com
 
 # 广告网络
-DOMAIN-SUFFIX,adsystem.com
-DOMAIN-SUFFIX,advertising.com
 DOMAIN-SUFFIX,advertserve.com
 DOMAIN-SUFFIX,adzerk.net
 DOMAIN-SUFFIX,adnxs.com
@@ -167,7 +154,6 @@ DOMAIN-SUFFIX,eloqua.com
 DOMAIN-SUFFIX,eloqua.net
 
 # 移动广告
-DOMAIN-SUFFIX,admob.com
 DOMAIN-SUFFIX,ads.mopub.com
 DOMAIN-SUFFIX,mopub.com
 DOMAIN-SUFFIX,inmobi.com
@@ -183,7 +169,6 @@ DOMAIN-SUFFIX,adcolony.com
 DOMAIN-SUFFIX,hyprmx.com
 DOMAIN-SUFFIX,tapjoy.com
 DOMAIN-SUFFIX,flurry.com
-DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,fabric.io
 DOMAIN-SUFFIX,firebaseio.com
 
@@ -198,13 +183,9 @@ DOMAIN-SUFFIX,addthis.com
 DOMAIN-SUFFIX,addthisedge.com
 DOMAIN-SUFFIX,sharethis.com
 DOMAIN-SUFFIX,sharethis.net
-DOMAIN-SUFFIX,outbrain.com
 DOMAIN-SUFFIX,outbrainimg.com
-DOMAIN-SUFFIX,taboola.com
 DOMAIN-SUFFIX,taboolanews.com
-DOMAIN-SUFFIX,revcontent.com
 DOMAIN-SUFFIX,revcontent.net
-DOMAIN-SUFFIX,mgid.com
 DOMAIN-SUFFIX,mgid.net
 DOMAIN-SUFFIX,content.ad
 DOMAIN-SUFFIX,adblade.com
@@ -216,20 +197,8 @@ DOMAIN-SUFFIX,thetrade desk.com
 DOMAIN-SUFFIX,tradedesk.com
 DOMAIN-SUFFIX,tradedesk.net
 DOMAIN-SUFFIX,dv360.com
-DOMAIN-SUFFIX,googleadservices.com
-DOMAIN-SUFFIX,googlesyndication.com
-DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,googletagservices.com
-DOMAIN-SUFFIX,googleoptimize.com
-DOMAIN-SUFFIX,firebase-analytics.com
 DOMAIN-SUFFIX,firebaseapp.com
-DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,firebaselogging.googleapis.com
-DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,app-analytics.com
-DOMAIN-SUFFIX,mobileanalytics.com
-DOMAIN-SUFFIX,analytics.google.com
 DOMAIN-SUFFIX,analytics.google.com
 DOMAIN-SUFFIX,stats.g.doubleclick.net
 DOMAIN-SUFFIX,stats.l.doubleclick.net
@@ -242,9 +211,6 @@ DOMAIN-SUFFIX,g.doubleclick.net
 DOMAIN-SUFFIX,cm.g.doubleclick.net
 DOMAIN-SUFFIX,securepubads.g.doubleclick.net
 DOMAIN-SUFFIX,pubads.g.doubleclick.net
-DOMAIN-SUFFIX,pagead2.googlesyndication.com
-DOMAIN-SUFFIX,tpc.googlesyndication.com
-DOMAIN-SUFFIX,adservice.google.com
 DOMAIN-SUFFIX,pagead.google.com
 DOMAIN-SUFFIX,afs.googlesyndication.com
 DOMAIN-SUFFIX,www.googletagservices.com
