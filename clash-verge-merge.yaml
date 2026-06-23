@@ -79,6 +79,13 @@ rule-providers:
     interval: 86400
 
   # 进程匹配规则集
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
   microsoft:
     type: http
     behavior: domain
@@ -118,6 +125,7 @@ rules:
   # ===== 第 6 层：IP 段匹配 =====
   - RULE-SET,lancidr,🎯 全球直连
   - RULE-SET,telegramcidr,📲 电报信息
+  - RULE-SET,cncidr,🎯 全球直连
 
   # ===== 第 7 层：GeoIP 兜底 =====
   - GEOIP,CN,🎯 全球直连,no-resolve
