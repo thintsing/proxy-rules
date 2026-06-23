@@ -261,3 +261,37 @@ DOMAIN-SUFFIX,hwdns.net
 
 # Let's Encrypt OCSP/CRL
 DOMAIN-SUFFIX,lencr.org
+
+acc-1258344699.cos.accelerate.myqcloud.com
+acc-1258344699.cos.ap-guangzhou.myqcloud.com
+agentrs.jd.com
+ai.immersivetranslate.com
+aigw1.immersivetranslate.com
+analytics.immersivetranslate.com
+api2.immersivetranslate.com
+assets.immersivetranslate.cn
+badjs.weixinbridge.com
+base.itab.link
+cdn.auth0.com
+cdn.jsdelivr.net
+cdn.zudoku.dev
+config.immersivetranslate.com
+copilot.tencent.com
+crl3.digicert.com
+galileotelemetry.tencent.com
+gh-proxy.org
+go.itab.link
+jdqd.jd.com
+joyedit.jd.com
+lang-detect.immersivetranslate.com
+localhost.ptlogin2.qq.com
+localhost.sec.qq.com
+mp.weixin.qq.com
+ocsp.digicert.com
+otheve.beacon.qq.com
+pwd.thintsing.com
+sp.sangfor.com.cn
+x1.c.lencr.org
+x2.c.lencr.org
+ye.c.lencr.org
+yr.c.lencr.org

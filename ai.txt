@@ -114,3 +114,26 @@ IP-CIDR,64.23.132.171/32,no-resolve
 # Vercel AI
 # 其他 AI 服务
 IP-ASN,20473,no-resolve
+
+a-api.anthropic.com
+a-cdn.anthropic.com
+a.claude.ai
+apertvs.ai
+api.anthropic.com
+api.publicai.co
+assets-proxy.anthropic.com
+assets.claude.ai
+build.nvidia.com
+cdn-avatars.huggingface.co
+cdn-thumbnails.huggingface.co
+chat.publicai.co
+claude.ai
+huggingface.co
+login.publicai.co
+opencode.ai
+openrouter.ai
+platform.kimi.com
+platform.publicai.co
+reclaim.ai
+s-cdn.anthropic.com
+token.sensenova.cn

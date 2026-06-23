@@ -1,66 +1,67 @@
 # 应用进程匹配规则（behavior: classical）
 # 按进程名称匹配，让特定应用强制走指定策略
 # 注意：只支持 Clash Premium/mihomo 内核
+# 格式：PROCESS-NAME,进程名,策略组
+payload:
+  # ==================== 浏览器 ====================
+  - PROCESS-NAME,msedge.exe,DIRECT
+  - PROCESS-NAME,chrome.exe,DIRECT
+  - PROCESS-NAME,firefox.exe,DIRECT
+  - PROCESS-NAME,brave.exe,DIRECT
+  - PROCESS-NAME,opera.exe,DIRECT
+  - PROCESS-NAME,safari.exe,DIRECT
 
-# ==================== 浏览器 ====================
-PROCESS-NAME,msedge.exe,DIRECT
-PROCESS-NAME,chrome.exe,DIRECT
-PROCESS-NAME,firefox.exe,DIRECT
-PROCESS-NAME,brave.exe,DIRECT
-PROCESS-NAME,opera.exe,DIRECT
-PROCESS-NAME,safari.exe,DIRECT
+  # ==================== 国内社交通讯 ====================
+  - PROCESS-NAME,WeChat.exe,DIRECT
+  - PROCESS-NAME,Weixin.exe,DIRECT
+  - PROCESS-NAME,QQ.exe,DIRECT
+  - PROCESS-NAME,QQBrowser.exe,DIRECT
+  - PROCESS-NAME,DingTalk.exe,DIRECT
+  - PROCESS-NAME,Feishu.exe,DIRECT
+  - PROCESS-NAME,Lark.exe,DIRECT
 
-# ==================== 国内社交通讯 ====================
-PROCESS-NAME,WeChat.exe,DIRECT
-PROCESS-NAME,Weixin.exe,DIRECT
-PROCESS-NAME,QQ.exe,DIRECT
-PROCESS-NAME,QQBrowser.exe,DIRECT
-PROCESS-NAME,DingTalk.exe,DIRECT
-PROCESS-NAME,Feishu.exe,DIRECT
-PROCESS-NAME,Lark.exe,DIRECT
+  # ==================== 办公软件 ====================
+  - PROCESS-NAME,WPS.exe,DIRECT
+  - PROCESS-NAME,wps.exe,DIRECT
+  - PROCESS-NAME,wpp.exe,DIRECT
+  - PROCESS-NAME,et.exe,DIRECT
 
-# ==================== 办公软件 ====================
-PROCESS-NAME,WPS.exe,DIRECT
-PROCESS-NAME,wps.exe,DIRECT
-PROCESS-NAME,wpp.exe,DIRECT
-PROCESS-NAME,et.exe,DIRECT
+  # ==================== 国内游戏（直连） ====================
+  - PROCESS-NAME,GenshinImpact.exe,DIRECT
+  - PROCESS-NAME,YuanShen.exe,DIRECT
+  - PROCESS-NAME,HonkaiImpact3rd.exe,DIRECT
+  - PROCESS-NAME,StarRail.exe,DIRECT
+  - PROCESS-NAME,HonkaiStarRail.exe,DIRECT
+  - PROCESS-NAME,ZenlessZoneZero.exe,DIRECT
+  - PROCESS-NAME,WuWa.exe,DIRECT
+  - PROCESS-NAME,WutheringWaves.exe,DIRECT
+  - PROCESS-NAME,Naraka.exe,DIRECT
+  - PROCESS-NAME,NarakaBladepoint.exe,DIRECT
+  - PROCESS-NAME,League of Legends.exe,DIRECT
+  - PROCESS-NAME,LeagueClient.exe,DIRECT
+  - PROCESS-NAME,LeagueClientUx.exe,DIRECT
+  - PROCESS-NAME,World of Warcraft.exe,DIRECT
+  - PROCESS-NAME,Warcraft III.exe,DIRECT
+  - PROCESS-NAME,StarCraft.exe,DIRECT
+  - PROCESS-NAME,StarCraft II.exe,DIRECT
+  - PROCESS-NAME,Overwatch.exe,DIRECT
+  - PROCESS-NAME,Hearthstone.exe,DIRECT
+  - PROCESS-NAME,Diablo III.exe,DIRECT
+  - PROCESS-NAME,Diablo IV.exe,DIRECT
+  - PROCESS-NAME,WoW.exe,DIRECT
+  - PROCESS-NAME,Battle.net.exe,DIRECT
 
-# ==================== 国内游戏（直连） ====================
-PROCESS-NAME,GenshinImpact.exe,DIRECT
-PROCESS-NAME,YuanShen.exe,DIRECT
-PROCESS-NAME,HonkaiImpact3rd.exe,DIRECT
-PROCESS-NAME,StarRail.exe,DIRECT
-PROCESS-NAME,HonkaiStarRail.exe,DIRECT
-PROCESS-NAME,ZenlessZoneZero.exe,DIRECT
-PROCESS-NAME,WuWa.exe,DIRECT
-PROCESS-NAME,WutheringWaves.exe,DIRECT
-PROCESS-NAME,Naraka.exe,DIRECT
-PROCESS-NAME,NarakaBladepoint.exe,DIRECT
-PROCESS-NAME,League of Legends.exe,DIRECT
-PROCESS-NAME,LeagueClient.exe,DIRECT
-PROCESS-NAME,LeagueClientUx.exe,DIRECT
-PROCESS-NAME,World of Warcraft.exe,DIRECT
-PROCESS-NAME,Warcraft III.exe,DIRECT
-PROCESS-NAME,StarCraft.exe,DIRECT
-PROCESS-NAME,StarCraft II.exe,DIRECT
-PROCESS-NAME,Overwatch.exe,DIRECT
-PROCESS-NAME,Hearthstone.exe,DIRECT
-PROCESS-NAME,Diablo III.exe,DIRECT
-PROCESS-NAME,Diablo IV.exe,DIRECT
-PROCESS-NAME,Wow.exe,DIRECT
-PROCESS-NAME,Battle.net.exe,DIRECT
+  # ==================== 国际游戏（代理） ====================
+  - PROCESS-NAME,steam.exe,🎮 Steam
+  - PROCESS-NAME,steamwebhelper.exe,🎮 Steam
+  - PROCESS-NAME,steamservice.exe,🎮 Steam
+  - PROCESS-NAME,steamerrorreporter.exe,🎮 Steam
+  - PROCESS-NAME,epicgameslauncher.exe,🎮 Steam
 
-# ==================== 国际游戏（代理） ====================
-PROCESS-NAME,steam.exe,🎮 Steam
-PROCESS-NAME,steamwebhelper.exe,🎮 Steam
-PROCESS-NAME,steamservice.exe,🎮 Steam
-PROCESS-NAME,steamerrorreporter.exe,🎮 Steam
-PROCESS-NAME,epicgameslauncher.exe,🎮 Steam
-
-# ==================== 系统服务 ====================
-PROCESS-NAME,SystemSettings.exe,DIRECT
-PROCESS-NAME,SearchApp.exe,DIRECT
-PROCESS-NAME,WindowsUpdate.exe,DIRECT
-PROCESS-NAME,wuauclt.exe,DIRECT
-PROCESS-NAME,MoUsoCoreWorker.exe,DIRECT
-PROCESS-NAME,SgrmBroker.exe,DIRECT
+  # ==================== 系统服务 ====================
+  - PROCESS-NAME,SystemSettings.exe,DIRECT
+  - PROCESS-NAME,SearchApp.exe,DIRECT
+  - PROCESS-NAME,WindowsUpdate.exe,DIRECT
+  - PROCESS-NAME,wuauclt.exe,DIRECT
+  - PROCESS-NAME,MoUsoCoreWorker.exe,DIRECT
+  - PROCESS-NAME,SgrmBroker.exe,DIRECT

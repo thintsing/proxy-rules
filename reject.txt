@@ -264,3 +264,14 @@ DOMAIN-SUFFIX,bat.bing.com
 DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,zc.qq.com
 DOMAIN-SUFFIX,zmedia.com
+
+aefd.nelreports.net
+connect.facebook.net
+filters.adtidy.org
+js.stripe.com
+m.stripe.com
+m.stripe.network
+plausible.io
+sb.scorecardresearch.com
+static.cloudflareinsights.com
+www.google-analytics.com
