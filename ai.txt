@@ -113,13 +113,15 @@ IP-CIDR,64.23.132.171/32,no-resolve
 # Stability AI
 # Vercel AI
 # 其他 AI 服务
-IP-ASN,20473,no-resolve
-
 a-api.anthropic.com
 a-cdn.anthropic.com
 a.claude.ai
+agentskills.io
+anthropic.com
 apertvs.ai
 api.anthropic.com
+api.individual.githubcopilot.com
+api.oaistatsig.com
 api.publicai.co
 assets-proxy.anthropic.com
 assets.claude.ai
@@ -128,8 +130,17 @@ cdn-avatars.huggingface.co
 cdn-thumbnails.huggingface.co
 chat.publicai.co
 claude.ai
+grok.com
+hermes-agent.nousresearch.com
+hermes-assets.nousresearch.com
+hermesagent.org.cn
 huggingface.co
+IP-ASN,20473,no-resolve
 login.publicai.co
+nousresearch.com
+openai.com
+openai.gallery.vsassets.io
+openai.gallerycdn.vsassets.io
 opencode.ai
 openrouter.ai
 platform.kimi.com
@@ -137,17 +148,4 @@ platform.publicai.co
 reclaim.ai
 s-cdn.anthropic.com
 token.sensenova.cn
-
-agentskills.io
-anthropic.com
-api.individual.githubcopilot.com
-api.oaistatsig.com
-grok.com
-hermes-agent.nousresearch.com
-hermes-assets.nousresearch.com
-hermesagent.org.cn
-nousresearch.com
-openai.com
-openai.gallery.vsassets.io
-openai.gallerycdn.vsassets.io
 www.perplexity.ai
