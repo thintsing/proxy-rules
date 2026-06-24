@@ -3,14 +3,6 @@
 # 注意：只支持 Clash Premium/mihomo 内核
 # 格式：PROCESS-NAME,进程名,策略组
 payload:
-  # ==================== 浏览器 ====================
-  - PROCESS-NAME,msedge.exe,DIRECT
-  - PROCESS-NAME,chrome.exe,DIRECT
-  - PROCESS-NAME,firefox.exe,DIRECT
-  - PROCESS-NAME,brave.exe,DIRECT
-  - PROCESS-NAME,opera.exe,DIRECT
-  - PROCESS-NAME,safari.exe,DIRECT
-
   # ==================== 国内社交通讯 ====================
   - PROCESS-NAME,WeChat.exe,DIRECT
   - PROCESS-NAME,Weixin.exe,DIRECT
