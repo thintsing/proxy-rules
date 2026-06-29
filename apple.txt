@@ -4,7 +4,6 @@
 
 
 # Apple direct domain additions
-DOMAIN-SUFFIX,buy.music.apple.com
 
 DOMAIN,apple-events.akamaized.net
 DOMAIN,appleworldwidedeveloper.hb-api.omtrdc.net
@@ -742,6 +741,7 @@ DOMAIN-SUFFIX,burstly.net
 DOMAIN-SUFFIX,burstlyrewards.com
 DOMAIN-SUFFIX,businesswebwise.com
 DOMAIN-SUFFIX,buy-from-shanghai.com
+DOMAIN-SUFFIX,buy.music.apple.com
 DOMAIN-SUFFIX,buyaapl.com
 DOMAIN-SUFFIX,buyaapl.net
 DOMAIN-SUFFIX,buyaple.com
