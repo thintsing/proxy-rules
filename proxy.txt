@@ -1,3 +1,25 @@
+
+# Plex
+DOMAIN-SUFFIX,analytics.plex.tv
+DOMAIN-SUFFIX,app.plex.tv
+DOMAIN-SUFFIX,chat-ws.x.com
+DOMAIN-SUFFIX,clients.plex.tv
+DOMAIN-SUFFIX,community.plex.tv
+DOMAIN-SUFFIX,discover.provider.plex.tv
+DOMAIN-SUFFIX,epg.provider.plex.tv
+DOMAIN-SUFFIX,features.plex.tv
+DOMAIN-SUFFIX,metadata.provider.plex.tv
+DOMAIN-SUFFIX,nrs.hooked.fm
+DOMAIN-SUFFIX,oauth2.plex.tv
+DOMAIN-SUFFIX,plex.tv
+DOMAIN-SUFFIX,pubsub.plex.tv
+DOMAIN-SUFFIX,status.plex.tv
+DOMAIN-SUFFIX,support.plex.tv
+DOMAIN-SUFFIX,together.plex.tv
+DOMAIN-SUFFIX,vod.provider.plex.tv
+DOMAIN-SUFFIX,www.plex.tv
+DOMAIN-SUFFIX,xpaywalletcdn-prod.azureedge.net
+
 ﻿# 代理规则集
 # 需要翻墙的国外网站和服务
 

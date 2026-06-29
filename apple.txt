@@ -2,6 +2,10 @@
 
 # Apple 国内 CDN
 
+
+# Apple direct domain additions
+DOMAIN-SUFFIX,buy.music.apple.com
+
 DOMAIN,apple-events.akamaized.net
 DOMAIN,appleworldwidedeveloper.hb-api.omtrdc.net
 DOMAIN,appleworldwidedeveloper.sc.omtrdc.net
