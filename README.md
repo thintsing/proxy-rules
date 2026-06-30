@@ -1,13 +1,15 @@
 <div align="center">
 
-# Clash Rules Collection
+# Proxy Rules Collection
 
-**个人整理的 Clash 分流规则集 · 开箱即用 · 自动更新**
+**个人整理的多平台代理分流规则集 · 开箱即用 · 自动更新**
 
 [![GitHub release](https://img.shields.io/github/v/release/thintsing/proxy-rules?style=flat-square&color=blue)](https://github.com/thintsing/proxy-rules/releases)
 [![Auto Update](https://img.shields.io/github/actions/workflow/status/thintsing/proxy-rules/update-rules.yml?style=flat-square&label=auto-update&logo=githubactions)](https://github.com/thintsing/proxy-rules/actions/workflows/update-rules.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thintsing/proxy-rules?style=flat-square&color=success)](https://github.com/thintsing/proxy-rules/commits/main)
-[![Total Rules](https://img.shields.io/badge/Total%20Rules-2829%2B-brightgreen?style=flat-square)](#-规则统计)
+[![Total Rules](https://img.shields.io/badge/Total%20Rules-9585%2B-brightgreen?style=flat-square)](#-规则统计)
+[![Clash](https://img.shields.io/badge/Platform-Clash-blue?style=flat-square)](#-clash-verge-推荐)
+[![Shadowrocket](https://img.shields.io/badge/Platform-Shadowrocket-orange?style=flat-square)](#-shadowrocket)
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt)
 
 </div>
@@ -17,7 +19,8 @@
 ## 目录
 
 - [规则集概览](#规则集概览)
-- [快速上手](#快速上手)
+- [Clash Verge（推荐）](#-clash-verge-推荐)
+- [Shadowrocket（小火箭）](#-shadowrocket)
 - [规则优先级](#规则优先级)
 - [自动更新](#自动更新)
 - [文件说明](#文件说明)
@@ -29,26 +32,27 @@
 
 | 规则集 | 数量 | 用途 | CDN 链接 |
 |:------:|:----:|:----|:--------:|
-| reject | **232** | 广告跟踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt) |
-| proxy | **338** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/proxy.txt) |
-| direct | **217** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/direct.txt) |
-| apple | **1729** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/apple.txt) |
-| microsoft | 651 | Microsoft 服务（Office/Teams/Azure/VS Code） | [microsoft.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/microsoft.txt) |
+| reject | **208** | 广告跟踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt) |
+| proxy | **461** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/proxy.txt) |
+| direct | **325** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/direct.txt) |
+| apple | **1730** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/apple.txt) |
+| microsoft | **734** | Microsoft 服务（Office/Teams/Azure/VS Code） | [microsoft.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/microsoft.txt) |
+| ai | **127** | AI 服务（OpenAI / Claude 等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/ai.txt) |
 | steam | **54** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/steam.txt) |
-| ai | **78** | AI 服务（OpenAI / Claude 等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/ai.txt) |
-| icloud | **81** | iCloud 认证 / Private Relay / CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/icloud.txt) |
-| private | 26 | 私有网络域名（路由器 / 内网） | [private.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/private.txt) |
-| telegramcidr | 16 | Telegram IP 段 | [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/telegramcidr.txt) |
-| lancidr | 13 | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/lancidr.txt) |
-| applications | 51 | 应用进程匹配（浏览器 / 游戏 / 办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/applications.txt) |
+| icloud | **82** | iCloud 认证 / Private Relay / CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/icloud.txt) |
+| cncidr | **5761** | 中国大陆 IP 段 | [cncidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/cncidr.txt) |
+| private | **28** | 私有网络域名（路由器 / 内网） | [private.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/private.txt) |
+| telegramcidr | **16** | Telegram IP 段 | [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/telegramcidr.txt) |
+| lancidr | **13** | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/lancidr.txt) |
+| applications | **46** | 应用进程匹配（浏览器 / 游戏 / 办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/applications.txt) |
 
-**总计: 3486+ 条规则**
+**总计: 9585+ 条规则（含 5761 条中国 IP 段）**
 
 ---
 
-## 快速上手
+## 🚀 Clash Verge（推荐）
 
-本规则集推荐通过 **Clash Verge 的 Merge（增强配置）** 功能使用，即配即用，无需手动编辑配置文件。
+适用于 Clash 全系客户端（Clash Verge Rev、Clash for Windows、OpenClash、ClashX Pro 等）。
 
 ### 方法一：使用 Merge 文件（推荐）
 
@@ -85,8 +89,6 @@
 如果你用**不同的组名**，只需修改 `clash-verge-merge.yaml` 中 `RULE-SET` 后面的组名即可。
 
 > 不知道怎么写代理组？参考 [`example-config.yaml`](example-config.yaml) 的完整配置示例。
-
----
 
 ### 方法二：手动编辑配置文件
 
@@ -141,9 +143,41 @@ rules:
 
 ---
 
-### 方法三：直接引用 URL
+## 🚀 Shadowrocket（小火箭）
 
-如果不想用 `rule-providers`，也可以直接把规则文件的 CDN 链接替换到你的规则中。不过推荐用方法一或二，可以实现**自动更新**。
+适用于 iOS / iPadOS Shadowrocket 客户端。规则已按策略分类，可直接导入。
+
+### 方式一：导入配置文件（推荐）
+
+小火箭 → 配置 → 添加配置 → 输入 URL：
+
+```
+https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/shadowrocket_rules.conf
+```
+
+导入后即可使用，包含全部规则集和优先级排序。
+
+### 方式二：按策略单独导入
+
+小火箭 → 配置 → 编辑规则 → 从 URL 下载规则：
+
+| 策略 | URL |
+|:----:|:----|
+| 🟢 代理 | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/proxy_proxy.list` |
+| 🟢 AI 代理 | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/ai_proxy.list` |
+| 🔵 直连 | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/direct_direct.list` |
+| 🔵 Apple | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/apple_direct.list` |
+| 🔵 Microsoft | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/microsoft_direct.list` |
+| 🔵 Steam | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/steam_direct.list` |
+| 🔵 iCloud | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/icloud_direct.list` |
+| 🔴 拒绝 | `https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/reject_reject.list` |
+
+配置中的最终兜底规则：
+
+```
+GEOIP,CN,Direct
+FINAL,Proxy
+```
 
 ---
 
@@ -180,7 +214,7 @@ rules:
 
 > 手动触发：进入 GitHub 仓库 → Actions → Auto-Update Rules → Run workflow
 
-利用 Clash 的 `rule-providers` 机制，**规则文件更新后，Clash 客户端在下次启动或下一次请求时会自动拉取最新版本**，无需手动操作。
+利用 Clash 的 `rule-providers` 机制，**规则文件更新后，Clash 客户端在下次启动或下一次请求时会自动拉取最新版本**，无需手动操作。Shadowrocket 同样支持 URL 自动更新规则。
 
 ---
 
@@ -188,11 +222,14 @@ rules:
 
 | 文件 | 说明 |
 |:----|:------|
-| `*.txt` | 规则数据文件（共 11 个），通过 rule-providers 远程引用 |
+| `*.txt` | 规则数据文件（共 13 个），通过 rule-providers 远程引用 |
 | `clash-verge-merge.yaml` | Clash Verge 增强配置（Merge），引用全部规则集 + 七层分流规则 |
 | `example-config.yaml` | 完整 Clash 配置示例，含节点 / 代理组 / DNS |
+| `shadowrocket/shadowrocket_rules.conf` | Shadowrocket 规则配置文件（一键导入） |
+| `shadowrocket/*.list` | Shadowrocket 分类规则列表（按策略单独导入） |
 | `.github/workflows/update-rules.yml` | GitHub Actions 自动构建配置 |
 | `scripts/merge_rules.py` | 自动合并上游规则的 Python 脚本 |
+| `scripts/update_rules.py` | 从 Clash 日志补充遗漏域名的脚本 |
 
 ---
 
