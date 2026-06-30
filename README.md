@@ -1,101 +1,101 @@
-﻿<div align="center">
+<div align="center">
 
 # Clash Rules Collection
 
-**涓汉鏁寸悊鐨?Clash 鍒嗘祦瑙勫垯闆?路 寮€绠卞嵆鐢?路 鑷姩鏇存柊**
+**个人整理的 Clash 分流规则集 · 开箱即用 · 自动更新**
 
 [![GitHub release](https://img.shields.io/github/v/release/thintsing/proxy-rules?style=flat-square&color=blue)](https://github.com/thintsing/proxy-rules/releases)
 [![Auto Update](https://img.shields.io/github/actions/workflow/status/thintsing/proxy-rules/update-rules.yml?style=flat-square&label=auto-update&logo=githubactions)](https://github.com/thintsing/proxy-rules/actions/workflows/update-rules.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/thintsing/proxy-rules?style=flat-square&color=success)](https://github.com/thintsing/proxy-rules/commits/main)
-[![Total Rules](https://img.shields.io/badge/Total%20Rules-2829%2B-brightgreen?style=flat-square)](#-瑙勫垯缁熻)
+[![Total Rules](https://img.shields.io/badge/Total%20Rules-2829%2B-brightgreen?style=flat-square)](#-规则统计)
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt)
 
 </div>
 
 ---
 
-## 鐩綍
+## 目录
 
-- [瑙勫垯闆嗘瑙圿(#瑙勫垯闆嗘瑙?
-- [蹇€熶笂鎵媇(#蹇€熶笂鎵?
-- [瑙勫垯浼樺厛绾(#瑙勫垯浼樺厛绾?
-- [鑷姩鏇存柊](#鑷姩鏇存柊)
-- [鏂囦欢璇存槑](#鏂囦欢璇存槑)
-- [璁稿彲](#璁稿彲)
+- [规则集概览](#规则集概览)
+- [快速上手](#快速上手)
+- [规则优先级](#规则优先级)
+- [自动更新](#自动更新)
+- [文件说明](#文件说明)
+- [许可](#许可)
 
 ---
 
-## 瑙勫垯闆嗘瑙?
+## 规则集概览
 
-| 瑙勫垯闆?| 鏁伴噺 | 鐢ㄩ€?| CDN 閾炬帴 |
+| 规则集 | 数量 | 用途 | CDN 链接 |
 |:------:|:----:|:----|:--------:|
-| reject | **232** | 骞垮憡璺熻釜銆佹伓鎰忕綉绔欐嫤鎴?| [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt) |
-| proxy | **338** | 鍥藉缃戠珯銆侀渶瑕佷唬鐞嗙殑鏈嶅姟 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/proxy.txt) |
-| direct | **217** | 鍥藉唴缃戠珯銆丆DN 鍔犻€熻妭鐐?| [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/direct.txt) |
-| apple | **1729** | Apple 鍏ㄧ郴鏈嶅姟 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/apple.txt) |
-| microsoft | 651 | Microsoft 鏈嶅姟锛圤ffice/Teams/Azure/VS Code锛?| [microsoft.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/microsoft.txt) |
-| steam | **54** | Steam 娓告垙骞冲彴 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/steam.txt) |
-| ai | **78** | AI 鏈嶅姟锛圤penAI / Claude 绛夛級 | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/ai.txt) |
-| icloud | **81** | iCloud 璁よ瘉 / Private Relay / CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/icloud.txt) |
-| private | 26 | 绉佹湁缃戠粶鍩熷悕锛堣矾鐢卞櫒 / 鍐呯綉锛?| [private.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/private.txt) |
-| telegramcidr | 16 | Telegram IP 娈?| [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/telegramcidr.txt) |
-| lancidr | 13 | 灞€鍩熺綉淇濈暀 IP 娈?| [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/lancidr.txt) |
-| applications | 51 | 搴旂敤杩涚▼鍖归厤锛堟祻瑙堝櫒 / 娓告垙 / 鍔炲叕锛?| [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/applications.txt) |
+| reject | **232** | 广告跟踪、恶意网站拦截 | [reject.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt) |
+| proxy | **338** | 国外网站、需要代理的服务 | [proxy.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/proxy.txt) |
+| direct | **217** | 国内网站、CDN 加速节点 | [direct.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/direct.txt) |
+| apple | **1729** | Apple 全系服务 | [apple.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/apple.txt) |
+| microsoft | 651 | Microsoft 服务（Office/Teams/Azure/VS Code） | [microsoft.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/microsoft.txt) |
+| steam | **54** | Steam 游戏平台 | [steam.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/steam.txt) |
+| ai | **78** | AI 服务（OpenAI / Claude 等） | [ai.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/ai.txt) |
+| icloud | **81** | iCloud 认证 / Private Relay / CloudKit | [icloud.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/icloud.txt) |
+| private | 26 | 私有网络域名（路由器 / 内网） | [private.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/private.txt) |
+| telegramcidr | 16 | Telegram IP 段 | [telegramcidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/telegramcidr.txt) |
+| lancidr | 13 | 局域网保留 IP 段 | [lancidr.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/lancidr.txt) |
+| applications | 51 | 应用进程匹配（浏览器 / 游戏 / 办公） | [applications.txt](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/applications.txt) |
 
-**鎬昏: 3486+ 鏉¤鍒?*
-
----
-
-## 蹇€熶笂鎵?
-
-鏈鍒欓泦鎺ㄨ崘閫氳繃 **Clash Verge 鐨?Merge锛堝寮洪厤缃級** 鍔熻兘浣跨敤锛屽嵆閰嶅嵆鐢紝鏃犻渶鎵嬪姩缂栬緫閰嶇疆鏂囦欢銆?
-
-### 鏂规硶涓€锛氫娇鐢?Merge 鏂囦欢锛堟帹鑽愶級
-
-> 閫傚悎宸茬粡閰嶇疆濂?*浠ｇ悊鑺傜偣**鍜?*浠ｇ悊缁?*鐨勭敤鎴枫€?
-
-**绗竴姝ワ細鍦?Clash Verge 涓坊鍔?Merge**
-
-1. 鎵撳紑 Clash Verge Rev 鈫?璁剧疆 / 澧炲己閰嶇疆
-2. 鐐瑰嚮銆屾柊寤恒€嶁啋 閫夋嫨銆孧erge銆?
-3. 灏?[`clash-verge-merge.yaml`](clash-verge-merge.yaml) 鐨勫叏閮ㄥ唴瀹瑰鍒惰繘鍘?
-4. 鐐瑰嚮銆屼繚瀛樸€?
-5. 鐐瑰嚮銆岄噸鏂板姞杞介厤缃€嶇敓鏁?
-
-> 濡傛灉浣犵湅涓嶅埌銆屽寮洪厤缃€嶅叆鍙ｏ紝鍙互鍦ㄨ缃腑寮€鍚€岄珮绾у姛鑳姐€嶆垨銆屽紑鍙戣€呮ā寮忋€嶃€?
-
-**绗簩姝ワ細纭繚浠ｇ悊缁勫悕绉板尮閰?*
-
-瑙勫垯闆嗕細鏍规嵁浠ｇ悊缁勫悕绉拌繘琛屽垎娴侊紝璇风‘淇濅綘鐨?Clash 閰嶇疆涓寘鍚互涓嬩唬鐞嗙粍锛堝悕绉板繀椤诲畬鍏ㄤ竴鑷达級锛?
-
-```
-馃殌 鑺傜偣閫夋嫨    鈫?鎵嬪姩閫夋嫨鑺傜偣
-鈾伙笍 鑷姩閫夋嫨    鈫?鑷姩娴嬮€熼€変紭
-馃實 鍥藉濯掍綋    鈫?娴佸獟浣撲笓鐢?
-馃摬 鐢垫姤淇℃伅    鈫?Telegram 涓撶敤
-馃 AI鏈嶅姟      鈫?AI 缃戠珯涓撶敤
-馃幃 Steam       鈫?Steam 娓告垙
-馃崕 鑻规灉鏈嶅姟    鈫?Apple 鏈嶅姟锛堝彲鐩磋繛鍔犻€熶笅杞斤級
-馃幆 鍏ㄧ悆鐩磋繛    鈫?鍥藉唴鐩磋繛
-馃洃 鍏ㄧ悆鎷︽埅    鈫?骞垮憡鎷︽埅
-馃悷 婕忕綉涔嬮奔    鈫?鍏滃簳瑙勫垯
-鈸傦笍 寰蒋鏈嶅姟    鈫?Microsoft 鏈嶅姟
-```
-
-濡傛灉浣犵敤**涓嶅悓鐨勭粍鍚?*锛屽彧闇€淇敼 `clash-verge-merge.yaml` 涓?`RULE-SET` 鍚庨潰鐨勭粍鍚嶅嵆鍙€?
-
-> 涓嶇煡閬撴€庝箞鍐欎唬鐞嗙粍锛熷弬鑰?[`example-config.yaml`](example-config.yaml) 鐨勫畬鏁撮厤缃ず渚嬨€?
+**总计: 3486+ 条规则**
 
 ---
 
-### 鏂规硶浜岋細鎵嬪姩缂栬緫閰嶇疆鏂囦欢
+## 快速上手
 
-> 閫傚悎浣跨敤鍏朵粬 Clash 瀹㈡埛绔紙Clash for Windows / OpenClash 绛夛級鐨勭敤鎴枫€?
+本规则集推荐通过 **Clash Verge 的 Merge（增强配置）** 功能使用，即配即用，无需手动编辑配置文件。
 
-鍦ㄩ厤缃枃浠剁殑 `rule-providers` 鍜?`rules` 涓坊鍔犲涓嬪唴瀹癸細
+### 方法一：使用 Merge 文件（推荐）
+
+> 适合已经配置好**代理节点**和**代理组**的用户。
+
+**第一步：在 Clash Verge 中添加 Merge**
+
+1. 打开 Clash Verge Rev → 设置 / 增强配置
+2. 点击「新建」→ 选择「Merge」
+3. 将 [`clash-verge-merge.yaml`](clash-verge-merge.yaml) 的全部内容复制进去
+4. 点击「保存」
+5. 点击「重新加载配置」生效
+
+> 如果你看不到「增强配置」入口，可以在设置中开启「高级功能」或「开发者模式」。
+
+**第二步：确保代理组名称匹配**
+
+规则集会根据代理组名称进行分流，请确保你的 Clash 配置中包含以下代理组（名称必须完全一致）：
+
+```
+🚀 节点选择    ← 手动选择节点
+♻️ 自动选择    ← 自动测速选优
+🌍 国外媒体    ← 流媒体专用
+📲 电报信息    ← Telegram 专用
+🤖 AI服务      ← AI 网站专用
+🎮 Steam       ← Steam 游戏
+🍎 苹果服务    ← Apple 服务（可直连加速下载）
+🎯 全球直连    ← 国内直连
+🛑 全球拦截    ← 广告拦截
+🐟 漏网之鱼    ← 兜底规则
+Ⓜ️ 微软服务    ← Microsoft 服务
+```
+
+如果你用**不同的组名**，只需修改 `clash-verge-merge.yaml` 中 `RULE-SET` 后面的组名即可。
+
+> 不知道怎么写代理组？参考 [`example-config.yaml`](example-config.yaml) 的完整配置示例。
+
+---
+
+### 方法二：手动编辑配置文件
+
+> 适合使用其他 Clash 客户端（Clash for Windows / OpenClash 等）的用户。
+
+在配置文件的 `rule-providers` 和 `rules` 中添加如下内容：
 
 ```yaml
-# 瑙勫垯闆嗘彁渚涜€?
+# 规则集提供者
 rule-providers:
   reject:
     type: http
@@ -118,84 +118,84 @@ rule-providers:
     path: ./ruleset/direct.yaml
     interval: 86400
 
-  # ... 鍏朵粬瑙勫垯闆嗙被浼硷紝璇﹁ clash-verge-merge.yaml
+  # ... 其他规则集类似，详见 clash-verge-merge.yaml
 
-# 鍒嗘祦瑙勫垯锛堟寜浼樺厛绾т粠楂樺埌浣庯級
+# 分流规则（按优先级从高到低）
 rules:
   - RULE-SET,applications,DIRECT
-  - RULE-SET,private,馃幆 鍏ㄧ悆鐩磋繛
-  - RULE-SET,reject,馃洃 鍏ㄧ悆鎷︽埅
-  - RULE-SET,ai,馃 AI鏈嶅姟
-  - RULE-SET,steam,馃幃 Steam
-  - RULE-SET,icloud,馃殌 鑺傜偣閫夋嫨
-  - RULE-SET,apple,馃崕 鑻规灉鏈嶅姟
-  - RULE-SET,proxy,馃殌 鑺傜偣閫夋嫨
-  - RULE-SET,direct,馃幆 鍏ㄧ悆鐩磋繛
-  - RULE-SET,lancidr,馃幆 鍏ㄧ悆鐩磋繛
-  - RULE-SET,telegramcidr,馃摬 鐢垫姤淇℃伅
-  - GEOIP,CN,馃幆 鍏ㄧ悆鐩磋繛,no-resolve
-  - MATCH,馃悷 婕忕綉涔嬮奔
+  - RULE-SET,private,🎯 全球直连
+  - RULE-SET,reject,🛑 全球拦截
+  - RULE-SET,ai,🤖 AI服务
+  - RULE-SET,steam,🎮 Steam
+  - RULE-SET,icloud,🚀 节点选择
+  - RULE-SET,apple,🍎 苹果服务
+  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,direct,🎯 全球直连
+  - RULE-SET,lancidr,🎯 全球直连
+  - RULE-SET,telegramcidr,📲 电报信息
+  - GEOIP,CN,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
 ```
 
-> 鍒濇鍔犺浇鏃?Clash 浼氳嚜鍔ㄤ粠 CDN 涓嬭浇瑙勫垯鏂囦欢锛岃纭繚缃戠粶閫氱晠銆?
+> 初次加载时 Clash 会自动从 CDN 下载规则文件，请确保网络通畅。
 
 ---
 
-### 鏂规硶涓夛細鐩存帴寮曠敤 URL
+### 方法三：直接引用 URL
 
-濡傛灉涓嶆兂鐢?`rule-providers`锛屼篃鍙互鐩存帴鎶婅鍒欐枃浠剁殑 CDN 閾炬帴鏇挎崲鍒颁綘鐨勮鍒欎腑銆備笉杩囨帹鑽愮敤鏂规硶涓€鎴栦簩锛屽彲浠ュ疄鐜?*鑷姩鏇存柊**銆?
-
----
-
-## 瑙勫垯浼樺厛绾?
-
-瑙勫垯鎸変互涓?**7 灞備紭鍏堢骇** 鍖归厤锛屼粠楂樺埌浣庯細
-
-```
-绗?1 灞? applications  鈫? 杩涚▼鍖归厤锛堟渶楂樹紭鍏堬紝涓嶈蛋浠ｇ悊鐨勫簲鐢ㄧ洿鎺ユ斁琛岋級
-绗?2 灞? private       鈫? 鍐呯綉鍩熷悕锛堣矾鐢卞櫒闈㈡澘銆佺兢鏅栥€丯AS 绛夛級
-绗?3 灞? reject        鈫? 骞垮憡璺熻釜銆佹伓鎰忕綉绔欙紙鐩存帴鎷︽埅锛?
-绗?4 灞? ai/steam/icloud/apple 鈫?鐗瑰畾鏈嶅姟鍒嗘祦
-绗?5 灞? proxy/direct  鈫? 閫氱敤浠ｇ悊 / 鍥藉唴鐩磋繛
-绗?6 灞? lancidr/telegramcidr 鈫?IP 娈靛尮閰?
-绗?7 灞? GEOIP,CN / MATCH 鈫?GeoIP 鍏滃簳
-```
-
-> 姣忔潯璇锋眰浠庝笂鍒颁笅閫愭潯鍖归厤锛屽尮閰嶅埌鍗冲仠姝紝涓嶄細缁х画鍚戜笅妫€鏌ャ€?
+如果不想用 `rule-providers`，也可以直接把规则文件的 CDN 链接替换到你的规则中。不过推荐用方法一或二，可以实现**自动更新**。
 
 ---
 
-## 鑷姩鏇存柊
+## 规则优先级
 
-鏈粨搴撲娇鐢?GitHub Actions **姣忓ぉ UTC 22:00锛堝寳浜椂闂?06:00锛?* 鑷姩浠?blackmatrix7 鍚屾 Apple / Steam / AI / iCloud 瑙勫垯锛?
+规则按以下 **7 层优先级** 匹配，从高到低：
 
-| 鏂囦欢 | 鏉ユ簮 | 绛栫暐 |
+```
+第 1 层  applications  →  进程匹配（最高优先，不走代理的应用直接放行）
+第 2 层  private       →  内网域名（路由器面板、群晖、NAS 等）
+第 3 层  reject        →  广告跟踪、恶意网站（直接拦截）
+第 4 层  ai/steam/icloud/apple → 特定服务分流
+第 5 层  proxy/direct  →  通用代理 / 国内直连
+第 6 层  lancidr/telegramcidr → IP 段匹配
+第 7 层  GEOIP,CN / MATCH → GeoIP 兜底
+```
+
+> 每条请求从上到下逐条匹配，匹配到即停止，不会继续向下检查。
+
+---
+
+## 自动更新
+
+本仓库使用 GitHub Actions **每天 UTC 22:00（北京时间 06:00）** 自动从 blackmatrix7 同步 Apple / Steam / AI / iCloud 规则：
+
+| 文件 | 来源 | 策略 |
 |:----|:-----|:-----|
-| apple.txt | blackmatrix7 | 鍚堝苟琛ュ厖锛堜繚鐣欒嚜瀹氫箟瑙勫垯锛?|
-| steam.txt | blackmatrix7 | 鍚堝苟琛ュ厖 |
-| ai.txt | blackmatrix7 | 鍚堝苟琛ュ厖 |
-| icloud.txt | blackmatrix7 | 鍚堝苟琛ュ厖 |
-| reject / proxy / direct | **鎵嬪姩缁存姢** | 涓婃父瑙勫垯杩囦簬搴炲ぇ锛屼笉鑷姩鍚堝苟 |
-| private / lancidr / telegramcidr / applications | **鑷畾涔夎鍒?* | 鏃犱笂娓告潵婧?|
+| apple.txt | blackmatrix7 | 合并补充（保留自定义规则） |
+| steam.txt | blackmatrix7 | 合并补充 |
+| ai.txt | blackmatrix7 | 合并补充 |
+| icloud.txt | blackmatrix7 | 合并补充 |
+| reject / proxy / direct | **手动维护** | 上游规则过于庞大，不自动合并 |
+| private / lancidr / telegramcidr / applications | **自定义规则** | 无上游来源 |
 
-> 鎵嬪姩瑙﹀彂锛氳繘鍏?GitHub 浠撳簱 鈫?Actions 鈫?Auto-Update Rules 鈫?Run workflow
+> 手动触发：进入 GitHub 仓库 → Actions → Auto-Update Rules → Run workflow
 
-鍒╃敤 Clash 鐨?`rule-providers` 鏈哄埗锛?*瑙勫垯鏂囦欢鏇存柊鍚庯紝Clash 瀹㈡埛绔湪涓嬫鍚姩鎴栦笅涓€娆¤姹傛椂浼氳嚜鍔ㄦ媺鍙栨渶鏂扮増鏈?*锛屾棤闇€鎵嬪姩鎿嶄綔銆?
+利用 Clash 的 `rule-providers` 机制，**规则文件更新后，Clash 客户端在下次启动或下一次请求时会自动拉取最新版本**，无需手动操作。
 
 ---
 
-## 鏂囦欢璇存槑
+## 文件说明
 
-| 鏂囦欢 | 璇存槑 |
+| 文件 | 说明 |
 |:----|:------|
-| `*.txt` | 瑙勫垯鏁版嵁鏂囦欢锛堝叡 11 涓級锛岄€氳繃 rule-providers 杩滅▼寮曠敤 |
-| `clash-verge-merge.yaml` | Clash Verge 澧炲己閰嶇疆锛圡erge锛夛紝寮曠敤鍏ㄩ儴瑙勫垯闆?+ 涓冨眰鍒嗘祦瑙勫垯 |
-| `example-config.yaml` | 瀹屾暣 Clash 閰嶇疆绀轰緥锛屽惈鑺傜偣 / 浠ｇ悊缁?/ DNS |
-| `.github/workflows/update-rules.yml` | GitHub Actions 鑷姩鏋勫缓閰嶇疆 |
-| `scripts/merge_rules.py` | 鑷姩鍚堝苟涓婃父瑙勫垯鐨?Python 鑴氭湰 |
+| `*.txt` | 规则数据文件（共 11 个），通过 rule-providers 远程引用 |
+| `clash-verge-merge.yaml` | Clash Verge 增强配置（Merge），引用全部规则集 + 七层分流规则 |
+| `example-config.yaml` | 完整 Clash 配置示例，含节点 / 代理组 / DNS |
+| `.github/workflows/update-rules.yml` | GitHub Actions 自动构建配置 |
+| `scripts/merge_rules.py` | 自动合并上游规则的 Python 脚本 |
 
 ---
 
-## 璁稿彲
+## 许可
 
 [MIT License](LICENSE)
