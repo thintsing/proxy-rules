@@ -10,6 +10,7 @@
 [![Total Rules](https://img.shields.io/badge/Total%20Rules-9585%2B-brightgreen?style=flat-square)](#-规则统计)
 [![Clash](https://img.shields.io/badge/Platform-Clash-blue?style=flat-square)](#-clash-verge-推荐)
 [![Shadowrocket](https://img.shields.io/badge/Platform-Shadowrocket-orange?style=flat-square)](#-shadowrocket)
+[![NexTIN](https://img.shields.io/badge/Platform-NexTIN-blueviolet?style=flat-square)](#-nextin)
 [![CDN](https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat-square)](https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt)
 
 </div>
@@ -21,6 +22,7 @@
 - [规则集概览](#规则集概览)
 - [Clash Verge（推荐）](#-clash-verge-推荐)
 - [Shadowrocket（小火箭）](#-shadowrocket)
+- [NexTIN（星拓）](#-nextin)
 - [规则优先级](#规则优先级)
 - [自动更新](#自动更新)
 - [文件说明](#文件说明)
@@ -181,6 +183,32 @@ FINAL,Proxy
 
 ---
 
+## 🚀 NexTIN（星拓）
+
+适用于 iOS / iPadOS / macOS / Apple TV，基于 Clash Meta (Mihomo) 内核，与 Clash 规则完全兼容。
+
+### 方式一：导入 YAML 配置文件（推荐，支持自动更新）
+
+NexTIN → 配置 → 导入配置文件 → 输入 URL：
+
+```
+https://raw.githubusercontent.com/thintsing/proxy-rules/main/nextin/nextin_rules.yaml
+```
+
+导入后即自动从 CDN 拉取规则文件，每天自动更新。
+
+### 方式二：导入纯文本规则
+
+NexTIN → 配置 → 导入配置 → 从 URL 下载：
+
+```
+https://raw.githubusercontent.com/thintsing/proxy-rules/main/nextin/nextin_rules.conf
+```
+
+此文件按策略排序（拒绝 → 直连 → 代理 → IP段），适合快速上手。
+
+---
+
 ## 规则优先级
 
 规则按以下 **7 层优先级** 匹配，从高到低：
@@ -227,6 +255,8 @@ FINAL,Proxy
 | `example-config.yaml` | 完整 Clash 配置示例，含节点 / 代理组 / DNS |
 | `shadowrocket/shadowrocket_rules.conf` | Shadowrocket 规则配置文件（一键导入） |
 | `shadowrocket/*.list` | Shadowrocket 分类规则列表（按策略单独导入） |
+| `nextin/nextin_rules.yaml` | NexTIN 规则配置（rule-providers，支持自动更新） |
+| `nextin/nextin_rules.conf` | NexTIN 纯文本规则（一键导入） |
 | `.github/workflows/update-rules.yml` | GitHub Actions 自动构建配置 |
 | `scripts/merge_rules.py` | 自动合并上游规则的 Python 脚本 |
 | `scripts/update_rules.py` | 从 Clash 日志补充遗漏域名的脚本 |

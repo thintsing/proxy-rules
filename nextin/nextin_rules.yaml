@@ -1,0 +1,101 @@
+# NexTIN (星拓) 规则集配置 - 基于 Clash Meta (Mihomo) 内核
+# 适用于 iPhone / iPad / Mac / Apple TV
+# 使用方式：NexTIN → 配置 → 导入配置文件 → 选择此文件
+
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  microsoft:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/microsoft.txt"
+    path: ./ruleset/microsoft.yaml
+    interval: 86400
+  steam:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/steam.txt"
+    path: ./ruleset/steam.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  ai:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/ai.txt"
+    path: ./ruleset/ai.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+# 分流规则（优先级从高到低）
+rules:
+  - RULE-SET,applications,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,ai,Proxy
+  - RULE-SET,steam,DIRECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,proxy,Proxy
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,microsoft,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,telegramcidr,Proxy
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,Proxy
