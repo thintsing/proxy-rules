@@ -1,132 +1,143 @@
-# Profile Enhancement Merge Template for Clash Verge
-# 引用 GitHub 规则集: https://github.com/thintsing/clash-rules
+# Profile Enhancement Merge Template for Clash Verge Rev
+# 引用 GitHub 规则集: https://github.com/thintsing/proxy-rules
 #
 # 本文件负责接管所有分流规则
 # 优先级: applications → private → reject → ai → steam → apple → proxy → direct → lancidr → cncidr → telegramcidr → GEOIP,CN → MATCH
 
-# 规则集提供者配置
+# 规则提供者（每天自动从 CDN 拉取更新）
 rule-providers:
-  # 域名规则集
+  # 广告拦截
   reject:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/reject.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
 
+  # 需要代理的网站
   proxy:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/proxy.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 86400
 
+  # 国内直连网站
   direct:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/direct.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
 
+  # Apple 全系服务
   apple:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/apple.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/apple.txt"
     path: ./ruleset/apple.yaml
     interval: 86400
 
-  steam:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/steam.txt"
-    path: ./ruleset/steam.yaml
-    interval: 86400
-
-  ai:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/ai.txt"
-    path: ./ruleset/ai.yaml
-    interval: 86400
-
-  icloud:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/icloud.txt"
-    path: ./ruleset/icloud.yaml
-    interval: 86400
-
-  private:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/private.txt"
-    path: ./ruleset/private.yaml
-    interval: 86400
-
-  # IP 段规则集
-  lancidr:
-    type: http
-    behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/lancidr.txt"
-    path: ./ruleset/lancidr.yaml
-    interval: 86400
-
-  telegramcidr:
-    type: http
-    behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/telegramcidr.txt"
-    path: ./ruleset/telegramcidr.yaml
-    interval: 86400
-
-  # 进程匹配规则集
-  cncidr:
-    type: http
-    behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/cncidr.txt"
-    path: ./ruleset/cncidr.yaml
-    interval: 86400
-
+  # Microsoft / Office / Teams / Azure
   microsoft:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/microsoft.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/microsoft.txt"
     path: ./ruleset/microsoft.yaml
     interval: 86400
 
+  # Steam 游戏平台
+  steam:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/steam.txt"
+    path: ./ruleset/steam.yaml
+    interval: 86400
+
+  # AI 网站（OpenAI / Claude 等）
+  ai:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/ai.txt"
+    path: ./ruleset/ai.yaml
+    interval: 86400
+
+  # iCloud 认证 / Private Relay / CloudKit
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  # 私有网络（内网 IP / NAS / 路由器）
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  # 局域网 IP 段
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  # Telegram IP 段
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+  # 中国大陆 IP 段
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  # 应用进程匹配
   applications:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/thintsing/clash-rules@main/applications.txt"
+    url: "https://cdn.jsdelivr.net/gh/thintsing/proxy-rules@main/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
 
 # 分流规则（优先级从高到低）
+# 注意：请确保下面的代理组名称和你的订阅配置中的组名完全一致
 rules:
-  # ===== 第 1 层：进程匹配（最高优先级） =====
-  - RULE-SET,applications,DIRECT
+  # ===== 第 1 层：应用进程匹配（最高优先级） =====
+  - RULE-SET,applications,🚀直接连接
 
-  # ===== 第 2 层：私有网络域名（路由器/内网） =====
-  - RULE-SET,private,🎯 全球直连
+  # ===== 第 2 层：私有网络 =====
+  - RULE-SET,private,🚀直接连接
 
   # ===== 第 3 层：广告拦截 =====
-  - RULE-SET,reject,🛑 全球拦截
+  - RULE-SET,reject,🔰国外流量
 
-  # ===== 第 4 层：特殊服务代理 =====
-  - RULE-SET,microsoft,Ⓜ️ 微软服务
-  - RULE-SET,ai,🤖 AI服务
-  - RULE-SET,steam,🎮 Steam
-  - RULE-SET,icloud,🚀 节点选择
-  - RULE-SET,apple,🍎 苹果服务
+  # ===== 第 4 层：特定服务分类 =====
+  - RULE-SET,microsoft,🚀直接连接
+  - RULE-SET,ai,🔰国外流量
+  - RULE-SET,steam,🚀直接连接
+  - RULE-SET,icloud,🚀直接连接
+  - RULE-SET,apple,🍎苹果服务
 
-  # ===== 第 5 层：通用代理/直连 =====
-  - RULE-SET,proxy,🚀 节点选择
-  - RULE-SET,direct,🎯 全球直连
+  # ===== 第 5 层：通用代理 / 直连 =====
+  - RULE-SET,proxy,🔰国外流量
+  - RULE-SET,direct,🚀直接连接
 
   # ===== 第 6 层：IP 段匹配 =====
-  - RULE-SET,lancidr,🎯 全球直连
-  - RULE-SET,telegramcidr,📲 电报信息
-  - RULE-SET,cncidr,🎯 全球直连
+  - RULE-SET,lancidr,🚀直接连接
+  - RULE-SET,telegramcidr,✈️Telegram
+  - RULE-SET,cncidr,🚀直接连接
 
   # ===== 第 7 层：GeoIP 兜底 =====
-  - GEOIP,CN,🎯 全球直连,no-resolve
-  - MATCH,🐟 漏网之鱼
+  - GEOIP,CN,🚀直接连接,no-resolve
+  - MATCH,🔰国外流量
