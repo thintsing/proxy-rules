@@ -154,7 +154,7 @@ rules:
 小火箭 → 配置 → 添加配置 → 输入 URL：
 
 ```
-https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/shadowrocket_rules.conf
+https://raw.githubusercontent.com/thintsing/proxy-rules/main/shadowrocket/shadowrocket_full.conf
 ```
 
 导入后即可使用，包含全部规则集和优先级排序。
@@ -253,7 +253,7 @@ https://raw.githubusercontent.com/thintsing/proxy-rules/main/nextin/nextin_rules
 | `*.txt` | 规则数据文件（共 13 个），通过 rule-providers 远程引用 |
 | `clash-verge-merge.yaml` | Clash Verge 增强配置（Merge），引用全部规则集 + 七层分流规则 |
 | `example-config.yaml` | 完整 Clash 配置示例，含节点 / 代理组 / DNS |
-| `shadowrocket/shadowrocket_rules.conf` | Shadowrocket 规则配置文件（一键导入） |
+| `shadowrocket/shadowrocket_full.conf` | Shadowrocket 规则配置文件（一键导入） |
 | `shadowrocket/*.list` | Shadowrocket 分类规则列表（按策略单独导入） |
 | `nextin/nextin_rules.yaml` | NexTIN 规则配置（rule-providers，支持自动更新） |
 | `nextin/nextin_rules.conf` | NexTIN 纯文本规则（一键导入） |
