@@ -363,3 +363,22 @@ iframeblock.mp.weixin.qq.com
 isdspeed.qq.com
 pingfore.qq.com
 report.huatuo.qq.com
+
+# 2026-07-06: classroom/erp/ebook/China-domains
+DOMAIN-SUFFIX,activity.sanmin.com.tw
+DOMAIN-SUFFIX,cdnec.sanmin.com.tw
+DOMAIN-SUFFIX,down.p2spdb.com
+DOMAIN-SUFFIX,ebck.cc
+DOMAIN-SUFFIX,images.aijiaocai.com
+DOMAIN-SUFFIX,m.ebck.cc
+DOMAIN-SUFFIX,nj.baidupcs.com
+DOMAIN-SUFFIX,pdfyl.ertongbook.com
+DOMAIN-SUFFIX,s01.sanmin.com.tw
+DOMAIN-SUFFIX,sb.scorecardresearch.com
+DOMAIN-SUFFIX,www.bookask.com
+DOMAIN-SUFFIX,www.chendianrong.com
+DOMAIN-SUFFIX,www.ebck.cc
+DOMAIN-SUFFIX,www.newbook8.com
+DOMAIN-SUFFIX,www.sanmin.com.tw
+DOMAIN-SUFFIX,www.shukui.net
+DOMAIN-SUFFIX,www.xiazainiu.com
