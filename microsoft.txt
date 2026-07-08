@@ -738,3 +738,6 @@ mobile.events.data.microsoft.com
 msrewardspme.azureedge.net
 storecatalogrevocation.storequality.microsoft.com
 tse1.mm.bing.net
+
+# 2026-07-08: new Win11 telemetry domains
+DOMAIN-SUFFIX,v20.events.data.microsoft.com
