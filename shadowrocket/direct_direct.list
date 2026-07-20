@@ -302,3 +302,10 @@ DOMAIN-SUFFIX,www.newbook8.com
 DOMAIN-SUFFIX,www.sanmin.com.tw
 DOMAIN-SUFFIX,www.shukui.net
 DOMAIN-SUFFIX,www.xiazainiu.com
+
+# Battle.net Chinese CDN
+DOMAIN-SUFFIX,blizzard.qq.com
+DOMAIN-SUFFIX,bnet.163.com
+DOMAIN-SUFFIX,cdn.blz.nos.netease.com
+DOMAIN-SUFFIX,battlenet.com.cn
+DOMAIN-SUFFIX,blz.nos.netease.com
