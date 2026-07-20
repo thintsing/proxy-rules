@@ -22,6 +22,13 @@ DOMAIN-SUFFIX,d.alicdn.com
 DOMAIN-SUFFIX,d.sinaimg.cn
 DOMAIN-SUFFIX,ding.wenote.cn
 DOMAIN-SUFFIX,displaycatalog.mp.microsoft.com
+
+# 战网国内CDN
+DOMAIN-SUFFIX,blizzard.qq.com
+DOMAIN-SUFFIX,bnet.163.com
+DOMAIN-SUFFIX,cdn.blz.nos.netease.com
+DOMAIN-SUFFIX,battlenet.com.cn
+DOMAIN-SUFFIX,blz.nos.netease.com
 DOMAIN-SUFFIX,dldir1.qq.com
 DOMAIN-SUFFIX,dldir2.qq.com
 DOMAIN-SUFFIX,dyn.wps.cn

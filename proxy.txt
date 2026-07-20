@@ -20,6 +20,40 @@ DOMAIN-SUFFIX,vod.provider.plex.tv
 DOMAIN-SUFFIX,www.plex.tv
 DOMAIN-SUFFIX,xpaywalletcdn-prod.azureedge.net
 
+# Battle.net / Blizzard
+DOMAIN-SUFFIX,battle.net
+DOMAIN-SUFFIX,blizzard.com
+DOMAIN-SUFFIX,blizzard.net
+DOMAIN-SUFFIX,blizzardcdn.net
+DOMAIN-SUFFIX,blz-contentstack.com
+DOMAIN-SUFFIX,blz.nos.netease.com
+DOMAIN-SUFFIX,battlenet.com.cn
+
+# 战网游戏相关
+DOMAIN-SUFFIX,diablo3.com
+DOMAIN-SUFFIX,diablo4.com
+DOMAIN-SUFFIX,overwatch.com
+DOMAIN-SUFFIX,playoverwatch.com
+DOMAIN-SUFFIX,hearthstone.com
+DOMAIN-SUFFIX,worldofwarcraft.com
+DOMAIN-SUFFIX,warcraft.com
+DOMAIN-SUFFIX,starcraft.com
+DOMAIN-SUFFIX,heroesofthestorm.com
+DOMAIN-SUFFIX,activision.com
+DOMAIN-SUFFIX,callofduty.com
+
+# 暴雪CDN(国际)
+DOMAIN-SUFFIX,blzddist1-a.akamaihd.net
+DOMAIN-SUFFIX,blzddist2-a.akamaihd.net
+DOMAIN-SUFFIX,blzddist3-a.akamaihd.net
+DOMAIN-SUFFIX,blzddistkr1-a.akamaihd.net
+DOMAIN-SUFFIX,blzddistkr2-a.akamaihd.net
+DOMAIN-SUFFIX,blizzard.gcdn.cloudnservices.com
+DOMAIN-SUFFIX,blizzard.nefficient.co.kr
+DOMAIN-SUFFIX,blizzardplus.com
+DOMAIN-SUFFIX,bnetcdn.com
+DOMAIN-SUFFIX,cdn.blz-contentstack.com
+
 ﻿# 代理规则集
 # 需要翻墙的国外网站和服务
 
