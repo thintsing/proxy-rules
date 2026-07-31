@@ -2,32 +2,32 @@
 # 以下规则已从 direct.txt 迁移至此
 
 # 本地回环
-IP-CIDR,127.0.0.0/8,no-resolve
-IP-CIDR,::1/128,no-resolve
+127.0.0.0/8
+::1/128
 
 # 私有 A 类
-IP-CIDR,10.0.0.0/8,no-resolve
+10.0.0.0/8
 
 # 私有 B 类
-IP-CIDR,172.16.0.0/12,no-resolve
+172.16.0.0/12
 
 # 私有 C 类
-IP-CIDR,192.168.0.0/16,no-resolve
+192.168.0.0/16
 
 # 运营商级 NAT (CGNAT)
-IP-CIDR,100.64.0.0/10,no-resolve
+100.64.0.0/10
 
 # 链路本地
-IP-CIDR,169.254.0.0/16,no-resolve
+169.254.0.0/16
 
 # 多播地址
-IP-CIDR,224.0.0.0/4,no-resolve
+224.0.0.0/4
 
 # 保留地址
-IP-CIDR,240.0.0.0/4,no-resolve
-IP-CIDR,255.255.255.255/32,no-resolve
+240.0.0.0/4
+255.255.255.255/32
 
 # IPv6 链路本地
-IP-CIDR,fc00::/7,no-resolve
-IP-CIDR,fe80::/10,no-resolve
-IP-CIDR,ff00::/8,no-resolve
+fc00::/7
+fe80::/10
+ff00::/8
