@@ -1,4 +1,9 @@
 
+# Parsec
+DOMAIN-SUFFIX,parsec.app
+DOMAIN-SUFFIX,parsecgaming.com
+DOMAIN-SUFFIX,parsec-cdn.com
+
 # Plex
 DOMAIN-SUFFIX,analytics.plex.tv
 DOMAIN-SUFFIX,app.plex.tv
