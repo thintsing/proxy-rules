@@ -40,16 +40,6 @@ payload:
   - PROCESS-NAME,League of Legends.exe,DIRECT
   - PROCESS-NAME,LeagueClient.exe,DIRECT
   - PROCESS-NAME,LeagueClientUx.exe,DIRECT
-  - PROCESS-NAME,World of Warcraft.exe,DIRECT
-  - PROCESS-NAME,Warcraft III.exe,DIRECT
-  - PROCESS-NAME,StarCraft.exe,DIRECT
-  - PROCESS-NAME,StarCraft II.exe,DIRECT
-  - PROCESS-NAME,Overwatch.exe,DIRECT
-  - PROCESS-NAME,Hearthstone.exe,DIRECT
-  - PROCESS-NAME,Diablo III.exe,DIRECT
-  - PROCESS-NAME,Diablo IV.exe,DIRECT
-  - PROCESS-NAME,WoW.exe,DIRECT
-  - PROCESS-NAME,Battle.net.exe,DIRECT
 
   # ==================== 国际游戏（代理） ====================
   - PROCESS-NAME,steam.exe,🎮 Steam
@@ -57,6 +47,17 @@ payload:
   - PROCESS-NAME,steamservice.exe,🎮 Steam
   - PROCESS-NAME,steamerrorreporter.exe,🎮 Steam
   - PROCESS-NAME,epicgameslauncher.exe,🎮 Steam
+  - PROCESS-NAME,Battle.net.exe,🎮 Steam
+  - PROCESS-NAME,Battle.net Helper.exe,🎮 Steam
+  - PROCESS-NAME,Diablo III.exe,🎮 Steam
+  - PROCESS-NAME,Diablo IV.exe,🎮 Steam
+  - PROCESS-NAME,Overwatch.exe,🎮 Steam
+  - PROCESS-NAME,World of Warcraft.exe,🎮 Steam
+  - PROCESS-NAME,Warcraft III.exe,🎮 Steam
+  - PROCESS-NAME,StarCraft.exe,🎮 Steam
+  - PROCESS-NAME,StarCraft II.exe,🎮 Steam
+  - PROCESS-NAME,Hearthstone.exe,🎮 Steam
+  - PROCESS-NAME,Agent.exe,🎮 Steam
 
   # ==================== 系统服务 ====================
   - PROCESS-NAME,SystemSettings.exe,DIRECT
