@@ -389,3 +389,12 @@ DOMAIN-SUFFIX,www.newbook8.com
 DOMAIN-SUFFIX,www.sanmin.com.tw
 DOMAIN-SUFFIX,www.shukui.net
 DOMAIN-SUFFIX,www.xiazainiu.com
+
+# Windows Network Connectivity Status Indicator
+DOMAIN-SUFFIX,msftncsi.com
+DOMAIN-SUFFIX,msftncsi.com
+
+
+# Tencent telemetry
+DOMAIN-SUFFIX,tgalileo.com
+

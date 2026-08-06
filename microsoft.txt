@@ -717,7 +717,7 @@ settings-win.data.microsoft.com
 slscr.update.microsoft.com
 static2.sharepointonline.com
 storage.live.com
-substrate.office.com
+DOMAIN-SUFFIX,substrate.office.com
 telem-edge.smartscreen.microsoft.com
 testfamilysafety.bing.com
 th.bing.com
