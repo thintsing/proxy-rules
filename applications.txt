@@ -18,6 +18,10 @@ payload:
   - PROCESS-NAME,wpp.exe,DIRECT
   - PROCESS-NAME,et.exe,DIRECT
 
+  # ==================== 远程桌面（直连，避免串流走代理导致断线）====================
+  - PROCESS-NAME,parsecd.exe,DIRECT
+  - PROCESS-NAME,Parsec.exe,DIRECT
+
   # ==================== 国内游戏（直连） ====================
   - PROCESS-NAME,GenshinImpact.exe,DIRECT
   - PROCESS-NAME,YuanShen.exe,DIRECT
