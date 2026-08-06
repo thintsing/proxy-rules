@@ -21,6 +21,10 @@ payload:
   # ==================== 远程桌面（直连，避免串流走代理导致断线）====================
   - PROCESS-NAME,parsecd.exe,DIRECT
   - PROCESS-NAME,Parsec.exe,DIRECT
+  - PROCESS-NAME,vncserver.exe,DIRECT
+  - PROCESS-NAME,vncagent.exe,DIRECT
+  - PROCESS-NAME,vncserverui.exe,DIRECT
+  - PROCESS-NAME,winvnc.exe,DIRECT
 
   # ==================== 国内游戏（直连） ====================
   - PROCESS-NAME,GenshinImpact.exe,DIRECT
