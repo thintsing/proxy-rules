@@ -22,6 +22,7 @@ payload:
   - PROCESS-NAME,parsecd.exe,DIRECT
   - PROCESS-NAME,Parsec.exe,DIRECT
   - PROCESS-NAME,vncserver.exe,DIRECT
+  - PROCESS-NAME,vncviewer.exe,DIRECT
   - PROCESS-NAME,vncagent.exe,DIRECT
   - PROCESS-NAME,vncserverui.exe,DIRECT
   - PROCESS-NAME,winvnc.exe,DIRECT
