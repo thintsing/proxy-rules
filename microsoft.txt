@@ -741,3 +741,8 @@ tse1.mm.bing.net
 
 # 2026-07-08: new Win11 telemetry domains
 DOMAIN-SUFFIX,v20.events.data.microsoft.com
+
+# Missing Microsoft domains (2026-08-08)
+aadcdnjp.msftauth.net
+vcf.bing.com
+
