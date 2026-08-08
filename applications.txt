@@ -1,4 +1,4 @@
-# 应用进程匹配规则（behavior: classical）
+﻿# 应用进程匹配规则（behavior: classical）
 # 按进程名称匹配，让特定应用强制走指定策略
 # 注意：只支持 Clash Premium/mihomo 内核
 # 格式：PROCESS-NAME,进程名,策略组
