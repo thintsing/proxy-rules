@@ -2,52 +2,46 @@
 # Parsec
 # Plex
 # Battle.net / Blizzard
-# 战网游戏相关
-# 暴雪CDN(国际)
-# 需要翻墙的国外网站和服务
-# GitHub
+# 鎴樼綉娓告垙鐩稿叧
+# 鏆撮洩CDN(鍥介檯)
+# 闇€瑕佺炕澧欑殑鍥藉缃戠珯鍜屾湇鍔?# GitHub
 # Google
 # StackOverflow
-# AI服务 - OpenAI
-# AI服务 - Anthropic
-# AI服务 - Google AI
-# AI服务 - 其他
-# 流媒体 - YouTube
-# 流媒体 - Netflix
-# 流媒体 - Spotify
-# 流媒体 - Twitch
-# 流媒体 - Disney+
-# 流媒体 - Amazon Prime
-# 流媒体 - HBO
-# 流媒体 - Hulu
-# 流媒体 - 日本
+# AI鏈嶅姟 - OpenAI
+# AI鏈嶅姟 - Anthropic
+# AI鏈嶅姟 - Google AI
+# AI鏈嶅姟 - 鍏朵粬
+# 娴佸獟浣?- YouTube
+# 娴佸獟浣?- Netflix
+# 娴佸獟浣?- Spotify
+# 娴佸獟浣?- Twitch
+# 娴佸獟浣?- Disney+
+# 娴佸獟浣?- Amazon Prime
+# 娴佸獟浣?- HBO
+# 娴佸獟浣?- Hulu
+# 娴佸獟浣?- 鏃ユ湰
 # Telegram
 # Twitter/X
 # Facebook
-# 社交媒体 - 其他
-# 云服务
-# 开发工具
-# 学术/技术
-# 微软服务（国际）
-# Steam（国际）
-# 文件存储
-# 其他国外服务
-# 补充 - 常用国外服务
-# 开发工具补充
-# 技术社区
-# 设计/创意
-# 学习/教育
-# 新闻/资讯
-# 娱乐/视频
-# 购物/电商
-# 旅游/出行
-# 金融/支付
-# 工具/效率
-# 通讯/协作
-# 安全/隐私
-# 游戏
-# 运动/健康
-# 其他常用
+# 绀句氦濯掍綋 - 鍏朵粬
+# 浜戞湇鍔?# 寮€鍙戝伐鍏?# 瀛︽湳/鎶€鏈?# 寰蒋鏈嶅姟锛堝浗闄咃級
+# Steam锛堝浗闄咃級
+# 鏂囦欢瀛樺偍
+# 鍏朵粬鍥藉鏈嶅姟
+# 琛ュ厖 - 甯哥敤鍥藉鏈嶅姟
+# 寮€鍙戝伐鍏疯ˉ鍏?# 鎶€鏈ぞ鍖?# 璁捐/鍒涙剰
+# 瀛︿範/鏁欒偛
+# 鏂伴椈/璧勮
+# 濞变箰/瑙嗛
+# 璐墿/鐢靛晢
+# 鏃呮父/鍑鸿
+# 閲戣瀺/鏀粯
+# 宸ュ叿/鏁堢巼
+# 閫氳/鍗忎綔
+# 瀹夊叏/闅愮
+# 娓告垙
+# 杩愬姩/鍋ュ悍
+# 鍏朵粬甯哥敤
 # AI model platforms
 # Dart/Flutter ecosystem
 # Gaming platforms
@@ -106,7 +100,7 @@ payload:
   - 'blizzardplus.com'
   - 'bnetcdn.com'
   - 'cdn.blz-contentstack.com'
-  - '﻿# 代理规则集'
+  - '锘? 浠ｇ悊瑙勫垯闆?
   - 'github.com'
   - 'githubusercontent.com'
   - 'githubassets.com'
@@ -454,7 +448,6 @@ payload:
   - 'o1158394.ingest.us.sentry.io'
   - 'o4511072101138432.ingest.us.sentry.io'
   - 'pbs.twimg.com'
-  - 'pkgs.tailscale.com'
   - 'play.google.com'
   - 'prod.download.desktop.kiro.dev'
   - 'prod.us-east-1.auth.desktop.kiro.dev'

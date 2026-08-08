@@ -1,26 +1,18 @@
 
 # Microsoft / Windows update
-# 战网国内CDN
-# 国内网站、CDN、微软服务（国内）等
-# Google 国内 CDN
-# 微软服务（国内）
-# 国内电商
-# 国内搜索
-# 国内视频
-# 国内社交
-# 国内新闻
-# 国内生活服务
-# 国内手机厂商
-# 国内域名
-# 补充 - 国内常用服务
-# 国内视频平台
-# 国内音乐
-# 国内云存储
-# 国内办公
-# 国内开发
-# 国内金融
-# 国内教育
-# 国内政府/公共服务
+# 閹存缍夐崶钘夊敶CDN
+# 閸ヨ棄鍞寸純鎴犵彲閵嗕竼DN閵嗕礁浜曟潪顖涙箛閸斺槄绱欓崶钘夊敶閿涘鐡?# Google 閸ヨ棄鍞?CDN
+# 瀵邦喛钂嬮張宥呭閿涘牆娴楅崘鍜冪礆
+# 閸ヨ棄鍞撮悽闈涙櫌
+# 閸ヨ棄鍞撮幖婊呭偍
+# 閸ヨ棄鍞寸憴鍡涱暥
+# 閸ヨ棄鍞寸粈鍙ユ唉
+# 閸ヨ棄鍞撮弬浼存
+# 閸ヨ棄鍞撮悽鐔告た閺堝秴濮?# 閸ヨ棄鍞撮幍瀣簚閸樺倸鏅?# 閸ヨ棄鍞撮崺鐔锋倳
+# 鐞涖儱鍘?- 閸ヨ棄鍞寸敮鍝ユ暏閺堝秴濮?# 閸ヨ棄鍞寸憴鍡涱暥楠炲啿褰?# 閸ヨ棄鍞撮棅鍏呯
+# 閸ヨ棄鍞存禍鎴濈摠閸?# 閸ヨ棄鍞撮崝鐐插彆
+# 閸ヨ棄鍞村鈧崣?# 閸ヨ棄鍞撮柌鎴ｇ€?# 閸ヨ棄鍞撮弫娆掑仜
+# 閸ヨ棄鍞撮弨鍨盎/閸忣剙鍙￠張宥呭
 # CDN - jsDelivr usado pelas rule-providers
 # AdGuard filters
 # Immersive Translate
@@ -101,7 +93,7 @@ payload:
   - 'wps-advice-activity.wps.com'
   - 'wps-live-cloud.wps.com'
   - 'www.ipip.net'
-  - '﻿# 直连规则集'
+  - '閿? 閻╃绻涚憴鍕灟闂?
   - '2mdn-cn.net'
   - 'admob-cn.com'
   - 'app-measurement-cn.com'
@@ -384,3 +376,9 @@ payload:
   - 'msftncsi.com'
   - 'msftncsi.com'
   - 'tgalileo.com'
+# Tailscale
+  - 'login.tailscale.com'
+  - 'api.tailscale.com'
+  - 'pkgs.tailscale.com'
+  - 'controlplane.tailscale.com'
+  - 'ts.tailscale.com'

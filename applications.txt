@@ -1,4 +1,4 @@
-﻿# 应用进程匹配规则（behavior: classical）
+# 应用进程匹配规则（behavior: classical）
 # 按进程名称匹配，让特定应用强制走指定策略
 # 注意：只支持 Clash Premium/mihomo 内核
 # 格式：PROCESS-NAME,进程名,策略组
@@ -19,8 +19,8 @@ payload:
   - PROCESS-NAME,et.exe,DIRECT
 
   # ==================== 远程桌面（直连，避免串流走代理导致断线）====================
-  - PROCESS-NAME,parsecd.exe,DIRECT
-  - PROCESS-NAME,Parsec.exe,DIRECT
+  - PROCESS-NAME,parsecd.exe,🌍 国外媒体
+  - PROCESS-NAME,Parsec.exe,🌍 国外媒体
   - PROCESS-NAME,vncserver.exe,DIRECT
   - PROCESS-NAME,vncviewer.exe,DIRECT
   - PROCESS-NAME,vncagent.exe,DIRECT
