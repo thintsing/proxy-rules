@@ -61,6 +61,9 @@ payload:
   - PROCESS-NAME,Agent.exe,🎮 Steam
 
   # ==================== 系统服务 ====================
+  # Tailscale（强制直连，避免被 TUN 拦截）
+  - PROCESS-NAME,tailscaled.exe,DIRECT
+  - PROCESS-NAME,tailscale.exe,DIRECT
   - PROCESS-NAME,SystemSettings.exe,DIRECT
   - PROCESS-NAME,SearchApp.exe,DIRECT
   - PROCESS-NAME,WindowsUpdate.exe,DIRECT
