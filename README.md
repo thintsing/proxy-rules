@@ -34,9 +34,19 @@ Clash 规则配置，基于 [Loyalsoldier/clash-rules](https://github.com/Loyals
 | `custom-direct.txt` | 直连覆盖（Tailscale / msftncsi / VNC / 国内游戏） |
 | `example-config.yaml` | 从零手写 Clash 配置时的完整示例（含节点、代理组、规则） |
 | `shadowrocket/shadowrocket_full.conf` | Shadowrocket 完整配置 |
-| `loyalsoldier/*.txt` | Loyalsoldier 各分类规则快照（**归档用**，模板并不引用，见下方说明） |
+| `loyalsoldier/*.txt` | Loyalsoldier 各分类规则快照，14 个（**归档用**，模板并不引用，见下方说明） |
 
-> **关于 `loyalsoldier/` 目录**：模板里 provider 的 `url` 直接指向 Loyalsoldier 的官方 release 地址，**不**引用本目录。本目录只是历史快照归档，不参与运行，也不影响自动更新。
+> **关于 `loyalsoldier/` 目录**：模板里 provider 的 `url` 直接指向 Loyalsoldier 的官方 release 地址，**不**引用本目录。本目录只是快照归档，不参与运行，也不影响自动更新。仓库内没有任何文件引用这些本地路径。
+>
+> 用途是「离线兜底 / 版本对照」：想查某个域名当前是否被拦截，或想把 provider 改成本地 `type: file` 时，可以直接拿这里的文件用。
+>
+> | 项 | 值 |
+> |---|---|
+> | 快照来源 | `Loyalsoldier/clash-rules` 的 `release` 分支 |
+> | 上游 commit | `4aeabf1f571334a89c2e6a1f5d608d323d24ae4c` |
+> | 刷新时间 | 2026-09-18（上游提交于 2026-09-18T00:41:19Z） |
+>
+> 覆盖 14 个分类：`apple` / `applications` / `cncidr` / `direct` / `gfw` / `google` / `greatfire` / `icloud` / `lancidr` / `private` / `proxy` / `reject` / `telegramcidr` / `tld-not-cn`。
 
 ## 依赖
 
@@ -149,7 +159,7 @@ dns:
 
 - **规则集**（`reject` / `proxy` / `direct` / `applications` / `lancidr`）：模板设了 `interval: 86400`，**每 24 小时自动拉取**，无需手动维护。
 - **模板本身**：Clash Verge Rev 的增强槽位会在订阅更新时一并拉取；改动后重启 Clash 生效。
-- 仓库里的 `loyalsoldier/*.txt` 是归档快照，不参与更新。
+- `loyalsoldier/*.txt` 是归档快照，**不自动更新**，需要时手动从上游重新拉取（见上方快照表格记录的上游 commit）。
 
 ## 常见问题
 
