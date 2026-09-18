@@ -6,7 +6,7 @@ Clash 规则配置，基于 [Loyalsoldier/clash-rules](https://github.com/Loyals
 
 ```
 ┌─ 规则优先级 ───────────────────────────────────────────────────┐
-│ 0. 强制直连 (1 条)          → bing.com 全系恒定 DIRECT         │
+│ 0. 强制直连 (2 条)          → bing.com / bing.net 恒定 DIRECT  │
 │ 1. 自定义覆盖 (3 RULE-SET)  → AI / Steam / 直连覆盖            │
 │ 2. Loyalsoldier 核心 (4)    → applications/reject/proxy/direct │
 │ 3. LAN 私有网段 (1 RULE-SET)→ lancidr                          │
@@ -14,7 +14,7 @@ Clash 规则配置，基于 [Loyalsoldier/clash-rules](https://github.com/Loyals
 │ 5. GEOIP,CN                 → 国内 IP 直连                     │
 │ 6. MATCH                    → 最终兜底                         │
 └──────────────────────────────────────────────────────────────┘
-                       共 19 条规则
+                       共 20 条规则
 ```
 
 设计要点：
@@ -23,11 +23,13 @@ Clash 规则配置，基于 [Loyalsoldier/clash-rules](https://github.com/Loyals
 - **第 1 层排在 GEOSITE 之前**，保证自定义覆盖优先级最高。
 - **GEOSITE 段零网络开销**，分类数据来自内核自带的 `geosite.dat`，不产生额外请求。
 
+> **`bing.net` 为什么要单独列**：它被 Loyalsoldier 的 `proxy.txt` 收进了代理名单，于是 `*.bing.net` 会绕道境外节点。而 `bing.net` 的真实服务（如 Windows Defender 遥测 `ts1.tc.mm.bing.net`）在国内本就有就近节点，走代理反而更慢甚至失败。
+
 ## 文件说明
 
 | 文件 | 用途 |
 |------|------|
-| `clash-verge-merge.yaml` | **Clash Verge Rev merge 模板**：8 个 rule-provider + 19 条规则 + DNS 策略 |
+| `clash-verge-merge.yaml` | **Clash Verge Rev merge 模板**：8 个 rule-provider + 20 条规则 + DNS 策略 |
 | `clash-verge-groups.yaml` | **Clash Verge Rev groups 模板**：补齐 merge 规则引用、但机场订阅通常没有的 2 个代理组 |
 | `custom-ai.txt` | AI 服务域名覆盖（Clash 用 `behavior: classical`） |
 | `custom-steam.txt` | Steam / Blizzard 游戏覆盖 |
@@ -135,11 +137,15 @@ dns:
       - 223.5.5.5
     "+.bing.com":
       - 223.5.5.5
+    "bing.net":
+      - 223.5.5.5
+    "+.bing.net":
+      - 223.5.5.5
 ```
 
-**背景**：在 `fake-ip` + `fallback-filter: geoip:CN` 的配置下，`bing.com` 会解析到微软国际 anycast IP（如 `150.171.x.x`），被判定为非 CN → 触发境外 fallback DNS。如果那个 fallback 在本网络不可达，就表现为「解析超时、页面打不开」。
+**背景**：在 `fake-ip` + `fallback-filter: geoip:CN` 的配置下，bing 域会解析到微软国际 anycast IP（如 `150.171.x.x`、`204.79.197.200`），被判定为非 CN → 触发境外 fallback DNS。如果那个 fallback 在本网络不可达，就表现为「解析超时、页面打不开」。
 
-**注意：规则层直连和 DNS 策略必须同时存在**——只写 `DOMAIN-SUFFIX,bing.com,DIRECT` 而不修 DNS，仍然会卡在解析阶段（实测：只加规则层时 `rewards.bing.com` 反而从 308 变成超时）。
+**注意：规则层直连和 DNS 策略必须同时存在**——只写 `DOMAIN-SUFFIX,bing.com,DIRECT` 而不修 DNS，仍然会卡在解析阶段（实测：只加规则层时 `rewards.bing.com` 反而从 308 变成超时）。反过来也成立：一个域**走代理**时不查本地 DNS 所以看不出问题，一旦改直连就会暴露——`bing.net` 就是这种情况（改直连后 `cn.bing.net` 立即报 `dns resolve failed`）。
 
 如果你用的是自己的 DNS 配置，**整段删掉**即可；需要时再照葫芦画瓢追加其它微软域名。
 

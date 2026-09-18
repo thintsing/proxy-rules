@@ -3,7 +3,7 @@
 # ================================================================
 # 5 Loyalsoldier (proxy/direct/reject/applications/lancidr)
 # + 3 自定义 (AI/Steam/Direct覆盖)
-# + 1 强制直连 (bing.com)
+# + 2 强制直连 (bing.com / bing.net)
 # + 8 GEOSITE
 # + 1 GEOIP + 1 MATCH
 # ================================================================
@@ -87,10 +87,15 @@ rule-providers:
 
 rules:
   # ── 第0层：强制直连（不受任何组选择影响）──
-  # bing.com 及全部子域(rewards / cn / www ...)强制 DIRECT。
+  # bing.com / bing.net 及全部子域强制 DIRECT。
   # 不走 GEOSITE,microsoft 是因为那会命中 Ⓜ️ 微软服务(select 组),
   # 一旦在面板里切换过该组, bing 就会跟着变; 用 DIRECT 关键字则恒定直连。
+  #
+  # 为什么 bing.net 也要单独列: 它被 Loyalsoldier 的 proxy.txt 收进了代理名单,
+  # 于是 *.bing.net 会绕道境外节点。而 bing.net 的真实服务(如 Windows Defender
+  # 遥测 ts1.tc.mm.bing.net)在国内本就有就近节点, 走代理反而更慢甚至连不上。
   - DOMAIN-SUFFIX,bing.com,DIRECT
+  - DOMAIN-SUFFIX,bing.net,DIRECT
 
   # ── 第1层：自定义覆盖 ──
   - RULE-SET,custom-ai,🤖 AI服务
@@ -125,12 +130,14 @@ rules:
 # ================================================================
 # DNS: bing 系域名强制境内解析（可选块，不需要可整段删除）
 # ================================================================
-# 背景: 在 fake-ip + fallback-filter(geoip:CN) 的配置下, bing.com 会解析到
-#       微软国际 anycast IP(150.171.x.x 等), 被判定为非 CN → 触发境外 fallback
-#       DNS。若该 fallback 在本网络不可达, 就表现为“解析超时、页面打不开”。
+# 背景: 在 fake-ip + fallback-filter(geoip:CN) 的配置下, bing 域会解析到
+#       微软国际 anycast IP(150.171.x.x / 204.79.197.200 等), 被判定为非 CN
+#       → 触发境外 fallback DNS。若该 fallback 在本网络不可达, 就表现为
+#       “解析超时、页面打不开”。
 #       让 bing 系域名只用境内 nameserver, 跳过境外 fallback 即可。
-# 注意: 规则层直连(DOMAIN-SUFFIX,bing.com,DIRECT)与这里必须同时存在——
+# 注意: 规则层直连(DOMAIN-SUFFIX,bing.*,DIRECT)与这里必须同时存在——
 #       只直连不修 DNS, 仍会卡在解析阶段。
+#       (反过来也一样: 走代理时不查本地 DNS 所以看不出问题, 一旦改直连就暴露。)
 # 其它微软域名(live.com / microsoft.com 等)如遇同类问题, 照此追加即可。
 # ================================================================
 dns:
@@ -138,4 +145,8 @@ dns:
     "bing.com":
       - 223.5.5.5
     "+.bing.com":
+      - 223.5.5.5
+    "bing.net":
+      - 223.5.5.5
+    "+.bing.net":
       - 223.5.5.5
