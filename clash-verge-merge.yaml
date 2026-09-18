@@ -3,8 +3,19 @@
 # ================================================================
 # 5 Loyalsoldier (proxy/direct/reject/applications/lancidr)
 # + 3 自定义 (AI/Steam/Direct覆盖)
+# + 1 强制直连 (bing.com)
 # + 8 GEOSITE
 # + 1 GEOIP + 1 MATCH
+# ================================================================
+#
+# ⚠️ 重要: provider 的 proxy 字段
+#   mihomo 拉取 rule-provider 时, 由内核自身发起出站连接, 会绕过它自己的
+#   TUN 与规则引擎(防环), 等价于“真·直连”。因此在无法直连
+#   raw.githubusercontent.com 的网络(如国内直连环境)下, 不加该字段会报:
+#       dns resolve failed: couldn't find ip
+#       TLS handshake timeout
+#   解决: 为每个 provider 指定一个可用的代理组/节点(见下方 proxy)。
+#   请按你实际的代理组名修改; 若你的网络本就能直连 GitHub, 删掉这些行即可。
 # ================================================================
 
 rule-providers:
@@ -15,6 +26,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/thintsing/proxy-rules/main/custom-ai.txt"
     path: ./ruleset/custom-ai.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   custom-steam:
     type: http
@@ -22,6 +34,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/thintsing/proxy-rules/main/custom-steam.txt"
     path: ./ruleset/custom-steam.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   custom-direct:
     type: http
@@ -29,6 +42,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/thintsing/proxy-rules/main/custom-direct.txt"
     path: ./ruleset/custom-direct.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   # ======== Loyalsoldier 核心规则 ========
   reject:
@@ -37,6 +51,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   proxy:
     type: http
@@ -44,6 +59,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   direct:
     type: http
@@ -51,6 +67,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   applications:
     type: http
@@ -58,6 +75,7 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
   lancidr:
     type: http
@@ -65,8 +83,15 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
     path: ./ruleset/lancidr.yaml
     interval: 86400
+    proxy: "♻️ 自动选择"
 
 rules:
+  # ── 第0层：强制直连（不受任何组选择影响）──
+  # bing.com 及全部子域(rewards / cn / www ...)强制 DIRECT。
+  # 不走 GEOSITE,microsoft 是因为那会命中 Ⓜ️ 微软服务(select 组),
+  # 一旦在面板里切换过该组, bing 就会跟着变; 用 DIRECT 关键字则恒定直连。
+  - DOMAIN-SUFFIX,bing.com,DIRECT
+
   # ── 第1层：自定义覆盖 ──
   - RULE-SET,custom-ai,🤖 AI服务
   - RULE-SET,custom-steam,🎮 Steam
@@ -96,3 +121,21 @@ rules:
 
   # ── 第6层：最终兜底 ──
   - MATCH,🐟 漏网之鱼
+
+# ================================================================
+# DNS: bing 系域名强制境内解析（可选块，不需要可整段删除）
+# ================================================================
+# 背景: 在 fake-ip + fallback-filter(geoip:CN) 的配置下, bing.com 会解析到
+#       微软国际 anycast IP(150.171.x.x 等), 被判定为非 CN → 触发境外 fallback
+#       DNS。若该 fallback 在本网络不可达, 就表现为“解析超时、页面打不开”。
+#       让 bing 系域名只用境内 nameserver, 跳过境外 fallback 即可。
+# 注意: 规则层直连(DOMAIN-SUFFIX,bing.com,DIRECT)与这里必须同时存在——
+#       只直连不修 DNS, 仍会卡在解析阶段。
+# 其它微软域名(live.com / microsoft.com 等)如遇同类问题, 照此追加即可。
+# ================================================================
+dns:
+  nameserver-policy:
+    "bing.com":
+      - 223.5.5.5
+    "+.bing.com":
+      - 223.5.5.5

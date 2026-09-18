@@ -1,0 +1,37 @@
+# ================================================================
+# Profile Enhancement Groups Template for Clash Verge
+# ================================================================
+# 作用: 补齐 merge 规则引用、但机场订阅通常没有的 2 个代理组
+#       (🤖 AI服务 / 🎮 Steam)
+#
+# 为什么需要:
+#   clash-verge-merge.yaml 的 rules 里引用了 🤖 AI服务 与 🎮 Steam,
+#   如果订阅里不存在同名组, 这两条 RULE-SET 规则会失效(组名找不到)。
+#   用 Clash Verge 的 groups 增强槽 append 两张组进去即可, 
+#   无需改动会自动更新的订阅文件本身。
+#
+# 用法: Clash Verge Rev → 订阅 → 右键「编辑增强」→ groups 槽位填入
+#       https://raw.githubusercontent.com/thintsing/proxy-rules/main/clash-verge-groups.yaml
+#
+# 适配提示: 下方 proxies 引用的 「🚀 节点选择」「♻️ 自动选择」是 ACL4SSR 系
+#           常见组名, 请按你自己订阅里实际存在的组名修改。
+# ================================================================
+
+prepend: []
+
+append:
+  - name: "🤖 AI服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "♻️ 自动选择"
+      - DIRECT
+
+  - name: "🎮 Steam"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "♻️ 自动选择"
+      - DIRECT
+
+delete: []
