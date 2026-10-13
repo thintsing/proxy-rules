@@ -3,9 +3,10 @@
 # ================================================================
 # 5 Loyalsoldier (proxy/direct/reject/applications/lancidr)
 # + 3 自定义 (AI/Steam/Direct覆盖)
-# + 2 强制直连 (bing.com / bing.net)
+# + 22 强制直连 (bing.com / bing.net + 微软账号链路 20 条)
 # + 8 GEOSITE
 # + 1 GEOIP + 1 MATCH
+# 共 40 条规则 (22 条第0层 + 18 条 RULE-SET/GEOSITE/GEOIP/MATCH)
 # ================================================================
 #
 # ⚠️ 重要: provider 的 proxy 字段
@@ -97,6 +98,34 @@ rules:
   - DOMAIN-SUFFIX,bing.com,DIRECT
   - DOMAIN-SUFFIX,bing.net,DIRECT
 
+  # ── 微软账号 / Rewards / Bing 周边链路（2026-10-08 加，通用）──
+  # 背景: Loyalsoldier 的 proxy.txt 显式收录了 +.live.com / +.microsoft.com /
+  #   +.bingapis.com / +.hotmail.com / +.msedge.net 等, 而 RULE-SET,proxy 排在
+  #   GEOSITE,microsoft 之前 → Ⓜ️ 微软服务 这个组被彻底架空:
+  #   **无论把它设成「全球直连」还是某个节点都不会被命中**。
+  #   所以想强直连只能加在第0层。
+  # 目的: 让登录(OAuth)、积分链路与 Bing 搜索走同一出口 IP, 避免 IP 分裂被风控。
+  - DOMAIN-SUFFIX,live.com,DIRECT
+  - DOMAIN-SUFFIX,live.net,DIRECT
+  - DOMAIN-SUFFIX,hotmail.com,DIRECT
+  - DOMAIN-SUFFIX,outlook.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+  - DOMAIN-SUFFIX,microsoftonline-p.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft365.com,DIRECT
+  - DOMAIN-SUFFIX,msftauth.net,DIRECT
+  - DOMAIN-SUFFIX,msauth.net,DIRECT
+  - DOMAIN-SUFFIX,msauthimages.net,DIRECT
+  - DOMAIN-SUFFIX,windows.com,DIRECT
+  - DOMAIN-SUFFIX,msedge.net,DIRECT
+  - DOMAIN-SUFFIX,msecnd.net,DIRECT
+  - DOMAIN-SUFFIX,office.com,DIRECT
+  - DOMAIN-SUFFIX,office.net,DIRECT
+  - DOMAIN-SUFFIX,bingapis.com,DIRECT
+  - DOMAIN-SUFFIX,bingapistatistics.com,DIRECT
+  - DOMAIN-SUFFIX,bingvisualsearch.com,DIRECT
+  - DOMAIN-SUFFIX,sfx.ms,DIRECT
+
   # ── 第1层：自定义覆盖 ──
   - RULE-SET,custom-ai,🤖 AI服务
   - RULE-SET,custom-steam,🎮 Steam
@@ -109,7 +138,17 @@ rules:
   - RULE-SET,direct,🎯 全球直连
 
   # ── 第3层：私有 IP 段（LAN CIDR）──
-  - RULE-SET,lancidr,🎯 全球直连
+  # ★ no-resolve 必加（2026-10-13 DNS 泄露修复，通用，重要）:
+  #   lancidr 的 behavior 是 **ipcidr**。不带 no-resolve 时, mihomo 为了拿它匹配
+  #   **每条域名连接**都会先用 nameserver 做一次本地解析 —— 于是即使该域名最终走代理,
+  #   AliDNS(223.5.5.5) 与 DNSPod(doh.pub) 也已经看到这次查询了 = DNS 泄露。
+  #   实测(HTTP 请求本身经 Clash 代理)中国解析器出口 IP 有 8 个:
+  #   182.242.140.60/61 (AliDNS) + 112.91.94.84 / 122.192.19.222 / 157.255.11.181 /
+  #   163.177.28.250 / 49.234.15.166 / 61.241.56.245 (DNSPod)。
+  #   本模板里第0层 IP-CIDR 与 GEOIP,CN 都带 no-resolve —— 所以 lancidr 是唯一触发点。
+  # ⚠ 代价: 本规则此后只对「按 IP 访问」生效; 用**域名**访问内网/Tailnet 主机
+  #   会掉到 MATCH → 兜底走代理, 需另加第0层 DOMAIN-SUFFIX 直连规则并配 nameserver-policy。
+  - RULE-SET,lancidr,🎯 全球直连,no-resolve
 
   # ── 第4层：GEOSITE 补充 ──
   - GEOSITE,apple,🍎 苹果服务
@@ -141,6 +180,20 @@ rules:
 # 其它微软域名(live.com / microsoft.com 等)如遇同类问题, 照此追加即可。
 # ================================================================
 dns:
+  # ★ fallback 必须换成**境内可达**的 DoH（2026-10-13 修复，通用，重要）
+  #   订阅自带的 dns.fallback 常见为 [https://1.1.1.1/dns-query, https://dns.google/dns-query],
+  #   这两个在国内均不可达。而 fallback-filter 的 geoip:CN 语义是:
+  #     「nameserver 解析结果若不是中国 IP, 就改用 fallback 的答案」。
+  #   两者叠加 → **任何解析到非中国 IP 的域名, 只要需要 mihomo 本地解析, 就必然失败**;
+  #   表现为直连时 5s 拨号超时 / HTTP 502。
+  #   实测受害面: lencr.org / ocsp.digicert.com (Windows 取中间证书 AIA 与吊销列表 OCSP
+  #   的地址) 取不到中间证书 → 证书链建不起来 → 浏览器判「证书不可信」, 页面打不开
+  #   (login.tailscale.com 正是 CN=YE1, O=Let's Encrypt 签发, AIA 落在 lencr.org)。
+  #   修法: 把 fallback 换成可达的境内 DoH, 语义不变, 只是把「必然失败」变成「可用」。
+  #   注意: 在 Clash Verge 的 merge 槽位里, 该字段是**替换**而非追加(改后原值消失)。
+  fallback:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
   nameserver-policy:
     "bing.com":
       - 223.5.5.5
@@ -149,4 +202,85 @@ dns:
     "bing.net":
       - 223.5.5.5
     "+.bing.net":
+      - 223.5.5.5
+    # ── 微软账号链路（与第0层那 21 条 DOMAIN-SUFFIX 一一对应，缺一即报 dns resolve failed）──
+    "live.com":
+      - 223.5.5.5
+    "+.live.com":
+      - 223.5.5.5
+    "live.net":
+      - 223.5.5.5
+    "+.live.net":
+      - 223.5.5.5
+    "hotmail.com":
+      - 223.5.5.5
+    "+.hotmail.com":
+      - 223.5.5.5
+    "outlook.com":
+      - 223.5.5.5
+    "+.outlook.com":
+      - 223.5.5.5
+    "microsoft.com":
+      - 223.5.5.5
+    "+.microsoft.com":
+      - 223.5.5.5
+    "microsoftonline.com":
+      - 223.5.5.5
+    "+.microsoftonline.com":
+      - 223.5.5.5
+    "microsoftonline-p.com":
+      - 223.5.5.5
+    "+.microsoftonline-p.com":
+      - 223.5.5.5
+    "microsoft365.com":
+      - 223.5.5.5
+    "+.microsoft365.com":
+      - 223.5.5.5
+    "msftauth.net":
+      - 223.5.5.5
+    "+.msftauth.net":
+      - 223.5.5.5
+    "msauth.net":
+      - 223.5.5.5
+    "+.msauth.net":
+      - 223.5.5.5
+    "msauthimages.net":
+      - 223.5.5.5
+    "+.msauthimages.net":
+      - 223.5.5.5
+    "windows.com":
+      - 223.5.5.5
+    "+.windows.com":
+      - 223.5.5.5
+    "msedge.net":
+      - 223.5.5.5
+    "+.msedge.net":
+      - 223.5.5.5
+    "msecnd.net":
+      - 223.5.5.5
+    "+.msecnd.net":
+      - 223.5.5.5
+    "office.com":
+      - 223.5.5.5
+    "+.office.com":
+      - 223.5.5.5
+    "office.net":
+      - 223.5.5.5
+    "+.office.net":
+      - 223.5.5.5
+    "bingapis.com":
+      - 223.5.5.5
+    "+.bingapis.com":
+      - 223.5.5.5
+    "bingapistatistics.com":
+      - 223.5.5.5
+    "+.bingapistatistics.com":
+      - 223.5.5.5
+    "bingvisualsearch.com":
+      - 223.5.5.5
+    "+.bingvisualsearch.com":
+      - 223.5.5.5
+    "sfx.ms":
+      - 223.5.5.5
+    "+.sfx.ms":
       - 223.5.5.5

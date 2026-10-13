@@ -4,32 +4,34 @@ Clash 规则配置，基于 [Loyalsoldier/clash-rules](https://github.com/Loyals
 
 ## 架构
 
-```
-┌─ 规则优先级 ───────────────────────────────────────────────────┐
-│ 0. 强制直连 (2 条)          → bing.com / bing.net 恒定 DIRECT  │
-│ 1. 自定义覆盖 (3 RULE-SET)  → AI / Steam / 直连覆盖            │
-│ 2. Loyalsoldier 核心 (4)    → applications/reject/proxy/direct │
-│ 3. LAN 私有网段 (1 RULE-SET)→ lancidr                          │
-│ 4. GEOSITE 补充 (8 条)      → 内置数据库，零网络开销           │
-│ 5. GEOIP,CN                 → 国内 IP 直连                     │
-│ 6. MATCH                    → 最终兜底                         │
-└──────────────────────────────────────────────────────────────┘
-                       共 20 条规则
-```
+规则自上而下匹配，命中即止，共 **40 条**：
+
+| 层 | 规则 | 说明 |
+|---|---|---|
+| 0 | 强制直连 ×22 | `bing.com` / `bing.net` + 微软账号链路 20 条，全部写死 `DIRECT` |
+| 1 | 自定义覆盖 ×3 | `custom-ai` → 🤖 AI服务；`custom-steam` → 🎮 Steam；`custom-direct` → 🎯 全球直连 |
+| 2 | Loyalsoldier 核心 ×4 | `applications` / `reject` / `proxy` / `direct` |
+| 3 | LAN 私有网段 ×1 | `lancidr`（**带 `no-resolve`**，见下方设计要点） |
+| 4 | GEOSITE ×8 | 内置数据库，零网络开销 |
+| 5 | `GEOIP,CN` ×1 | 国内 IP 直连（`no-resolve`） |
+| 6 | `MATCH` | 最终兜底 → 🐟 漏网之鱼 |
 
 设计要点：
 
 - **第 0 层用 `DIRECT` 关键字而非代理组名**。`bing.com` 如果只靠 `GEOSITE,microsoft` 命中 `Ⓜ️ 微软服务`，那是个 `select` 组——在面板里切换过就会跟着变。写死 `DIRECT` 才能恒定直连。
 - **第 1 层排在 GEOSITE 之前**，保证自定义覆盖优先级最高。
 - **GEOSITE 段零网络开销**，分类数据来自内核自带的 `geosite.dat`，不产生额外请求。
+- **IP 类规则一律带 `no-resolve`**（`GEOIP,CN`、`RULE-SET,lancidr`，以及你自己的第 0 层 `IP-CIDR`）。不带的话 mihomo 会为**每条域名连接**先做一次本地解析 —— 用国内 `nameserver` 时，等于把走代理的域名也暴露给阿里/腾讯。详见「常见问题」最后两行。
 
 > **`bing.net` 为什么要单独列**：它被 Loyalsoldier 的 `proxy.txt` 收进了代理名单，于是 `*.bing.net` 会绕道境外节点。而 `bing.net` 的真实服务（如 Windows Defender 遥测 `ts1.tc.mm.bing.net`）在国内本就有就近节点，走代理反而更慢甚至失败。
+
+> **微软账号链路（20 条）为什么要单独列**：Loyalsoldier 的 `proxy.txt` 显式收录了 `+.live.com` / `+.microsoft.com` / `+.bingapis.com` / `+.hotmail.com` / `+.msedge.net` 等，而 `RULE-SET,proxy` 排在 `GEOSITE,microsoft` **之前** → `Ⓜ️ 微软服务` 这个组被彻底架空，**改成「全球直连」或任何节点都不会被命中**。想强直连只能加在第 0 层。加完后登录（OAuth）与 Bing 搜索会走同一出口 IP，避免 IP 分裂被风控。
 
 ## 文件说明
 
 | 文件 | 用途 |
 |------|------|
-| `clash-verge-merge.yaml` | **Clash Verge Rev merge 模板**：8 个 rule-provider + 20 条规则 + DNS 策略 |
+| `clash-verge-merge.yaml` | **Clash Verge Rev merge 模板**：8 个 rule-provider + 40 条规则 + DNS 策略（含 `fallback` 修复） |
 | `clash-verge-groups.yaml` | **Clash Verge Rev groups 模板**：补齐 merge 规则引用、但机场订阅通常没有的 2 个代理组 |
 | `custom-ai.txt` | AI 服务域名覆盖（Clash 用 `behavior: classical`） |
 | `custom-steam.txt` | Steam / Blizzard 游戏覆盖 |
@@ -128,26 +130,32 @@ reject:
 
 ### ③ DNS 策略（可选，遇到再开）
 
-模板末尾有一段 `dns.nameserver-policy`：
+模板末尾有一个 `dns:` 块，包含两部分：
 
 ```yaml
 dns:
+  fallback:
+    - https://223.5.5.5/dns-query
+    - https://doh.pub/dns-query
   nameserver-policy:
     "bing.com":
       - 223.5.5.5
     "+.bing.com":
       - 223.5.5.5
-    "bing.net":
-      - 223.5.5.5
-    "+.bing.net":
-      - 223.5.5.5
+    # …bing.net + 微软账号链路 20 条，每条都是 bare + "+." 两种 key
 ```
 
-**背景**：在 `fake-ip` + `fallback-filter: geoip:CN` 的配置下，bing 域会解析到微软国际 anycast IP（如 `150.171.x.x`、`204.79.197.200`），被判定为非 CN → 触发境外 fallback DNS。如果那个 fallback 在本网络不可达，就表现为「解析超时、页面打不开」。
+**`fallback` 那两行是必须的**。订阅自带的 `dns.fallback` 常见为 `https://1.1.1.1/dns-query` / `https://dns.google/dns-query`，这两个在国内都不可达；而 `fallback-filter: {geoip: true, geoip-code: CN}` 的语义是「nameserver 解析结果若不是中国 IP，就改用 fallback 的答案」。两者叠加 → **任何解析到非中国 IP 的域名，只要需要 mihomo 本地解析，就必然失败**，表现为直连时 5s 拨号超时 / HTTP 502。
 
-**注意：规则层直连和 DNS 策略必须同时存在**——只写 `DOMAIN-SUFFIX,bing.com,DIRECT` 而不修 DNS，仍然会卡在解析阶段（实测：只加规则层时 `rewards.bing.com` 反而从 308 变成超时）。反过来也成立：一个域**走代理**时不查本地 DNS 所以看不出问题，一旦改直连就会暴露——`bing.net` 就是这种情况（改直连后 `cn.bing.net` 立即报 `dns resolve failed`）。
+实测受害面（2026-10-13）：`lencr.org` / `ocsp.digicert.com` —— 这是 Windows 取**中间证书（AIA）**与**吊销列表（OCSP）**的地址。取不到中间证书 → 证书链建不起来 → 浏览器判「证书不可信」、页面打不开（`login.tailscale.com` 的签发者正是 `CN=YE1, O=Let's Encrypt`，AIA 落在 `lencr.org`）。所以这条修复的意义远超「某些网站打不开」。
 
-如果你用的是自己的 DNS 配置，**整段删掉**即可；需要时再照葫芦画瓢追加其它微软域名。
+> 在 Clash Verge Rev 的 merge 槽位里，`dns.fallback` 是**替换**而非追加 —— 写上去之后原值会消失。
+
+**`nameserver-policy` 是第 0 层直连规则的配套**。背景：在 `fake-ip` + `fallback-filter: geoip:CN` 的配置下，bing 域会解析到微软国际 anycast IP（如 `150.171.x.x`、`204.79.197.200`），被判定为非 CN → 触发境外 fallback DNS。
+
+**规则层直连和 DNS 策略必须同时存在**——只写 `DOMAIN-SUFFIX,bing.com,DIRECT` 而不修 DNS，仍然会卡在解析阶段（实测：只加规则层时 `rewards.bing.com` 反而从 308 变成超时）。反过来也成立：一个域**走代理**时不查本地 DNS 所以看不出问题，一旦改直连就会暴露——`bing.net` 就是这种情况（改直连后 `cn.bing.net` 立即报 `dns resolve failed`）。
+
+如果你用的是自己的 DNS 配置，**两段都可以整段删掉**；需要时再照葫芦画瓢追加其它域名（注意每条都要 `bare` + `+.` 两种 key）。
 
 ## Shadowrocket 使用
 
@@ -173,7 +181,8 @@ dns:
 |------|------|------|
 | 启动失败 / `proxy group [xxx] not found` | 规则引用的组名订阅里没有 | 导入 `clash-verge-groups.yaml`，或按订阅实际组名改规则 |
 | 日志反复 `pull error: dns resolve failed` | provider 直连拉不到 GitHub | 给 provider 加 `proxy:` 字段 |
-| 某网站打不开，关掉 Clash 就正常 | 该域名被解析到非 CN IP，触发了不可达的境外 fallback DNS | 规则层加 `DOMAIN-SUFFIX,<域名>,DIRECT` **且** DNS 层加 `nameserver-policy` |
+| 某网站打不开，关掉 Clash 就正常 | 该域名被解析到非 CN IP，触发了不可达的境外 fallback DNS | 把 `dns.fallback` 换成境内可达 DoH；该域名若要直连，再补 `DOMAIN-SUFFIX,<域名>,DIRECT` **且** `nameserver-policy` |
+| **DNS 泄漏测试出现一堆国内解析器（阿里/腾讯），但请求明明是走代理的** | `RULE-SET,lancidr` 是 `behavior: ipcidr` 且**没带 `no-resolve`** → mihomo 会为**每条域名连接**先本地解析一次，而 `nameserver` 是国内 DNS | 改成 `RULE-SET,lancidr,🎯 全球直连,no-resolve`。实测中国解析器 8 条 → **0 条**。代价：该规则此后只对「按 IP 访问」生效，用**域名**访问内网需另加第 0 层 `DOMAIN-SUFFIX` 直连规则并配 `nameserver-policy` |
 | 改了增强槽位但不生效 | 只重启了 `clash-verge-service` | 重启 GUI 进程 `clash-verge.exe` |
 
 ## 许可
