@@ -165,6 +165,19 @@ dns:
    ```
 2. 在 `[Proxy]` 段落填入节点
 
+### DNS 与防泄露（2026-10-13 修订，重要）
+
+Shadowrocket 的 DNS 行为和 Clash **不是一套机制**，这份 conf 的 DNS 处理要点：
+
+- **DNS 覆写只对「直连类域名」生效**。匹配到 `Proxy` 策略的域名由代理服务器远端解析，不经过本地 DNS —— 这是好事，也是整套方案的前提。
+- **但只要规则里出现 IP 类规则**（`IP-CIDR` / `GEOIP` / IP 段的 `RULE-SET`），Shadowrocket 为了判断是否命中，会**先把域名交给本地 DNS 解析一次**，然后再按规则决定走向。于是即使这个域名最后走代理，国内 DNS 也已经看到这次查询 —— 泄漏测试里冒出 AliDNS / DNSPod 就是这么来的，**与 Clash 侧 `lancidr` 缺 `no-resolve` 是同一个病**。
+- **修法：给 IP 类规则统一加 `no-resolve`**（Shadowrocket 官方修饰符，语义与 Clash 一致 —— 域名请求直接跳过该规则，不做本地解析；只有「按 IP 访问」时才匹配）。本模板已对私网段（改为手写）与 `GEOIP,CN` 全部加上。
+- `dns-server` / `direct-dns-server` 用国内 DoH（`doh.pub` + `dns.alidns.com`），`fallback-dns-server` 也换成 DoH 而**不是 `system`**（原来主 DoH 超时后会回退明文系统 DNS）。全程不出现明文 DNS。
+- `hijack-dns = true` 拦截 App 发往硬编码 IP（如 `8.8.8.8`）的查询，堵住「App 自带 DNS 绕过 Shadowrocket」这条路。
+- 第 0 层那 22 条 `DOMAIN-SUFFIX` 直连（bing + 微软账号链路）是**域名级匹配，不触发解析**，与 Clash merge 模板保持一致。
+
+**自测方法**：小火箭 → 配置页 → 「测试规则」，输入一个国外域名，看它命中的规则名与策略；或看 Proxy Logs 里该连接的规则。若要测 DNS 泄露，在手机上用浏览器打开泄漏测试站点 —— **正常结果应该只剩代理节点所在地区的解析器**，不再出现 AliDNS / DNSPod 的出口 IP。
+
 ## 从零手写配置
 
 不用 Clash Verge Rev、想自己写完整配置的话，参考 `example-config.yaml`（含节点、代理组、规则的完整骨架）。
